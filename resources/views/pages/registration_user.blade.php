@@ -24,18 +24,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="reg-w3">
 <div class="w3layouts-main">
 	<h2>Register Now</h2>
-		<form action="#" method="post">
-			<input type="text" class="ggg" name="Username" placeholder="USERNAME" required="">
-			<input type="email" class="ggg" name="Email" placeholder="E-MAIL" required="">
-            <input type="password" class="ggg" name="Password" placeholder="PASSWORD" required="">
-            <input type="password" class="ggg" name="Password" placeholder="CONFIRM PASSWORD" required="">
-            <input type="text" class="ggg" name="Firstname" placeholder="FIRSTNAME" required="">
-            <input type="text" class="ggg" name="Lastname" placeholder="LASTNAME" required="">
-            <input type="text" class="ggg" name="Address" placeholder="ADDRESS" required="">
-			<input type="text" class="ggg" name="Phone" placeholder="PHONE" required="">
+    <?php
+    $message = Session::get('message');
+    if($message){
+        echo $message;
+        Session::put('message', null);
+    }
+    ?>
+		<form action="{{URL::to('save_register')}}" method="post">
+            {{csrf_field()}}
+			<input type="text" class="ggg" name="username" placeholder="USERNAME" required="">
+			<input type="email" class="ggg" name="email" placeholder="E-MAIL" required="">
+            <input type="password" class="ggg" name="password" placeholder="PASSWORD" required="">
+            <input type="password" class="ggg" name="confirm_password" placeholder="CONFIRM PASSWORD" required="">
+            <input type="text" class="ggg" name="firstname" placeholder="FIRSTNAME" required="">
+            <input type="text" class="ggg" name="lastname" placeholder="LASTNAME" required="">
+            <input type="text" class="ggg" name="address" placeholder="ADDRESS" required="">
 			<h4><input type="checkbox" />I agree to the Terms of Service and Privacy Policy</h4>
 				<div class="clearfix"></div>
-				<input type="submit" value="Register" name="register">
+				<input type="submit" value="Register" name="register" data-target="#exampleModal">
 		</form>
 		<p>Already have an account ?<a href="{{URL::to('login')}}"><u>Login</u></a></p>
 </div>

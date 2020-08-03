@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-<title>Admin - Registration</title>
+<title>Registration</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
@@ -23,22 +23,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <div class="reg-w3">
 <div class="w3layouts-main">
-	<h2>Register Now</h2>
-		<form action="#" method="post">
-			<input type="email" class="ggg" name="Email" placeholder="E-MAIL" required="">
-            <input type="password" class="ggg" name="Password" placeholder="PASSWORD" required="">
-            <input type="password" class="ggg" name="Password" placeholder="CONFIRM PASSWORD" required="">
-            <input type="text" class="ggg" name="Firstname" placeholder="FIRSTNAME" required="">
-            <input type="text" class="ggg" name="Lastname" placeholder="LASTNAME" required="">
-            <input type="text" class="ggg" name="Address" placeholder="ADDRESS" required="">
-			<input type="text" class="ggg" name="Phone" placeholder="PHONE" required="">
-			<h4><input type="checkbox" />I agree to the Terms of Service and Privacy Policy</h4>
-				<div class="clearfix"></div>
-				<input type="submit" value="Register" name="register">
-		</form>
-		<p>Already have an account ?<a href="{{URL::to('admin/login')}}"><u>Login</u></a></p>
+
 </div>
+
 </div>
+
 <script src="{{asset('backend/js/bootstrap.js')}}"></script>
 <script src="{{asset('backend/js/jquery.dcjqaccordion.2.7.js')}}"></script>
 <script src="{{asset('backend/js/scripts.js')}}"></script>
