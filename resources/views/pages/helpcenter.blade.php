@@ -1,7 +1,6 @@
 @extends('layout.user_layout')
 
 @section('user_content')
-
     <div class="service-area section-padding30">
         <div class="container">
             <div class="row justify-content-center">
@@ -22,6 +21,7 @@
                     </div>
                 </div>
             </div>
-
+        </div>
+    </div>
 
 @endsection

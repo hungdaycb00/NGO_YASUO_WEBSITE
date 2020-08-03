@@ -31,7 +31,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         Session::put('message', null);
     }
     ?>
-		<form action="{{URL::to('save_register')}}" method="post">
+		<form action="{{URL::to('save_register_user')}}" method="post">
             {{csrf_field()}}
 			<input type="text" class="ggg" name="username" placeholder="USERNAME" required="">
 			<input type="email" class="ggg" name="email" placeholder="E-MAIL" required="">

@@ -16,6 +16,20 @@ class HomeController extends Controller
     public function login(){
         return view('pages.login_user');
     }
+    public function loginCheck(Request $request){
+        $username = $request->username;
+        $password = $request->password;
+        $result = member::where('username',$username)->where('password',$password)->first();
+        if(!$result){
+            Session::put('message',' Invalid login or password. Please try again. !!!');
+            return Redirect::to('login');
+        }
+        else{
+            Session::put('username', $result->lastname);
+            Session::put('user_id', $result->member_id);
+            return Redirect::to('home');
+        }
+    }
     public function register(){
         return view('pages.registration_user');
     }
@@ -46,7 +60,7 @@ class HomeController extends Controller
         }
         if($data){
             $data->save();
-            return Redirect::to('login');
+            return Redirect::to('register/success');
         }
 
     }

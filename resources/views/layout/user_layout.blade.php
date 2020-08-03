@@ -73,7 +73,14 @@
                                     </form>
                                 </div>
                                 <ul class="contact-now">
-                                    <li><a class="font-weight-bold" href="{{URL::to('login')}}"><u>Login</u></a></li>
+                                    <li><a class="font-weight-bold" href="{{URL::to('login')}}">
+                                                {{--show admin name--}}
+                                                <?php
+                                                $name = Session::get('username');
+                                                if($name){
+                                                    echo 'Welcome, '.$name;
+                                                }
+                                                ?></a></li>
                                 </ul>
                             </div>
                         </div>

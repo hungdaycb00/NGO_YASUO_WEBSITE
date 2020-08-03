@@ -32,10 +32,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             $message = Session::put('message',null);
         }
         ?>
-        <form action="{{URL::to('admin-dashBoard')}}" method="post">
+        <form action="{{URL::to('login_check')}}" method="post">
             {{csrf_field()}}
-            <input type="text" class="ggg" name="admin_email" placeholder="Enter your account" required="">
-            <input type="password" class="ggg" name="admin_password" placeholder="Enter your password" required="">
+            <input type="text" class="ggg" name="username" placeholder="Enter your account" required="">
+            <input type="password" class="ggg" name="password" placeholder="Enter your password" required="">
             <span><input type="checkbox" />Remember Me</span>
             <h6><a href="#">Forgot Password?</a></h6>
             <div class="clearfix"></div>

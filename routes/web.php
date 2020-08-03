@@ -19,7 +19,7 @@ Route::get('/login', 'HomeController@login');
 Route::get('/register', 'HomeController@register');
 
 Route::get('/register/success', 'HomeController@registerSuccess');
-
+Route::post('/login_check', 'HomeController@loginCheck');
 
 //Backend
 
@@ -41,9 +41,9 @@ Route::get('/list_post','PostController@listPost');
 Route::post('/save_new_post','PostController@saveNewPost');
 
 // lưu thông tin đăng kí người dùng của user
-Route::post('/save_register', 'HomeController@saveRegister');
+Route::post('/save_register_user', 'HomeController@saveRegister');
 // lưu thông tin đăng kí tài khoản của admin
-Route::post('/save_register', 'AdminController@saveRegister');
+Route::post('/save_register_admin', 'AdminController@saveRegister');
 
 //help center
 Route::get('/helpcenter','HelpCenterController@showHelpCenter');
