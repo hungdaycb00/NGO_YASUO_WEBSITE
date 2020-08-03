@@ -19,6 +19,9 @@ class HomeController extends Controller
     public function register(){
         return view('pages.registration_user');
     }
+    public function registerSuccess(){
+        return view('pages.registration_success');
+    }
 
     public function saveRegister(Request $request){
         $data = new member();

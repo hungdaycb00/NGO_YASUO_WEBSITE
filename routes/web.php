@@ -18,7 +18,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/login', 'HomeController@login');
 Route::get('/register', 'HomeController@register');
 
-
+Route::get('/register/success', 'HomeController@registerSuccess');
 
 
 //Backend
