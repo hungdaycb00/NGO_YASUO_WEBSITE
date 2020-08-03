@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{URL::asset('frontend/css/slick.css')}}">
     <link rel="stylesheet" href="{{URL::asset('frontend/css/nice-select.css')}}">
     <link rel="stylesheet" href="{{URL::asset('frontend/css/style.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/helpcenter.css')}}">
 </head>
 <body>
 <!--  Preloader Start -->
@@ -103,7 +104,7 @@
                                                 </ul>
                                             </li>
                                             <li><a href="about.html">About Us</a></li>
-                                            <li><a href="program.html">Help Center</a></li>
+                                            <li><a href="{{URL::to('helpcenter')}}">Help Center</a></li>
                                             <li><a href="events.html">Our partners </a></li>
 
                                         </ul>

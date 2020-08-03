@@ -44,3 +44,6 @@ Route::post('/save_new_post','PostController@saveNewPost');
 Route::post('/save_register', 'HomeController@saveRegister');
 // lưu thông tin đăng kí tài khoản của admin
 Route::post('/save_register', 'AdminController@saveRegister');
+
+//help center
+Route::get('/helpcenter','HelpCenterController@showHelpCenter');
