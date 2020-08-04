@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{URL::asset('frontend/css/slick.css')}}">
     <link rel="stylesheet" href="{{URL::asset('frontend/css/nice-select.css')}}">
     <link rel="stylesheet" href="{{URL::asset('frontend/css/style.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('frontend/css/helpcenter.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/children.css')}}">
 </head>
 <body>
 <!--  Preloader Start -->
@@ -104,14 +104,14 @@
                                         <ul id="navigation">
                                             <li><a href="{{URL::to('home')}}" class="font-weight-bold"><h2>News</h2></a>
                                                 <ul class="submenu">
-                                                    <li><a href="#">Children</a></li>
+                                                    <li><a href="{{URL::to('children')}}">Children</a></li>
                                                     <li><a href="#">Education</a></li>
                                                     <li><a href="#">Woman</a></li>
                                                     <li><a href="#">Others</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="about.html">About Us</a></li>
-                                            <li><a href="{{URL::to('helpcenter')}}">Help Center</a></li>
+                                            <li><a href="{{URL::to('help_center')}}">Help Center</a></li>
                                             <li><a href="events.html">Our partners </a></li>
 
                                         </ul>

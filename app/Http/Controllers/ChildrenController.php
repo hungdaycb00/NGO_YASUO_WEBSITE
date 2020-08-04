@@ -4,7 +4,7 @@
 namespace App\Http\Controllers;
 
 
-class HelpCenterController
+class ChildrenController
 {
     public function showhelpcenter(){
         return view('pages.helpcenter');
