@@ -16,6 +16,9 @@ class HomeController extends Controller
     public function login(){
         return view('pages.login_user');
     }
+    public function profile(){
+        return view('pages.user_profile');
+    }
     public function logOut(){
         Session::put('username', null);
         Session::put('member_id', null);
