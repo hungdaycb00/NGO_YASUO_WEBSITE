@@ -46,4 +46,4 @@ Route::post('/save_register_user', 'HomeController@saveRegister');
 Route::post('/save_register_admin', 'AdminController@saveRegister');
 
 //help center
-Route::get('/helpcenter','HelpCenterController@showHelpCenter');
+Route::get('/children','ChildrenController@showChildren');

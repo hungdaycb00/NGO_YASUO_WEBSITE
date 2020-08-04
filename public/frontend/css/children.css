@@ -4,18 +4,21 @@ Primary style
 
 -------------------------------- */
 
-.helpcenter{
+.children{
     padding: 20px;
     text-align: center;
 
 }
-.help{
+.child{
     display: table;
     background-color: #E7E4D8;
     padding: 15px;
     text-align: center;
 }
-h1{
+h1.children{
     margin-top: 50px;
     color: #c9302c;
+}
+img.children{
+    position: fixed;
 }
