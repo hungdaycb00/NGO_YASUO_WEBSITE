@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 
 class ChildrenController
 {
-    public function showhelpcenter(){
-        return view('pages.helpcenter');
+    public function children(){
+        return view('pages.children');
     }
 }

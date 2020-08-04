@@ -15,10 +15,10 @@ Primary style
     padding: 15px;
     text-align: center;
 }
-h1{
+h1.children{
     margin-top: 50px;
     color: #c9302c;
 }
-img{
-    position: absolute;
+img.children{
+    position: fixed;
 }
