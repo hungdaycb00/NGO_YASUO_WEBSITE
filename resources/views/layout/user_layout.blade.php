@@ -72,16 +72,26 @@
                                         </div>
                                     </form>
                                 </div>
-                                <ul class="contact-now">
-                                    <li><a class="font-weight-bold" href="{{URL::to('login')}}">
-                                                {{--show admin name--}}
-                                                <?php
-                                                $name = Session::get('username');
-                                                if($name){
-                                                    echo 'Welcome, '.$name;
+                                <div class="dropdown">
+                                        <a class=" text-dark dropdown-toggle"  style="padding: 10px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <span class="fa fa-user"></span>
+                                            <?php
+                                            $name = Session::get('username');
+                                            if($name){
+                                                echo $name;
+                                                Session::put('login', null);
+                                            }else{
+                                                ?>
+                                            <a class='text-dark' href={{URL::to('login')}}>Login</a>
+                                            <?php
                                                 }
-                                                ?></a></li>
-                                </ul>
+                                            ?>
+                                        </a>
+                                    <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item  h5 font-weight-bold" href="{{URL::to('profile')}}">Profile</a>
+                                        <a class="dropdown-item h5 font-weight-bold" href="{{URL::to('login')}}">Logout</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

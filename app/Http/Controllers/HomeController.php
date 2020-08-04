@@ -16,6 +16,11 @@ class HomeController extends Controller
     public function login(){
         return view('pages.login_user');
     }
+    public function logOut(){
+        Session::put('username', null);
+        Session::put('member_id', null);
+        return Redirect::to('login');
+    }
     public function loginCheck(Request $request){
         $username = $request->username;
         $password = $request->password;

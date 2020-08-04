@@ -30,7 +30,7 @@ Route::get('/admin', 'AdminController@showDashboard');
 Route::get('/admin/login', 'AdminController@showLogin');
 Route::get('/admin/register', 'AdminController@register');
 //đăng xuất admin web
-Route::get('/logout','AdminController@logOut');
+Route::get('/admin_logout','AdminController@logOut');
 
 //đăng nhập vào admin web
 Route::post('/admin-dashBoard', 'AdminController@login');
