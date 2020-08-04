@@ -20,7 +20,7 @@ Route::get('/register', 'HomeController@register');
 
 Route::get('/register/success', 'HomeController@registerSuccess');
 Route::post('/login_check', 'HomeController@loginCheck');
-
+Route::get('/user_logout', 'HomeController@logOut');
 //Backend
 
 //hiển thị trang chủ admin

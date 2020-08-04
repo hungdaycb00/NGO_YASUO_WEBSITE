@@ -73,24 +73,32 @@
                                     </form>
                                 </div>
                                 <div class="dropdown">
-                                        <a class=" text-dark dropdown-toggle"  style="padding: 10px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span class="fa fa-user"></span>
+
+
                                             <?php
                                             $name = Session::get('username');
                                             if($name){
                                                 echo $name;
                                                 Session::put('login', null);
+                                                ?>
+
+                                                <a class=" text-dark "   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="fa fa-user dropdown-toggle"></span>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item  h5 font-weight-bold" href="{{URL::to('profile')}}">Profile</a>
+                                                    <a class="dropdown-item h5 font-weight-bold" href="{{URL::to('user_logout')}}">Logout</a>
+                                                </div>
+
+
+                                            <?php
                                             }else{
                                                 ?>
-                                            <a class='text-dark' href={{URL::to('login')}}>Login</a>
+                                            <a class='text-dark font-weight-bold' href={{URL::to('login')}}>Log In</a>
+                                            <a href="{{URL::to('register')}}" class='text-dark btn' style="padding: 20px;" >Sign Up</a>
                                             <?php
                                                 }
                                             ?>
                                         </a>
-                                    <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item  h5 font-weight-bold" href="{{URL::to('profile')}}">Profile</a>
-                                        <a class="dropdown-item h5 font-weight-bold" href="{{URL::to('login')}}">Logout</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
