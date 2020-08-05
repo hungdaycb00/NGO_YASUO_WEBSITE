@@ -22,7 +22,13 @@ Route::get('/register/success', 'HomeController@registerSuccess');
 Route::post('/login_check', 'HomeController@loginCheck');
 Route::get('/user_logout', 'HomeController@logOut');
 //help center
+
+//Children
 Route::get('/children','ChildrenController@showChildren');
+
+//Donate
+Route::get('/donate','DonateController@showDonate');
+
 //Backend
 
 //hiển thị trang chủ admin
