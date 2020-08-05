@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{URL::asset('frontend/css/nice-select.css')}}">
     <link rel="stylesheet" href="{{URL::asset('frontend/css/style.css')}}">
     <link rel="stylesheet" href="{{URL::asset('frontend/css/children.css')}}">
+
 </head>
 <body>
 <!--  Preloader Start -->

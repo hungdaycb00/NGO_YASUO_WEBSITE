@@ -21,6 +21,8 @@ Route::get('/profile', 'HomeController@profile');
 Route::get('/register/success', 'HomeController@registerSuccess');
 Route::post('/login_check', 'HomeController@loginCheck');
 Route::get('/user_logout', 'HomeController@logOut');
+//help center
+Route::get('/children','ChildrenController@showChildren');
 //Backend
 
 //hiển thị trang chủ admin
@@ -32,8 +34,7 @@ Route::get('/admin/register', 'AdminController@register');
 //đăng xuất admin web
 Route::get('/admin_logout','AdminController@logOut');
 
-//help center
-Route::get('/children','ChildrenController@showChildren');
+
 //đăng nhập vào admin web
 Route::post('/admin-dashBoard', 'AdminController@login');
 // Posts
