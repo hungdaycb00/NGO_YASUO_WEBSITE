@@ -25,13 +25,22 @@ class PostController extends Controller
         $data = array();
         $data['post_title'] = $request->add_title_post;
         $data['post_content'] = $request->add_content;
-//        $data['post_imageName'] = $request->imageName;
         $data['post_status']= $request->post_status;
+        $get_image = $request->file('post_image');
+        if($get_image){
+            $get_name_image = $get_image->getClientOriginalName();
+            $name_image = current(explode('.',$get_name_image));
+            $new_image = $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
+            $get_image->move('upload/',$new_image);
+            $data['post_imageName'] = $new_image;
+            DB::table('list_post')->insert($data);
+            Session::put('message', 'Add new post success!');
+            return Redirect::to('add_post');
+        }
         if($data){
             DB::table('list_post')->insert($data);
             Session::put('message', 'Add new post success!');
             return Redirect::to('add_post');
-
         }
         else{
             Session::put('message', 'Please fill full the information!!');

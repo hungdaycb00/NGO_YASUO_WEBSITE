@@ -19,7 +19,7 @@
             </div>
 
             <div class="position-center">
-                <form role="form" action="{{URL::to('save_new_post')}}" method="post">
+                <form role="form" action="{{URL::to('save_new_post')}}" method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="form-group">
                         <label for="exampleInputEmail1">Title</label>
@@ -36,7 +36,7 @@
                     </select>
                     <div class="form-group" name="imageName">
                         <label for="exampleInputFile">Image input</label>
-                        <input type="file" id="exampleInputFile">
+                        <input type="file" name="post_image" id="exampleInputFile">
                     </div>
                     <button type="submit" name="add_new_post" class="btn mt-10 btn-info ">Submit</button>
                 </form>
