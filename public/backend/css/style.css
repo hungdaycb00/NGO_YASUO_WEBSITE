@@ -3154,3 +3154,6 @@ span.text-alert {
 .mt-10{
     margin-top: 10px;
 }
+a.active.styling-edit {
+    font-size: 25px;
+}

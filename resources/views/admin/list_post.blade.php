@@ -2,10 +2,20 @@
 ?>
 @extends('layout.admin_layout')
 @section('admin_content')
+
     <div class="table-agile-info">
         <div class="panel panel-default">
             <div class="panel-heading">
                 List of post
+            </div>
+            <div class="position-center text-center">
+                <?php
+                $message = Session::get('message');
+                if($message){
+                    echo '<span class="text-alert alert" >'.$message.'</span>';
+                    Session::put('message', null);
+                }
+                ?>
             </div>
             <div class="row w3-res-tb">
                 <div class="col-sm-5 m-b-xs">
@@ -38,7 +48,7 @@
                             </label>
                         </th>
                         <th>Title</th>
-                        <th>Author</th>
+
                         <th>Upload Date</th>
                         <th style="width:30px;"></th>
                     </tr>
@@ -48,12 +58,14 @@
                     <tr>
                         <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
                         <td>{{$cate_pro->post_title}}</td>
-                        <td ><span class="text-ellipsis">Android.</span></td>
                         <td><span class="text-ellipsis">31/7/2020</span></td>
                         <td>
-                            <a href="" class="active" ui-toggle-class=""><i
-                                    class="fa fa-pencil-square-o text-success text-active"></i><i
-                                    class="fa fa-times text-danger text"></i></a>
+                            <a href="{{URL::to('edit_post/'.$cate_pro->post_id)}}" class="active styling-edit" ui-toggle-class="">
+                                <i class="fa fa-pencil-square-o text-success text-active"></i>
+                            </a>
+                            <a onclick="return confirm('Are you sure to delete ?')" href="{{URL::to('delete_post/'.$cate_pro->post_id)}}" class="active  styling-edit" ui-toggle-class="">
+                                <i class="fa fa-times text-danger text"></i>
+                            </a>
                         </td>
                     </tr>
                     @endforeach

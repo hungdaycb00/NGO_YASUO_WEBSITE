@@ -32,10 +32,15 @@ Route::get('/admin/register', 'AdminController@register');
 //đăng xuất admin web
 Route::get('/admin_logout','AdminController@logOut');
 
+//help center
+Route::get('/children','ChildrenController@showChildren');
 //đăng nhập vào admin web
 Route::post('/admin-dashBoard', 'AdminController@login');
 // Posts
 Route::get('/add_post','PostController@addPost');
+Route::get('/edit_post/{post_id}','PostController@editPost');
+
+Route::get('/delete_post/{post_id}','PostController@deletePost');
 Route::get('/list_post','PostController@listPost');
 
 Route::post('/save_new_post','PostController@saveNewPost');
@@ -44,6 +49,5 @@ Route::post('/save_new_post','PostController@saveNewPost');
 Route::post('/save_register_user', 'HomeController@saveRegister');
 // lưu thông tin đăng kí tài khoản của admin
 Route::post('/save_register_admin', 'AdminController@saveRegister');
-
-//help center
-Route::get('/children','ChildrenController@showChildren');
+//update post
+Route::post('/update_post/{post_id}','PostController@updatePost');
