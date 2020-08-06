@@ -5,11 +5,11 @@
     <main>
         <!--? Hero Start -->
         <div class="slider-area2">
-            <div class="slider-height2 d-flex align-items-center">
+            <div class=" d-flex align-items-center">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
-                            <div class="hero-cap hero-cap2 pt-70 text-center">
+                            <div class="hero-cap hero-cap2 pt-25 text-center">
                                 <h2>Children</h2>
                             </div>
                         </div>
@@ -19,7 +19,7 @@
         </div>
         <!-- Hero End -->
         <!--? Blog Area Start-->
-        <section class="blog_area section-padding">
+        <section class="blog_area pt-25 pb-30" >
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mb-5 mb-lg-0">

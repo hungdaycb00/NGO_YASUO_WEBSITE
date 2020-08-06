@@ -25,9 +25,9 @@ Route::get('/user_logout', 'HomeController@logOut');
 
 //Children
 Route::get('/children','ChildrenController@showChildren');
-
 //Donate
 Route::get('/donate','DonateController@showDonate');
+
 
 //Backend
 
