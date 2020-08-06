@@ -12,7 +12,7 @@
 
             @foreach($edit_post as $key =>$edit_value)
             <div class="position-center">
-                <form role="form" action="{{URL::to('update_post/'.$edit_value->post_id)}}" method="post">
+                <form role="form" action="{{URL::to('update_post/'.$edit_value->post_id)}}" method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="form-group">
                         <label for="exampleInputEmail1">Title</label>
@@ -23,8 +23,8 @@
                         <textarea class="form-control" style="resize: none" rows="8" name="add_content">{{$edit_value->post_content}}
                         </textarea>
                     </div>
-                    <div class="form-group" name="imageName">
-                        <label for="exampleInputFile">Image input</label>
+                    <div class="form-group">
+                        <label for="exampleInputFile"><img src="/upload/{{$edit_value->post_imageName}}" alt="" height="150" width="150" style="margin-bottom: 10px;"></label>
                         <input type="file" name="post_image" id="exampleInputFile">
                     </div>
                     <button type="submit" name="update_post" class="btn mt-10 btn-info ">Submit</button>

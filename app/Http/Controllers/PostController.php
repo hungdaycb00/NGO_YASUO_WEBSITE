@@ -26,11 +26,15 @@ class PostController extends Controller
         $data['post_title'] = $request->add_title_post;
         $data['post_content'] = $request->add_content;
         $data['post_status']= $request->post_status;
+
+        $this->validate($request, [
+            'post_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
         $get_image = $request->file('post_image');
         if($get_image){
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.',$get_name_image));
-            $new_image = $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
+            $new_image = $name_image.time().'.'.$get_image->getClientOriginalExtension();
             $get_image->move('upload/',$new_image);
             $data['post_imageName'] = $new_image;
             DB::table('list_post')->insert($data);
@@ -57,12 +61,17 @@ class PostController extends Controller
         $data = array();
         $data['post_title'] = $request->add_title_post;
         $data['post_content'] = $request->add_content;
-//        $data['post_imageName'] = $request->imageName;
-        if($data){
+        $data['post_imageName'] = $request->imageName;
+        $get_image = $request->file('post_image');
+        if($get_image){
+            $get_name_image = $get_image->getClientOriginalName();
+            $name_image = current(explode('.',$get_name_image));
+            $new_image = $name_image.time().'.'.$get_image->getClientOriginalExtension();
+            $get_image->move('upload/',$new_image);
+            $data['post_imageName'] = $new_image;
             list_post::where('post_id', $post_id)->update($data);
             Session::put('message', 'Update post success!');
             return Redirect::to('list_post');
-
         }
     }
     public function deletePost( $post_id){

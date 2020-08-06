@@ -14,6 +14,7 @@
                 $message = Session::get('message');
                 if($message){
                     echo '<span class="text-alert alert" >'.$message.'</span>';
+                    Session::put('message', null);
                 }
                 ?>
             </div>
