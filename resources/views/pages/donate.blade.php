@@ -192,6 +192,10 @@
             margin-top: initial;
         }
 
+        .aaa{
+            padding: 15px;
+        }
+
         /*PREFERENCES STYLE*//*__INSPECT_SEPERATOR__*/
         /* Injected CSS Code */
     </style>
@@ -230,7 +234,7 @@
                         </div>
                         <div class="header-text httal htvam">
                             <h1 id="header_1" class="form-header" data-component="header">
-                                Helping hands orphanage Donation Form
+                                NGO donate
                             </h1>
                             <div id="subHeader_1" class="form-subHeader">
                                 Just a dollar could save a soul
@@ -984,6 +988,37 @@
                   <label class="form-sub-label" for="input_6_country" id="sublabel_6_country" style="min-height:13px" aria-hidden="false"> Country </label>
                 </span>
               </span>
+
+                            <div class="form-line" data-type="control_fullname" id="id_4">
+                                <label class="form-label form-label-left form-label-auto" id="label_4" for="first_4"> Choose your donation </label>
+                                <span class="form-sub-label-container " style="vertical-align:top">
+                        <label class="form-sub-label" for="input_6_country" id="sublabel_6_country" style="min-height:13px" aria-hidden="false"> By amount: </label>
+                   <select class="form-dropdown validate[required] form-address-country" name="q3_donationRange[country]" id="input_3_country" data-component="country">
+                       <option value="United States"> Rs. 10 - 500 </option>
+                       <option value="United States"> Rs. 501 - 1500 </option>
+                       <option value="United States"> Rs. 1501 - 2000 </option>
+                       <option value="United States"> Rs. 2001 - 3000 </option>
+                       <option value="United States"> Rs. 3001 - 4000 </option>
+                       <option value="United States"> Rs. 4001 - 5000 </option>
+                   </select>
+                        <div class="aaa">
+
+                        </div>
+                   <label class="form-sub-label" for="input_6_country" id="sublabel_6_country" style="min-height:13px" aria-hidden="false"> By cause: </label>
+                   <select class="form-dropdown validate[required] form-address-country" name="q3_donationRange[country]" id="input_3_country" data-component="country">
+                        <option value="" selected=""> --Any donation cause-- </option>
+                        <option value="United States"> Children </option>
+                        <option value="United States"> Disabled </option>
+                        <option value="United States"> Education </option>
+                        <option value="United States"> Employment </option>
+                        <option value="United States"> Employment </option>
+                        <option value="United States"> Environment </option>
+                        <option value="United States"> Health </option>
+                        <option value="United States"> Women </option>
+                        <option value="United States"> Youth </option>
+                   </select>
+                    </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1015,16 +1050,8 @@
     </script>
     <div class="formFooter-heightMask">
     </div>
-    <div class="formFooter f6">
-        <div class="formFooter-wrapper formFooter-leftSide">
-            <a href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=202160152327442&utm_content=jotform_logo&utm_campaign=powered_by_jotform_le" target="_blank" class="formFooter-logoLink"><img class="formFooter-logo" src="https://cdn.jotfor.ms/assets/img/logo/logo-new@1x.png" alt="Jotform Logo"></a>
-        </div>
-        <div class="formFooter-wrapper formFooter-rightSide">
-      <span class="formFooter-text">
-        Now create your own JotForm - It's free!
-      </span>
-            <a class="formFooter-button" href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=202160152327442&utm_content=jotform_button&utm_campaign=powered_by_jotform_le" target="_blank">Create your own JotForm</a>
-        </div>
-    </div>
+
 </form></body>
 </html>
+
+
