@@ -120,10 +120,10 @@
             color: #3e4e1a;
         }
         .form-header-group .form-header {
-            color: #3e4e1a;
+            color: #09cc7f;
         }
         .form-header-group .form-subHeader {
-            color: #3e4e1a;
+            color: #09cc7f;
         }
         .form-label-top,
         .form-label-left,
@@ -131,14 +131,14 @@
         .form-html,
         .form-checkbox-item label,
         .form-radio-item label {
-            color: #3e4e1a;
+            color: #09cc7f;
         }
         .form-sub-label {
             color: #586834;
         }
 
         .supernova {
-            background-color: #69d2e7;
+            background-color: #84d4e5;
         }
         .supernova body {
             background: transparent;
@@ -990,21 +990,8 @@
               </span>
 
                             <div class="form-line" data-type="control_fullname" id="id_4">
-                                <label class="form-label form-label-left form-label-auto" id="label_4" for="first_4"> Choose your donation </label>
+                                <label class="form-label form-label-left form-label-auto" id="label_4" for="first_4"> Choose your donation by cause: </label>
                                 <span class="form-sub-label-container " style="vertical-align:top">
-                        <label class="form-sub-label" for="input_6_country" id="sublabel_6_country" style="min-height:13px" aria-hidden="false"> By amount: </label>
-                   <select class="form-dropdown validate[required] form-address-country" name="q3_donationRange[country]" id="input_3_country" data-component="country">
-                       <option value="United States"> Rs. 10 - 500 </option>
-                       <option value="United States"> Rs. 501 - 1500 </option>
-                       <option value="United States"> Rs. 1501 - 2000 </option>
-                       <option value="United States"> Rs. 2001 - 3000 </option>
-                       <option value="United States"> Rs. 3001 - 4000 </option>
-                       <option value="United States"> Rs. 4001 - 5000 </option>
-                   </select>
-                        <div class="aaa">
-
-                        </div>
-                   <label class="form-sub-label" for="input_6_country" id="sublabel_6_country" style="min-height:13px" aria-hidden="false"> By cause: </label>
                    <select class="form-dropdown validate[required] form-address-country" name="q3_donationRange[country]" id="input_3_country" data-component="country">
                         <option value="" selected=""> --Any donation cause-- </option>
                         <option value="United States"> Children </option>
