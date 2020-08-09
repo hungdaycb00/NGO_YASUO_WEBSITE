@@ -20,8 +20,16 @@ class AdminController extends Controller
     public function showLogin(){
         return view('admin.login');
     }
-    public function register(){
-        return view('admin.registration_admin');
+//    public function register(){
+//        $dataListMember = member::all();
+//        $manager = view('admin.list_member')->with('list_member', $dataListMember);
+//        return view('layout.admin_layout')->with('admin.list_member', $manager);
+//    }
+    public function listMember(){
+        $dataListMember = member::all();
+        $manager = view('admin.list_member')->with('list_member', $dataListMember);
+        return view('layout.admin_layout')->with('admin.list_member', $manager);
+        return view('admin.list_member');
     }
     public function login(Request $request){
        $admin_email = $request->admin_email;

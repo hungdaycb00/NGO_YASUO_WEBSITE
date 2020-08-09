@@ -1,7 +1,12 @@
 
 @extends('layout.user_layout')
 @section('user_content')
-
+    <style>
+        a.text-dark.btn {
+            background: #ffbc00;
+            border-radius: 30px;
+        }
+    </style>
     <!-- slider Area Start-->
     <div class="slider-area">
         <div class="slider-active">

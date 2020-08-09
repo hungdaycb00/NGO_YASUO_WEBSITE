@@ -5,7 +5,8 @@
         <div class="text-center">
             <span class="display-3 font-weight-bold">Personal info</span>
         </div>
-        <form method="post">
+        <form method="post" action="{{URL::to('edit_profile')}}" >
+
             <div class="row">
                 <div class="col-md-4">
                     <div class="profile-img">
@@ -100,7 +101,7 @@
                 </div>
 
                 <div class="col-md-2">
-                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                    <a href="{{URL::to('profile/'.$list_member->member_id)}}"><input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/></a>
                 </div>
             </div>
         </form>
