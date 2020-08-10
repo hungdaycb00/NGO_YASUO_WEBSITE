@@ -44,7 +44,6 @@ Route::get('/admin/register', 'AdminController@register');
 //đăng xuất admin web
 Route::get('/admin_logout','AdminController@logOut');
 
-
 //đăng nhập vào admin web
 Route::post('/admin-dashBoard', 'AdminController@login');
 // Posts
@@ -60,6 +59,11 @@ Route::post('/save_new_post','PostController@saveNewPost');
 Route::post('/save_register_user', 'HomeController@saveRegister');
 //danh sách thành viên
 Route::get('admin/list_member','AdminController@listMember');
+// edit profile by admin
+Route::get('edit_profile_member/{id}','AdminController@editProfile');
+Route::post('update_profile_member/{id}','AdminController@updateProfile');
+//delete member
+Route::get('delete_profile_member/{id}','AdminController@deleteProfile');
 // lưu thông tin đăng kí tài khoản của admin
 Route::post('/save_register_admin', 'AdminController@saveRegister');
 //update post
