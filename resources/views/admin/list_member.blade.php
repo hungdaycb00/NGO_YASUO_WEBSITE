@@ -33,6 +33,7 @@
                         <th>Last Name</th>
                         <th>Address</th>
                         <th>Created At</th>
+                        <th>Updated At</th>
                         <th></th>
                         <th style="width:30px;"></th>
                     </tr>
@@ -48,6 +49,7 @@
                         <td>{{$cate_member->firstname}}</td>
                         <td>{{$cate_member->address}}</td>
                         <td>{{$cate_member->created_at}}</td>
+                        <td>{{$cate_member->updated_at}}</td>
                         <td>
                             <a href="{{URL::to('edit_profile_member/'.$cate_member->member_id)}}" class="active styling-edit" ui-toggle-class="">
                                 <i class="fa fa-pencil-square-o text-success text-active"></i>

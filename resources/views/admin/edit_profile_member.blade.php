@@ -37,7 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     }
     ?>
     @foreach($list_member as $key => $cate_member)
-		<form action="{{URL::to('/update_profile/'.$cate_member->member_id)}}" method="post">
+		<form action="{{URL::to('/update_profile_member/'.$cate_member->member_id)}}" method="post">
             {{csrf_field()}}
             <span>Email</span>
 			<input type="email" class="ggg" name="email" value="{{$cate_member->email}}" required="">

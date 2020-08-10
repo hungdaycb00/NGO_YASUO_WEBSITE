@@ -17,11 +17,13 @@ Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 Route::get('/login', 'HomeController@login');
 Route::get('/register', 'HomeController@register');
-Route::get('/profile', 'HomeController@profile');
+Route::get('/profile', 'HomeController@showProfile');
 Route::get('/register/success', 'HomeController@registerSuccess');
 Route::post('/login_check', 'HomeController@loginCheck');
 Route::get('/user_logout', 'HomeController@logOut');
-Route::get('user_edit_profile','HomeController@userEditProfile');
+// update profile by user
+Route::get('edit_profile/{id}','HomeController@editProfile');
+Route::post('update_profile/{id}','HomeController@updateProfile');
 //help center
 
 //Children

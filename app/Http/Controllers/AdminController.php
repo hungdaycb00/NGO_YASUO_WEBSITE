@@ -37,7 +37,7 @@ class AdminController extends Controller
 
     public function editProfile($id){
         $data = member::where('member_id', $id)->get();
-        return view('pages.edit_profile_member',['list_member' => $data]);
+        return view('admin.edit_profile_member',['list_member' => $data]);
     }
     public function updateProfile(Request $request, $id){
         $data = array();

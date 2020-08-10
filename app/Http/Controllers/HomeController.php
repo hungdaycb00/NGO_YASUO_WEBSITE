@@ -16,12 +16,28 @@ class HomeController extends Controller
     public function login(){
         return view('pages.login_user');
     }
-    public function profile(){
-        return view('pages.user_profile');
+    public function showProfile(){
+        $data = member::where('member_id', Session::get('user_id'))->get();
+        return view('pages.user_profile',['list_member' => $data]);
+    }
+    public function editProfile($id){
+        $data = member::where('member_id', $id)->get();
+        return view('pages.edit_profile_member',['list_member' => $data]);
+    }
+    public function updateProfile(Request $request, $id){
+        $data = array();
+        $data['email'] = $request->email;
+        $data['firstname'] = $request->firstname;
+        $data['lastname'] = $request->lastname;
+        $data['address'] = $request->address;
+        member::where('member_id', $id)->update($data);
+        Session::put('message', 'Update profile success!');
+        return Redirect::to('profile');
     }
     public function logOut(){
         Session::put('username', null);
         Session::put('member_id', null);
+        Session::put('message', null);
         return Redirect::to('login');
     }
     public function loginCheck(Request $request){
