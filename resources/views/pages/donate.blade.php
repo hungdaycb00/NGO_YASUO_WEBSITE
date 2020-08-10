@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html class="supernova"><head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -11,13 +12,31 @@
     <link rel="canonical" href="https://form.jotform.com/202160152327442" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1" />
     <meta name="HandheldFriendly" content="true" />
-    <title>Donate</title>
-    <link href="https://cdn.jotfor.ms/static/formCss.css?3.3.19354" rel="stylesheet" type="text/css" />
-    <link type="text/css" media="print" rel="stylesheet" href="https://cdn.jotfor.ms/css/printForm.css?3.3.19354" />
-    <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/nova.css?3.3.19354" />
+    <title>Donate NGO</title>
+    <link href="https://cdn.jotfor.ms/static/formCss.css?3.3.19486" rel="stylesheet" type="text/css" />
+    <link type="text/css" media="print" rel="stylesheet" href="https://cdn.jotfor.ms/css/printForm.css?3.3.19486" />
+    <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/nova.css?3.3.19486" />
     <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/themes/CSS/566a91c2977cdfcd478b4567.css?themeRevisionID=5dca5ac9a5e86d17235d90c1"/>
-    <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/payment/payment_feature.css?3.3.19354" />
+    <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/payment/payment_feature.css?3.3.19486" />
+
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/slicknav.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/progressbar_barfiller.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/gijgo.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/animate.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/animated-headline.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/fontawesome-all.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/slick.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/nice-select.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/style.css')}}">
+
     <style type="text/css">
+        /*css@import (css) '@{buttonFontLink}';*/
+
         .form-label-left{
             width:150px;
         }
@@ -31,14 +50,14 @@
         body, html{
             margin:0;
             padding:0;
-            background:#d5eef3;
+            background:#e6ebed;
         }
 
         .form-all{
             margin:0px auto;
             padding-top:0px;
-            width:590px;
-            color:#3e4e1a !important;
+            width:690px;
+            color:#063873 !important;
             font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
             font-size:14px;
         }
@@ -73,19 +92,20 @@
 
         .form-label.form-label-auto {
 
-            display: inline-block;
-            float: left;
+            display: block;
+            float: none;
             text-align: left;
+            width: 100%;
 
         }
 
         .form-line {
-            /*margin: 12px 36px 12px 36px;*/
-
+            /*margin-top: 12px 36px 12px 36px;*/
+            /*margin-bottom: 12px 36px 12px 36px;*/
         }
 
         .form-all {
-            max-width: 590px;
+            max-width: 690px;
             width: 100%;
         }
 
@@ -112,18 +132,18 @@
         }
 
         .supernova .form-all, .form-all {
-            background-color: #d5eef3;
+            background-color: #e6ebed;
             border: 1px solid transparent;
         }
 
         .form-all {
-            color: #3e4e1a;
+            color: #063873;
         }
         .form-header-group .form-header {
-            color: #09cc7f;
+            color: #063873;
         }
         .form-header-group .form-subHeader {
-            color: #09cc7f;
+            color: #063873;
         }
         .form-label-top,
         .form-label-left,
@@ -131,14 +151,14 @@
         .form-html,
         .form-checkbox-item label,
         .form-radio-item label {
-            color: #09cc7f;
+            color: #063873;
         }
         .form-sub-label {
-            color: #586834;
+            color: #20528d;
         }
 
         .supernova {
-            background-color: #84d4e5;
+            background-color: #e6ebed;
         }
         .supernova body {
             background: transparent;
@@ -154,10 +174,17 @@
         }
 
         .supernova {
-            background-image: none;
+            height: 100%;
+            background-repeat: repeat;
+            background-attachment: scroll;
+            background-position: center top;
+        }
+        .supernova {
+            background-image: url("https://www.jotform.com/uploads/luffyace198/form_files/photo9.5f313bf40ca854.95349272.jpg");
+            /*background-size: cover;*/
         }
         #stage {
-            background-image: none;
+            background-image: url("https://www.jotform.com/uploads/luffyace198/form_files/photo9.5f313bf40ca854.95349272.jpg");
         }
 
         .form-all {
@@ -191,9 +218,8 @@
             margin-top: auto;
             margin-top: initial;
         }
-
-        .aaa{
-            padding: 15px;
+        .hihi{
+            background-color: #0b1c39;
         }
 
         /*PREFERENCES STYLE*//*__INSPECT_SEPERATOR__*/
@@ -202,7 +228,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.min.js"></script>
     <script src="https://cdn.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
-    <script src="https://cdn.jotfor.ms/static/jotform.forms.js?3.3.19354" type="text/javascript"></script>
+    <script src="https://cdn.jotfor.ms/static/jotform.forms.js?3.3.19486" type="text/javascript"></script>
     <script type="text/javascript">
         JotForm.init(function(){
             setTimeout(function() {
@@ -230,11 +256,11 @@
                 <div style="display:table;width:100%">
                     <div class="form-header-group hasImage header-large" data-imagealign="Left">
                         <div class="header-logo">
-                            <img src="https://www.jotform.com/uploads/leroypetry/form_files/2 (1).754.jpg" alt="" width="259" class="header-logo-left" />
+                            <a href="{{URL::to('home')}}"><img src="frontend/img/logo/Logo.png" alt="" width="259" class="header-logo-left" /></a>
                         </div>
                         <div class="header-text httal htvam">
                             <h1 id="header_1" class="form-header" data-component="header">
-                                NGO donate
+                                NGO Donate
                             </h1>
                             <div id="subHeader_1" class="form-subHeader">
                                 Just a dollar could save a soul
@@ -672,8 +698,8 @@
                 </div>
             </li>
             <li class="form-line" data-type="control_fullname" id="id_4">
-                <label class="form-label form-label-left form-label-auto" id="label_4" for="first_4"> Donors Name </label>
-                <div id="cid_4" class="form-input">
+                <label class="form-label form-label-top form-label-auto" id="label_4" for="first_4"> Donors Name </label>
+                <div id="cid_4" class="form-input-wide">
                     <div data-wrapper-react="true">
             <span class="form-sub-label-container " style="vertical-align:top" data-input-type="first">
               <input type="text" id="first_4" name="q4_donorsName[first]" class="form-textbox" size="10" value="" data-component="first" aria-labelledby="label_4 sublabel_4_first" />
@@ -687,14 +713,14 @@
                 </div>
             </li>
             <li class="form-line" data-type="control_email" id="id_5">
-                <label class="form-label form-label-left form-label-auto" id="label_5" for="input_5"> Donors E-mail </label>
-                <div id="cid_5" class="form-input">
+                <label class="form-label form-label-top form-label-auto" id="label_5" for="input_5"> Donors E-mail </label>
+                <div id="cid_5" class="form-input-wide">
                     <input type="email" id="input_5" name="q5_donorsEmail" class="form-textbox validate[Email]" size="32" value="" placeholder="ex: myname@example.com" data-component="email" aria-labelledby="label_5" />
                 </div>
             </li>
             <li class="form-line" data-type="control_address" id="id_6">
-                <label class="form-label form-label-left form-label-auto" id="label_6" for="input_6_addr_line1"> Donors Address </label>
-                <div id="cid_6" class="form-input">
+                <label class="form-label form-label-top form-label-auto" id="label_6" for="input_6_addr_line1"> Donors Address </label>
+                <div id="cid_6" class="form-input-wide">
                     <div summary="" class="form-address-table jsTest-addressField">
                         <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
               <span class="form-address-line form-address-street-line jsTest-address-lineField">
@@ -713,13 +739,13 @@
               </span>
                         </div>
                         <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
-              <span class="form-address-line form-address-city-line jsTest-address-lineField">
+              <span class="form-address-line form-address-city-line jsTest-address-lineField ">
                 <span class="form-sub-label-container " style="vertical-align:top">
                   <input type="text" id="input_6_city" name="q6_donorsAddress6[city]" class="form-textbox form-address-city" value="" data-component="city" aria-labelledby="label_6 sublabel_6_city" />
                   <label class="form-sub-label" for="input_6_city" id="sublabel_6_city" style="min-height:13px" aria-hidden="false"> City </label>
                 </span>
               </span>
-                            <span class="form-address-line form-address-state-line jsTest-address-lineField">
+                            <span class="form-address-line form-address-state-line jsTest-address-lineField ">
                 <span class="form-sub-label-container " style="vertical-align:top">
                   <input type="text" id="input_6_state" name="q6_donorsAddress6[state]" class="form-textbox form-address-state" value="" data-component="state" aria-labelledby="label_6 sublabel_6_state" />
                   <label class="form-sub-label" for="input_6_state" id="sublabel_6_state" style="min-height:13px" aria-hidden="false"> State / Province </label>
@@ -727,13 +753,13 @@
               </span>
                         </div>
                         <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
-              <span class="form-address-line form-address-zip-line jsTest-address-lineField">
+              <span class="form-address-line form-address-zip-line jsTest-address-lineField ">
                 <span class="form-sub-label-container " style="vertical-align:top">
                   <input type="text" id="input_6_postal" name="q6_donorsAddress6[postal]" class="form-textbox form-address-postal" value="" data-component="zip" aria-labelledby="label_6 sublabel_6_postal" />
                   <label class="form-sub-label" for="input_6_postal" id="sublabel_6_postal" style="min-height:13px" aria-hidden="false"> Postal / Zip Code </label>
                 </span>
               </span>
-                            <span class="form-address-line form-address-country-line jsTest-address-lineField">
+                            <span class="form-address-line form-address-country-line jsTest-address-lineField ">
                 <span class="form-sub-label-container " style="vertical-align:top">
                   <select class="form-dropdown form-address-country noTranslate" name="q6_donorsAddress6[country]" id="input_6_country" data-component="country" required="" aria-labelledby="label_6 sublabel_6_country">
                     <option value=""> Please Select </option>
@@ -1038,7 +1064,112 @@
     <div class="formFooter-heightMask">
     </div>
 
-</form></body>
+    </main>
+    <footer class="hihi">
+        <div class="footer-wrapper section-bg2" data-background="frontend/img/gallery/footer_bg.png">
+            <!-- Footer Top-->
+            <div class="footer-area footer-padding">
+                <div class="container">
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <div class="single-footer-caption mb-30">
+                                    <div class="footer-tittle">
+                                        <div class="footer-logo mb-20">
+                                            <a href="{{URL::to('home')}}"><img src="frontend/img/logo/Logo1_footer.png" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>Contact Info</h4>
+                                    <ul>
+                                        <li>
+                                            <p>Address :Your address goes here, your demo address.</p>
+                                        </li>
+                                        <li><a href="#">Phone : +8880 44338899</a></li>
+                                        <li><a href="#">Email : info@colorlib.com</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>Important Link</h4>
+                                    <ul>
+                                        <li><a href="#"> View Project</a></li>
+                                        <li><a href="#">Contact Us</a></li>
+                                        <li><a href="#">Testimonial</a></li>
+                                        <li><a href="#">Proparties</a></li>
+                                        <li><a href="#">Support</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>Newsletter</h4>
+                                    <div class="footer-pera footer-pera2">
+                                        <p>Heaven fruitful doesn't over lesser in days. Appear creeping.</p>
+                                    </div>
+                                    <!-- Form -->
+                                    <div class="footer-form" >
+                                        <div id="mc_embed_signup">
+                                            <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                                                  method="get" class="subscribe_form relative mail_part">
+                                                <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address"
+                                                       class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
+                                                       onblur="this.placeholder = ' Email Address '">
+                                                <div class="form-icon">
+                                                    <button type="submit" name="submit" id="newsletter-submit"
+                                                            class="email_icon newsletter-submit button-contactForm"><img src="frontend/img/gallery/form.png" alt=""></button>
+                                                </div>
+                                                <div class="mt-10 info"></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer-bottom -->
+            <div class="footer-bottom-area">
+                <div class="container">
+                    <div class="footer-border">
+                        <div class="row d-flex justify-content-between align-items-center">
+                            <div class="col-xl-10 col-lg-9 ">
+                                <div class="footer-copy-right">
+                                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> GIVE - AID <i class="fa fa-heart" aria-hidden="true"></i> by <a href="#" target="_blank">Yasuo Team</a>
+                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-lg-3">
+                                <div class="footer-social f-right">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a  href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fas fa-globe"></i></a>
+                                    <a href="#"><i class="fab fa-behance"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</form>
+</body>
 </html>
 
 
