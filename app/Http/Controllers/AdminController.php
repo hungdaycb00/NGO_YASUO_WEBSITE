@@ -6,6 +6,7 @@ use App\admin_user;
 use App\member;
 use App\ngo_admin;
 use Illuminate\Routing\Controller as BaseController;
+use phpDocumentor\Reflection\Types\Array_;
 use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -20,8 +21,39 @@ class AdminController extends Controller
     public function showLogin(){
         return view('admin.login');
     }
-    public function register(){
-        return view('admin.registration_admin');
+//    public function register(){
+//        $dataListMember = member::all();
+//        $manager = view('admin.list_member')->with('list_member', $dataListMember);
+//        return view('layout.admin_layout')->with('admin.list_member', $manager);
+//    }
+    public function listMember(){
+        $dataListMember = member::all();
+//        $manager = view('admin.list_member')->with('list_member', $dataListMember);
+//        return view('layout.admin_layout')->with('admin.list_member', $manager);
+
+        return view('admin.list_member',['list' => $dataListMember]);
+    }
+
+
+    public function editProfile($id){
+        $data = member::where('member_id', $id)->get();
+        return view('admin.edit_profile_member',['list_member' => $data]);
+    }
+    public function updateProfile(Request $request, $id){
+        $data = array();
+        $data['username'] = $request->username;
+        $data['email'] = $request->email;
+        $data['firstname'] = $request->firstname;
+        $data['lastname'] = $request->lastname;
+        $data['address'] = $request->address;
+        member::where('member_id', $id)->update($data);
+        Session::put('message', 'Update profile success!');
+        return Redirect::to('admin/list_member');
+    }
+    public function deleteProfile($id){
+        $data = member::where('member_id', $id)->delete();
+        Session::put('message', 'Delete profile member success!!!');
+        return redirect('admin/list_member');
     }
     public function login(Request $request){
        $admin_email = $request->admin_email;

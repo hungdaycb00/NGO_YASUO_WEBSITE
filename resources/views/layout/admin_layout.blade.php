@@ -273,7 +273,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <span>Users</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="">Member</a></li>
+                            <li><a href="{{URL::to('admin/list_member')}}">List Member</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">

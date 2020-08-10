@@ -5,7 +5,8 @@
         <div class="text-center">
             <span class="display-3 font-weight-bold">Personal info</span>
         </div>
-        <form method="post">
+
+        <form method="post" action="" >
             <div class="row">
                 <div class="col-md-4">
                     <div class="profile-img">
@@ -17,7 +18,15 @@
                     </div>
                 </div>
                 <div class="col-md-6 pt-5">
+                    <?php
+                    $message = Session::get('message');
+                    if($message){
+                        echo $message;
+                        Session::put('message', null);
+                    }
+                    ?>
                     <div class="border rounded p-5 mb-15">
+                        @foreach($list_member as $key => $p)
                         <div class="profile-head">
                             <h2>
                                 Basic info
@@ -29,7 +38,7 @@
                                 <label >Username</label>
                             </div>
                             <div class="col-md-6">
-                                <label>Kshiti123</label>
+                                <label>{{$p->username}}</label>
                             </div>
                         </div>
                         <hr class="my-4">
@@ -38,7 +47,7 @@
                                 <label>First Name</label>
                             </div>
                             <div class="col-md-6">
-                                <label>Kshiti123</label>
+                                <label>{{$p->firstname}}</label>
                             </div>
                         </div>
                         <hr class="my-4">
@@ -47,7 +56,7 @@
                                 <label>Last Name</label>
                             </div>
                             <div class="col-md-6">
-                                <label>Kshiti123</label>
+                                <label>{{$p->lastname}}</label>
                             </div>
                         </div>
 
@@ -65,7 +74,7 @@
                                 <label>Email</label>
                             </div>
                             <div class="col-md-6">
-                                <label>Kshiti123</label>
+                                <label>{{$p->email}}</label>
                             </div>
                         </div>
                         <hr class="my-4">
@@ -74,35 +83,17 @@
                                 <label>Address</label>
                             </div>
                             <div class="col-md-6">
-                                <label>Kshiti123</label>
-                            </div>
-                        </div>
-                        <hr class="my-4">
-                        <div class="row text-secondary">
-                            <div class="col-md-6">
-                                <label>Phone</label>
-                            </div>
-                            <div class="col-md-6">
-                                <label>Kshiti123</label>
-                            </div>
-                        </div>
-                        <hr class="my-4">
-                        <div class="row text-secondary">
-                            <div class="col-md-6">
-                                <label>Created At</label>
-                            </div>
-                            <div class="col-md-6">
-                                <label>Kshiti123</label>
+                                <label>{{$p->address}}</label>
                             </div>
                         </div>
                     </div>
-
+                    @endforeach
                 </div>
-
                 <div class="col-md-2">
-                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                    <a href="{{URL::to('edit_profile/'.$p->member_id)}}" class="profile-edit-btn btn-secondary" style="color: #ffffff">Edit Profile</a>
                 </div>
             </div>
         </form>
+
     </div>
 @endsection
