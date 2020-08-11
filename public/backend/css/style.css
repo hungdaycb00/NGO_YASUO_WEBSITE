@@ -3157,3 +3157,12 @@ span.text-alert {
 a.active.styling-edit {
     font-size: 25px;
 }
+span.thumbs-up-style{
+    font-size: 24px;
+    color: red;
+}
+span.thumbs-down-style{
+    font-size: 24px;
+    color: green;
+}
+

@@ -51,7 +51,8 @@ Route::post('/admin-dashBoard', 'AdminController@login');
 // Posts
 Route::get('/add_post','PostController@addPost');
 Route::get('/edit_post/{post_id}','PostController@editPost');
-
+Route::get('/inactive/{post_id}','PostController@inactivePost');
+Route::get('/active/{post_id}','PostController@activePost');
 Route::get('/delete_post/{post_id}','PostController@deletePost');
 Route::get('/list_post','PostController@listPost');
 

@@ -9,6 +9,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- bootstrap-css -->
     <link rel="stylesheet" href="{{asset('backend/css/bootstrap.min.css')}}" >
+
     <!-- //bootstrap-css -->
     <!-- Custom CSS -->
     <link href="{{asset('backend/css/style.css')}}" rel='stylesheet' type='text/css' />
@@ -23,6 +24,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" href="{{asset('backend/css/monthly.css')}}">
     <!-- //calendar -->
     <!-- //font-awesome icons -->
+    <script type="text/javascript" src="{{asset('ckeditor/ckeditor.js')}}"></script>
+
     <script src="{{asset('backend/js/jquery2.0.3.min.js')}}"></script>
     <script src="{{asset('backend/js/raphael-min.js')}}"></script>
     <script src="{{asset('backend/js/morris.js')}}"></script>
@@ -379,7 +382,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     });
 </script>
 <!-- calendar -->
-<script type="text/javascript" src="js/monthly.js"></script>
+<script type="text/javascript" src="{{asset('backend/js/monthly.js')}}"></script>
 <script type="text/javascript">
     $(window).load( function() {
 
