@@ -135,10 +135,10 @@
                                                     <li><a href="#">Others</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="about.html">About Us</a></li>
+                                            <li><a href="{{URL::to('about_us')}}">About Us</a></li>
                                             <li><a href="{{URL::to('help_center')}}">Help Center</a></li>
-                                            <li><a href="events.html">Our partners </a></li>
-                                            <li><a href="events.html">Contact </a></li>
+                                            <li><a href="{{URL::to('our_partners')}}">Our partners </a></li>
+                                            <li><a href="{{URL::to('contact')}}">Contact </a></li>
                                         </ul>
                                     </nav>
                                 </div>

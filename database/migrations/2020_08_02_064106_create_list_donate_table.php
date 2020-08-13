@@ -29,9 +29,9 @@ class CreateListDonateTable extends Migration
             $table->string('cause')->nullable();
             $table->string('card_type')->nullable();
             $table->string('card_name')->nullable();
-            $table->string('card_number')->nullable();
-            $table->string('expiration_date')->nullable();
-            $table->string('cvv')->nullable();
+            $table->integer('card_number')->nullable();
+            $table->integer('expiration_date')->nullable();
+            $table->integer('cvv')->nullable();
             $table->timestamps();
         });
     }

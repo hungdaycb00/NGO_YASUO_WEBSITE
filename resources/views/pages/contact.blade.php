@@ -1,27 +1,18 @@
 @extends('layout.user_layout')
 @section('user_content')
-
+    <link rel="stylesheet" href="{{asset('frontend/css/contact.css')}}">
+    <!--? Hero Start -->
+    <div class="owl-carousel-wrapper">
+        <div class="box-92819">
+            <h1 class="text-white mb-3">Contact</h1>
+            <p class="lead text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt ab doloremque a quia laboriosam suscipit, iure illum perspiciatis!</p>
+        </div>
+        <div class="ftco-cover-1 overlay" style="background-image: url('frontend/img/hero.jpg');"></div>
+    </div>
+    <!-- Hero End -->
     <section class="contact-section">
         <div class="container">
-            <!--? Hero Start -->
-            <div class="slider-area2">
-                <div class="slider-height2 d-flex align-items-center">
-                    <div class="container class="img-fluid" alt="Responsive image"" style="background-image: url('frontend/img/gallery/socialEvents6.png');">
-                        <div class="row">
-                            <div class="col-xl-12" >
-                                <div class="hero-cap hero-cap2 pt-20 text-center">
-                                    <h2>Contact Us</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Hero End -->
             <div class="row">
-                <div class="col-12">
-                    <h2 class="contact-title">Get in Touch</h2>
-                </div>
                 <div class="col-lg-8">
                     <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
                         <div class="row">
@@ -47,11 +38,14 @@
                             </div>
                         </div>
                         <div class="form-group mt-3">
-                            <button type="submit" class="button button-contactForm boxed-btn">Send</button>
+                            <button type="submit" class="button button-contactForm boxed-btn font-weight-bold">Send</button>
                         </div>
                     </form>
                 </div>
                 <div class="col-lg-3 offset-lg-1">
+                    <div class="col-12">
+                        <h2 class="contact-title">Contact info</h2><br>
+                    </div>
                     <div class="media contact-info">
                         <span class="contact-info__icon"><i class="ti-home"></i></span>
                         <div class="media-body">
@@ -66,7 +60,7 @@
                             <p>Mon to Fri 9am to 6pm</p>
                         </div>
                     </div>
-                    <div class="media contact-info">
+                    <div class="media contact-info" >
                         <span class="contact-info__icon"><i class="ti-email"></i></span>
                         <div class="media-body">
                             <h3>support@colorlib.com</h3>
