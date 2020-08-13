@@ -24,7 +24,9 @@ Route::get('/user_logout', 'HomeController@logOut');
 // update profile by user
 Route::get('edit_profile/{id}','HomeController@editProfile');
 Route::post('update_profile/{id}','HomeController@updateProfile');
+
 //help center
+Route::get('/help_center','HelpCenterController@showHelpCenter');
 
 //Children
 Route::get('/children','ChildrenController@showChildren');
