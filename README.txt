@@ -10,7 +10,7 @@ FIX lỗi: vendor/autoload.php
 
 - Mở Git Bash hoặc CMD > di chuyển đến thư mục chứa project, gõ lệnh:
 composer install
-- copy file .env.example rồi đổi tên thành .evn
+- copy file .env.example rồi đổi tên thành .env
 - bấm: Alt + F12 gõ lệnh: php artisan key:generate
 - chạy tiếp lệnh : php artisan migrate --seed
 
