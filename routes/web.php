@@ -21,6 +21,7 @@ Route::get('/profile', 'HomeController@showProfile');
 Route::get('/register/success', 'HomeController@registerSuccess');
 Route::post('/login_check', 'HomeController@loginCheck');
 Route::get('/user_logout', 'HomeController@logOut');
+Route::get('/contact', 'HomeController@contact');
 // update profile by user
 Route::get('edit_profile/{id}','HomeController@editProfile');
 Route::post('update_profile/{id}','HomeController@updateProfile');

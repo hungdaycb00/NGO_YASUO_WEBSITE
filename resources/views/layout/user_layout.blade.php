@@ -25,6 +25,12 @@
     <link rel="stylesheet" href="{{URL::asset('frontend/css/nice-select.css')}}">
     <link rel="stylesheet" href="{{URL::asset('frontend/css/style.css')}}">
     <link rel="stylesheet" href="{{URL::asset('frontend/css/children.css')}}">
+    <style>
+        a.text-dark.btn {
+            background: #ffbc00;
+            border-radius: 30px;
+        }
+    </style>
 
 </head>
 <body>
@@ -132,7 +138,7 @@
                                             <li><a href="about.html">About Us</a></li>
                                             <li><a href="{{URL::to('help_center')}}">Help Center</a></li>
                                             <li><a href="events.html">Our partners </a></li>
-
+                                            <li><a href="events.html">Contact </a></li>
                                         </ul>
                                     </nav>
                                 </div>

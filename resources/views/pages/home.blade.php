@@ -1,12 +1,6 @@
 @extends('layout.user_layout')
 @section('user_content')
 
-    <style>
-        a.text-dark.btn {
-            background: #ffbc00;
-            border-radius: 30px;
-        }
-    </style>
     <link rel="stylesheet" href="{{URL::asset('frontend/css/style_home.css')}}">
     <link rel="stylesheet" href="frontend/css/owl.theme.default.min.css">
     <!-- slider Area Start-->
