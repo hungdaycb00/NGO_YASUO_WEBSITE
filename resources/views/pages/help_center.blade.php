@@ -57,12 +57,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         <label class="ggg" style="margin-top: 20px"> I am in need of: </label>
         <div id="cid_31" class="form-input-wide">
-            <textarea id="input_31" class="form-textarea" name="q31_iAm31" cols="60" rows="8" data-component="textarea" aria-labelledby="label_31"></textarea>
+            <textarea id="input_31" class="form-textarea" name="q31_iAm31" cols="70" rows="8" data-component="textarea" aria-labelledby="label_31"></textarea>
         </div>
 
         <label class="ggg" style="margin-top: 20px"> COMENTS </label>
         <div id="cid_31" class="form-input-wide">
-            <textarea id="input_31" class="form-textarea" name="q31_iAm31" cols="60" rows="8" data-component="textarea" aria-labelledby="label_31"></textarea>
+            <textarea id="input_31" class="form-textarea" name="q31_iAm31" cols="70" rows="8" data-component="textarea" aria-labelledby="label_31"></textarea>
         </div>
 
         <div class="clearfix"></div>
