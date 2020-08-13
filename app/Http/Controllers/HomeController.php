@@ -88,6 +88,9 @@ class HomeController extends Controller
         }
 
     }
+    public function aboutUs(){
+        return view('pages.about_us');
+    }
 
     public function contact(){
         return view('pages.contact');

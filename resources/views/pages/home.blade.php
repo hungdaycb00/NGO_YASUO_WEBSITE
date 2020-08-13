@@ -2,7 +2,7 @@
 @section('user_content')
 
     <link rel="stylesheet" href="{{URL::asset('frontend/css/style_home.css')}}">
-    <link rel="stylesheet" href="frontend/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/owl.theme.default.min.css')}}">
     <!-- slider Area Start-->
     <div class="slider-area">
         <div class="slider-active">
