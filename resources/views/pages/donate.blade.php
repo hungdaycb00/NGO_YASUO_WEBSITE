@@ -255,7 +255,7 @@
     <input type="hidden" id="JWTContainer" value="" />
     <input type="hidden" id="cardinalOrderNumber" value="" />
 
-    <div class="haha">
+    <div style="margin-top:-60px" class="haha">
         <!-- Header Start -->
         <div class="header-area">
             <div class="main-header ">
@@ -1158,7 +1158,7 @@
             </li>
             <li class="form-line" data-type="control_button" id="id_2">
                 <div id="cid_2" class="form-input-wide">
-                    <div style="margin-left:156px" data-align="auto" class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
+                    <div style="margin-left:276px" data-align="auto" class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
                         <button id="input_2" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
                             Submit
                         </button>
