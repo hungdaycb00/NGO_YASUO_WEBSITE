@@ -20,8 +20,36 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Content</label>
-                        <textarea class="form-control" style="resize: none" rows="8" name="add_content">{{$edit_value->post_content}}
+                        <textarea class="form-control" id="content-1" style="resize: none" rows="8" name="add_content">{{$edit_value->post_content}}
                         </textarea>
+                        <script type="text/javascript">
+
+                            config={};
+                            config.entities_latin = false;
+                            config.uiColor = '#AADC6E';
+                            config.language = 'en';
+                            config.toolbarGroups = [
+                                { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+                                { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
+                                { name: 'document', groups: [ 'document', 'doctools', 'mode' ] },
+                                { name: 'links', groups: [ 'links' ] },
+                                { name: 'forms', groups: [ 'forms' ] },
+                                { name: 'tools', groups: [ 'tools' ] },
+                                '/',
+                                { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+                                { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
+                                { name: 'insert', groups: [ 'insert' ] },
+                                { name: 'styles', groups: [ 'styles' ] },
+                                { name: 'about', groups: [ 'about' ] },
+                                '/',
+                                { name: 'colors', groups: [ 'colors' ] },
+                                { name: 'others', groups: [ 'others' ] }
+                            ];
+
+                            config.removeButtons = 'Checkbox,Radio,HiddenField,Button,ImageButton,Select,TextField,Textarea,Form,CreateDiv,Language,Anchor,Table,Flash,Image,HorizontalRule,Iframe,ShowBlocks,Font,FontSize,TextColor,BGColor,Subscript,Superscript,CopyFormatting,RemoveFormat,Preview,Link,Unlink,NewPage,Print,Indent,Outdent,BidiLtr,BidiRtl,Smiley,SpecialChar,PageBreak';
+
+                            CKEDITOR.replace('content-1', config);
+                        </script>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputFile"><img src="/upload/{{$edit_value->post_imageName}}" alt="" height="150" width="150" style="margin-bottom: 10px;"></label>

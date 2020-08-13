@@ -1,5 +1,4 @@
-<?php
-?>
+
 @extends('layout.admin_layout')
 @section('admin_content')
 
@@ -49,6 +48,7 @@
                         </th>
                         <th>Title</th>
                         <th>Image Name</th>
+                        <th>Post Status</th>
                         <th>Upload Date</th>
                         <th style="width:30px;"></th>
                     </tr>
@@ -59,6 +59,20 @@
                         <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
                         <td>{{$cate_pro->post_title}}</td>
                         <td><img src="/upload/{{$cate_pro->post_imageName}}" alt="" height="100" width="100"></td>
+                        <td><?php
+                            if($cate_pro->post_status == 0){
+                                ?>
+
+                                <a href="{{URL::to('/inactive/'.$cate_pro->post_id)}}"><span class='fa thumbs-up-style fa-thumbs-down'></span></a>
+                           <?php
+                            }
+                            else{
+                            ?>
+                                <a href="{{URL::to('/active/'.$cate_pro->post_id)}}"><span class='fa thumbs-down-style fa-thumbs-up'></span></a>
+                            <?php
+                            }
+                        ?>
+                        </td>
                         <td>{{$cate_pro->updated_at}}</td>
                         <td>
                             <a href="{{URL::to('edit_post/'.$cate_pro->post_id)}}" class="active styling-edit" ui-toggle-class="">

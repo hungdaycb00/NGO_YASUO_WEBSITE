@@ -74,6 +74,23 @@ class PostController extends Controller
             return Redirect::to('list_post');
         }
     }
+    public function inactivePost($post_id){
+
+        $data = array();
+        $data['post_status'] = 1;
+        list_post::where('post_id', $post_id)->update($data);
+//        list_post::where('post_id', $post_id)->update('post_status', 0);
+        Session::put('message', 'Post is inactive!');
+        return Redirect::to('list_post');
+    }
+    public function activePost($post_id){
+        $data = array();
+        $data['post_status'] = 0;
+        list_post::where('post_id', $post_id)->update($data);
+        Session::put('message', 'Post is active!');
+        return Redirect::to('list_post');
+    }
+
     public function deletePost( $post_id){
             list_post::where('post_id', $post_id)->delete();
             Session::put('message', 'Delete post success!');
