@@ -105,7 +105,7 @@
         }
 
         .form-all {
-            max-width: 690px;
+            max-width: 720px;
             width: 100%;
         }
 
@@ -117,18 +117,18 @@
         }
 
         .form-all {
-            font-size: 14px
+            font-size: 18px
         }
         .form-all .qq-upload-button,
         .form-all .qq-upload-button,
         .form-all .form-submit-button,
         .form-all .form-submit-reset,
         .form-all .form-submit-print {
-            font-size: 14px
+            font-size: 18px
         }
         .form-all .form-pagebreak-back-container,
         .form-all .form-pagebreak-next-container {
-            font-size: 14px
+            font-size: 18px
         }
 
         .supernova .form-all, .form-all {
