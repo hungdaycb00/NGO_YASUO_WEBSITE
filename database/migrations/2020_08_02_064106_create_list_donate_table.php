@@ -14,7 +14,24 @@ class CreateListDonateTable extends Migration
     public function up()
     {
         Schema::create('list_donate', function (Blueprint $table) {
-            $table->id();
+            $table->increments('donate_id');
+            $table->string('member_id');
+            $table->string('firstname')->nullable();
+            $table->string('lastname');
+            $table->string('organization');
+            $table->string('email')->nullable()->unique();
+            $table->string('address')->nullable();
+            $table->string('country');
+            $table->string('city');
+            $table->string('phone')->nullable()->unique();
+            $table->string('comment');
+            $table->string('amount')->nullable();
+            $table->string('cause')->nullable();
+            $table->string('card_type')->nullable();
+            $table->string('card_name')->nullable();
+            $table->string('card_number')->nullable();
+            $table->string('expiration_date')->nullable();
+            $table->string('cvv')->nullable();
             $table->timestamps();
         });
     }

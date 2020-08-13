@@ -7,7 +7,7 @@
             border-radius: 30px;
         }
     </style>
-    <link rel="stylesheet" href="{{URL::asset('frontend/css/style_home.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('frontend/css/style_home.css')}}">
     <link rel="stylesheet" href="frontend/css/owl.theme.default.min.css">
     <!-- slider Area Start-->
     <div class="slider-area">
@@ -88,6 +88,7 @@
                         </a>
                         <div class="cases-caption2">
                             <h5><a href="services.html">A Life Spared</a></h5>
+
                         </div>
                     </div>
                 </div>
