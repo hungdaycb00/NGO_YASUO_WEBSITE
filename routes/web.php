@@ -20,6 +20,7 @@ Route::get('/register', 'HomeController@register');
 Route::get('/profile', 'HomeController@showProfile');
 Route::get('/register/success', 'HomeController@registerSuccess');
 Route::post('/login_check', 'HomeController@loginCheck');
+Route::get('/about_us', 'HomeController@aboutUs');
 Route::get('/user_logout', 'HomeController@logOut');
 // update profile by user
 Route::get('edit_profile/{id}','HomeController@editProfile');
