@@ -6,9 +6,9 @@
             background: #ffbc00;
             border-radius: 30px;
         }
+
     </style>
-    <link rel="stylesheet" href="{{URL::asset('frontend/css/style_home.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('frontend/css/owl.theme.default.min.css')}}">
+
     <!-- slider Area Start-->
     <div class="slider-area">
         <div class="slider-active">
@@ -361,9 +361,6 @@
     <!-- Featured_job_end -->
 
     <!-- Count Down End -->
-    <!-- slider -->
-    <script src="frontend/js/owl.carousel.min.js"></script>
-    <script src="frontend/js/slider.js"></script>
-    <!-- slider -->
+
 @endsection
 

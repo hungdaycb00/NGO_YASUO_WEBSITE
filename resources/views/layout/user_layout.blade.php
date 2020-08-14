@@ -25,6 +25,14 @@
     <link rel="stylesheet" href="{{URL::asset('frontend/css/nice-select.css')}}">
     <link rel="stylesheet" href="{{URL::asset('frontend/css/style.css')}}">
     <link rel="stylesheet" href="{{URL::asset('frontend/css/children.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/style_home.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/1owl.carousel.min.css')}}">
+
+
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/style_home.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('frontend/css/1owl.carousel.min.css')}}">
 
 </head>
 <body>
@@ -310,5 +318,11 @@
 <script src="./frontend/js/plugins.js"></script>
 <script src="./frontend/js/main.js"></script>
 
+
+<!-- slider -->
+<script src="frontend/js/owl.carousel.min.js"></script>
+<script src="frontend/js/slider.js"></script>
+<script src="frontend/js/1owl.carousel.min.js"></script>
+<!-- slider -->
 </body>
 </html>
