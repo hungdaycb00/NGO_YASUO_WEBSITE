@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNgoAdminTable extends Migration
+class CreateCategoryPostTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateNgoAdminTable extends Migration
      */
     public function up()
     {
-        Schema::create('ngo_admin', function (Blueprint $table) {
-
-            $table->increments('admin_id');
-            $table->string('admin_name');
-            $table->string('admin_email')->unique()->nullable();
-            $table->string('password');
-            $table->integer('phone')->unique();
+        Schema::create('category_post', function (Blueprint $table) {
+            $table->increments('category_id');
+            $table->string('category_name');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateNgoAdminTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ngo_admin');
+        Schema::dropIfExists('category_post');
     }
 }

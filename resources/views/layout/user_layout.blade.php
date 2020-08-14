@@ -25,14 +25,17 @@
     <link rel="stylesheet" href="{{URL::asset('frontend/css/nice-select.css')}}">
     <link rel="stylesheet" href="{{URL::asset('frontend/css/style.css')}}">
     <link rel="stylesheet" href="{{URL::asset('frontend/css/children.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('frontend/css/style_home.css')}}">
+{{--    home css--}}
     <link rel="stylesheet" href="{{URL::asset('frontend/css/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('frontend/css/1owl.carousel.min.css')}}">
 
+    <style>
+        a.text-dark.btn {
+            background: #ffbc00;
+            border-radius: 30px;
+        }
+    </style>
 
-    <link rel="stylesheet" href="{{URL::asset('frontend/css/style_home.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('frontend/css/owl.theme.default.min.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('frontend/css/1owl.carousel.min.css')}}">
 
 </head>
 <body>
@@ -137,10 +140,10 @@
                                                     <li><a href="#">Others</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="about.html">About Us</a></li>
+                                            <li><a href="{{URL::to('about_us')}}">About Us</a></li>
                                             <li><a href="{{URL::to('help_center')}}">Help Center</a></li>
-                                            <li><a href="events.html">Our partners </a></li>
-
+                                            <li><a href="{{URL::to('our_partners')}}">Our partners </a></li>
+                                            <li><a href="{{URL::to('contact')}}">Contact </a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -318,11 +321,11 @@
 <script src="./frontend/js/plugins.js"></script>
 <script src="./frontend/js/main.js"></script>
 
-
-<!-- slider -->
+<!-- slider home -->
 <script src="frontend/js/owl.carousel.min.js"></script>
 <script src="frontend/js/slider.js"></script>
 <script src="frontend/js/1owl.carousel.min.js"></script>
 <!-- slider -->
+
 </body>
 </html>
