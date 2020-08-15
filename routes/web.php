@@ -14,27 +14,24 @@ use Illuminate\Support\Facades\Route;
 //Frontend
 Route::group(['prefix'=>'/'],function(){
     Route::get('home','PagesController@home');
-    Route::get('/', 'HomeController@index');
-//Route::get('/home', 'HomeController@index');
-    Route::get('/login', 'HomeController@login');
-    Route::get('/register', 'HomeController@register');
-    Route::get('/profile', 'HomeController@showProfile');
-    Route::get('/register/success', 'HomeController@registerSuccess');
-    Route::post('/login_check', 'HomeController@loginCheck');
-    Route::get('/about_us', 'HomeController@aboutUs');
-    Route::get('/user_logout', 'HomeController@logOut');
-    Route::get('/contact', 'HomeController@contact');
+    Route::get('/', 'PagesController@home');
+    Route::get('/login', 'PagesController@login');
+    Route::get('/register', 'PagesController@register');
+    Route::get('/profile', 'PagesController@showProfile');
+    Route::get('/register/success', 'PagesController@registerSuccess');
+    Route::post('/login_check', 'PagesController@loginCheck');
+    Route::get('/user_logout', 'PagesController@logOut');
+    Route::post('/save_register_user', 'PagesController@saveRegister');
     // update profile by user
-    Route::get('edit_profile/{id}','HomeController@editProfile');
-    Route::post('update_profile/{id}','HomeController@updateProfile');
+    Route::get('edit_profile/{id}','PagesController@editProfile');
+    Route::post('update_profile/{id}','PagesController@updateProfile');
 
-//help center
+    //pages
     Route::get('/help_center','HelpCenterController@showHelpCenter');
-
-//Children
-    Route::get('/children','ChildrenController@showChildren');
-//Donate
+    Route::get('/children','PagesController@showChildren');
     Route::get('/donate','DonateController@showDonate');
+    Route::get('/contact', 'PagesController@contact');
+    Route::get('/about_us', 'PagesController@aboutUs');
 });
 //Backend
 //hiển thị trang chủ admin
@@ -47,7 +44,6 @@ Route::get('/admin/register', 'AdminController@register');
 Route::get('/admin_logout','AdminController@logOut');
 Route::post('/admin-dashBoard', 'AdminController@login');
 // lưu thông tin đăng kí người dùng của user
-Route::post('/save_register_user', 'HomeController@saveRegister');
 //danh sách thành viên
 Route::get('admin/list_member','AdminController@listMember');
 // edit profile by admin
@@ -79,5 +75,4 @@ Route::group(['prefix'=>'admin'],function (){
         Route::get('/inactive/{id}','PostController@inactivePost');
         Route::get('/active/{id}','PostController@activePost');
     });
-
 });

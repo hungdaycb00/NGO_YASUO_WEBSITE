@@ -1,4 +1,7 @@
 @extends('layout.user_layout')
+@section('title')
+    Contact
+@endsection
 @section('user_content')
     <link rel="stylesheet" href="{{asset('frontend/css/contact.css')}}">
     <!--? Hero Start -->
