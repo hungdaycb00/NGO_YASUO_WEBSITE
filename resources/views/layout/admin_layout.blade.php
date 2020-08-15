@@ -264,9 +264,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="leftside-navigation">
                 <ul class="sidebar-menu" id="nav-accordion">
                     <li>
-                        <a class="active" href="{{URL::to('admin/login')}}">
+                        <a class="active" href="#">
                             <i class="fa fa-dashboard"></i>
                             <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="/" class="active">
+                            <i class="fa fa-globe"></i>
+                            <span>Website - Give Aid </span>
                         </a>
                     </li>
 
@@ -277,25 +283,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </a>
                         <ul class="sub">
                             <li><a href="{{URL::to('admin/list_member')}}">List Member</a></li>
+                            <li><a href="{{URL::to('register')}}">Add Member</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
                         <a href="javascript:;">
-                            <i class="fa fa-envelope"></i>
+                            <i class="fa fa-list-alt"></i>
+                            <span>Category </span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="{{URL::to('admin/category/add_category')}}">New Category</a></li>
+                            <li><a href="{{URL::to('admin/category/list_category')}}">List Category</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-product-hunt"></i>
                             <span>Posts </span>
                         </a>
                         <ul class="sub">
-                            <li><a href="{{URL::to('add_post')}}">New Post</a></li>
-                            <li><a href="{{URL::to('list_post')}}">List Posts</a></li>
+                            <li><a href="{{URL::to('admin/post/add_post')}}">New Post</a></li>
+                            <li><a href="{{URL::to('admin/post/list_post')}}">List Posts</a></li>
                         </ul>
                     </li>
 
-                    <li>
-                        <a href="{{URL::to('admin/login')}}">
+                    <li class="sub-menu">
+                        <a href="javascript:;">
                             <i class="fa fa-user"></i>
-                            <span>Login Page</span>
+                            <span>Login</span>
                         </a>
+                        <ul class="sub">
+                            <li><a href="{{URL::to('admin/login')}}">Login Admin</a></li>
+                            <li><a href="{{URL::to('admin/register')}}">Register Admin</a></li>
+                        </ul>
                     </li>
+
+
                 </ul>            </div>
             <!-- sidebar menu end-->
         </div>

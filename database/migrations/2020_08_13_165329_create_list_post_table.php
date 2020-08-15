@@ -16,10 +16,10 @@ class CreateListPostTable extends Migration
         Schema::create('list_post', function (Blueprint $table) {
             $table->increments('post_id');
             $table->string('post_title');
-            $table->string('post_summary');
+            $table->string('post_summary')->nullable();
             $table->text('post_content');
-            $table->string('post_imageName');
-            $table->integer('post_highlights');
+            $table->string('post_imageName')->nullable();
+            $table->integer('post_highlights')->nullable();
             $table->integer('post_status');
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('category_id')->on('category_post');

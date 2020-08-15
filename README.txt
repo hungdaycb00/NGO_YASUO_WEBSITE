@@ -3,9 +3,9 @@ mở phpMyAdmin
 1. tạo database mới tên: ngo
 nếu tạo trước đó thì xóa đi tạo lại hoặc xóa hết các bảng ở bên trong.
 2. trọn mục export(nhập) sau đó chọn tệp ngo.sql
-3. ấn mút go(thực hiện). 
+3. ấn mút go(thực hiện).
 ->> kiểm tra lại dữ liệu
- 
+
 FIX lỗi: vendor/autoload.php
 
 - Mở Git Bash hoặc CMD > di chuyển đến thư mục chứa project, gõ lệnh:
@@ -35,4 +35,4 @@ copy and paste 2 file này vào cuối file httpd-vhosts.conf và save.
 	DocumentRoot "C:\xampp\htdocs\ngo-yasuo\public"
 	ServerName ngo-yasuo.org
 </VirtualHost>
-3. 
+3.

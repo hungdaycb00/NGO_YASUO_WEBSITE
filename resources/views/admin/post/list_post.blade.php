@@ -47,6 +47,8 @@
                             </label>
                         </th>
                         <th>Title</th>
+                        <th>Category</th>
+                        <th>Summary</th>
                         <th>Image Name</th>
                         <th>Post Status</th>
                         <th>Upload Date</th>
@@ -54,31 +56,33 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($list_post as $key =>$cate_pro)
+                    @foreach($list as $key =>$cate_pro)
                     <tr>
                         <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
                         <td>{{$cate_pro->post_title}}</td>
+                        <td>{{$cate_pro->categoryPost->category_name}}</td>
+                        <td>{{$cate_pro->post_summary}}</td>
                         <td><img src="/upload/{{$cate_pro->post_imageName}}" alt="" height="100" width="100"></td>
                         <td><?php
                             if($cate_pro->post_status == 0){
                                 ?>
 
-                                <a href="{{URL::to('/inactive/'.$cate_pro->post_id)}}"><span class='fa thumbs-up-style fa-thumbs-down'></span></a>
+                                <a href="{{URL::to('admin/post/inactive/'.$cate_pro->post_id)}}"><span class='fa thumbs-up-style fa-thumbs-down'></span></a>
                            <?php
                             }
                             else{
                             ?>
-                                <a href="{{URL::to('/active/'.$cate_pro->post_id)}}"><span class='fa thumbs-down-style fa-thumbs-up'></span></a>
+                                <a href="{{URL::to('admin/post/active/'.$cate_pro->post_id)}}"><span class='fa thumbs-down-style fa-thumbs-up'></span></a>
                             <?php
                             }
                         ?>
                         </td>
                         <td>{{$cate_pro->updated_at}}</td>
                         <td>
-                            <a href="{{URL::to('edit_post/'.$cate_pro->post_id)}}" class="active styling-edit" ui-toggle-class="">
+                            <a href="{{URL::to('admin/post/edit_post/'.$cate_pro->post_id)}}" class="active styling-edit" ui-toggle-class="">
                                 <i class="fa fa-pencil-square-o text-success text-active"></i>
                             </a>
-                            <a onclick="return confirm('Are you sure to delete ?')" href="{{URL::to('delete_post/'.$cate_pro->post_id)}}" class="active  styling-edit" ui-toggle-class="">
+                            <a onclick="return confirm('Are you sure to delete ?')" href="{{URL::to('admin/post/delete_post/'.$cate_pro->post_id)}}" class="active  styling-edit" ui-toggle-class="">
                                 <i class="fa fa-times text-danger text"></i>
                             </a>
                         </td>

@@ -1,5 +1,7 @@
 @extends('layout.user_layout')
-
+@section('title')
+    Children
+@endsection
 @section('user_content')
 
     <main>

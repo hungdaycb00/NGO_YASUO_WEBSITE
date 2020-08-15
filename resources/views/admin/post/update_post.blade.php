@@ -9,26 +9,22 @@
         </header>
 
         <div class="panel-body">
-            <div class="position-center text-center">
-                <?php
-                $message = Session::get('message');
-                if($message){
-                    echo '<span class="text-alert alert" >'.$message.'</span>';
-                    Session::put('message', null);
-                }
-                ?>
-            </div>
 
+            @foreach($edit_post as $key =>$edit_value)
             <div class="position-center">
-                <form role="form" action="{{URL::to('save_new_post')}}" method="post" enctype="multipart/form-data">
+                <form role="form" action="{{URL::to('admin/post/update_post/'.$edit_value->post_id)}}" method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="form-group">
                         <label for="exampleInputEmail1">Title</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" name="add_title_post" placeholder="Enter title">
+                        <input type="text" value="{{$edit_value->post_title}}" class="form-control" id="exampleInputEmail1" name="add_title_post" placeholder="Enter title">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Summary</label>
+                        <input type="text" value="{{$edit_value->post_summary}}" class="form-control" id="exampleInputEmail1" name="add_summary" placeholder="Enter title">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Content</label>
-                        <textarea class="form-control" id="content-1"  style="resize: none" rows="8" name="add_content" placeholder="Enter your content...">
+                        <textarea class="form-control" id="content-1" style="resize: none" rows="8" name="add_content">{{$edit_value->post_content}}
                         </textarea>
                         <script type="text/javascript">
 
@@ -59,18 +55,32 @@
                             CKEDITOR.replace('content-1', config);
                         </script>
                     </div>
-                    <select class="form-control input-m m-bot15" name="post_status">
-                        <option value="1">Show</option>
-                        <option value="0">Hidden</option>
-                    </select>
-                    <div class="form-group" name="imageName">
-                        <label for="exampleInputFile">Image input</label>
-                        <input type="file" name="post_image" id="exampleInputFile">
+                    <div class="form-group">
+                        <label for="">Category</label>
+                        <select class="form-control input-m m-bot15" name="category_type">
+                            <option value="{{$edit_value->category_id}}">{{$edit_value->categoryPost->category_name}}</option>
+                            <option value="1">Education</option>
+                            <option value="2">Health Care</option>
+                            <option value="3">Privileged Children</option>
+                            <option value="4">Other</option>
+                        </select>
                     </div>
-                    <button type="submit" name="add_new_post" class="btn mt-10 btn-info ">Submit</button>
+                    <div class="form-group">
+                        <label for="">Highlights</label>
+                        <select class="form-control input-m m-bot15" name="highlights">
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile"><img src="/upload/{{$edit_value->post_imageName}}" alt="" height="150" width="150" style="margin-bottom: 10px;"></label>
+                        <input type="file" name="post_image" id="exampleInputFile">
+                        <input type="hidden" name="old_image" id="exampleInputFile" value="{{$edit_value->post_imageName}}">
+                    </div>
+                    <button type="submit" name="update_post" class="btn mt-10 btn-info ">Submit</button>
                 </form>
             </div>
-
+            @endforeach
         </div>
     </section>
 

@@ -21,23 +21,18 @@ class AdminController extends Controller
     public function showLogin(){
         return view('admin.login');
     }
-//    public function register(){
-//        $dataListMember = member::all();
-//        $manager = view('admin.list_member')->with('list_member', $dataListMember);
-//        return view('layout.admin_layout')->with('admin.list_member', $manager);
-//    }
+    public function register(){
+        return view('admin.admin_account.registration_admin');
+    }
     public function listMember(){
         $dataListMember = member::all();
-//        $manager = view('admin.list_member')->with('list_member', $dataListMember);
-//        return view('layout.admin_layout')->with('admin.list_member', $manager);
-
-        return view('admin.list_member',['list' => $dataListMember]);
+        return view('admin.member.list_member',['list' => $dataListMember]);
     }
 
 
     public function editProfile($id){
         $data = member::where('member_id', $id)->get();
-        return view('admin.edit_profile_member',['list_member' => $data]);
+        return view('admin.member.edit_profile_member',['list_member' => $data]);
     }
     public function updateProfile(Request $request, $id){
         $data = array();
@@ -59,7 +54,6 @@ class AdminController extends Controller
        $admin_email = $request->admin_email;
        $admin_password = $request->admin_password;
        $result = ngo_admin::where('email',$admin_email)->where('password',$admin_password)->first();
-       //$result = DB::table('ngo_admin')->where('admin_email',$admin_email)->where('password', $admin_password)->first();
        if(!$result){
            Session::put('message',' Invalid login or password. Please try again. !!!');
            return Redirect::to('admin/login');

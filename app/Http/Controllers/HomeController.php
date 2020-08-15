@@ -51,7 +51,7 @@ class HomeController extends Controller
         else{
             Session::put('username', $result->lastname);
             Session::put('user_id', $result->member_id);
-            return Redirect::to('home');
+            return Redirect::to('pages/home');
         }
     }
     public function register(){
