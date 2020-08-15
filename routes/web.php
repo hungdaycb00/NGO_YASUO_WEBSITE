@@ -32,6 +32,7 @@ Route::group(['prefix'=>'/'],function(){
     Route::get('/donate','DonateController@showDonate');
     Route::get('/contact', 'PagesController@contact');
     Route::get('/about_us', 'PagesController@aboutUs');
+    Route::get('/blog_detail/{id}', 'PagesController@blogDetail');
 });
 //Backend
 //hiển thị trang chủ admin

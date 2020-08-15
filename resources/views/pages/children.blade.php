@@ -30,13 +30,13 @@
                             <article class="blog_item">
                                 <div class="blog_item_img">
                                     <img class="card-img rounded-0" src="upload/{{$p->post_imageName}}" alt="">
-                                    <a href="#" class="blog_item_date">
+                                    <a href="blog_detail/{{$p->post_id}}" class="blog_item_date">
                                         <h3>{{ \Carbon\Carbon::parse($p->created_at)->format('j') }}</h3>
                                         <p>{{ \Carbon\Carbon::parse($p->created_at)->format('F') }}</p>
                                     </a>
                                 </div>
                                 <div class="blog_details">
-                                    <a class="d-inline-block" href="blog_details.html">
+                                    <a class="d-inline-block" href="blog_detail/{{$p->post_id}}">
                                         <h2 class="blog-head" style="color: #2d2d2d;">{{$p->post_title}}</h2>
                                     </a>
                                     <p>{{$p->post_summary}}</p>

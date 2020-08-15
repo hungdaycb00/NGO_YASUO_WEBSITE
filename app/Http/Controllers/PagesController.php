@@ -98,12 +98,19 @@ class PagesController extends Controller
     public function contact(){
         return view('pages.contact');
     }
-    public function showChildren(){
-       $category =  Category_post::all();
-       $post = list_post::all();
-        return view('pages.children',['cate'=>$category],['post'=>$post]);
+    function __construct()
+    {
+        $category =  Category_post::all();
+        $post = list_post::all();
+        view()->share('cate',$category);
+        view()->share('post',$post);
     }
-    public function userEditProfile(){
 
+    public function showChildren(){
+        return view('pages.children');
+    }
+    public function blogDetail($id){
+        $data = list_post::where('post_id', $id)->get();
+        return view('pages.blog_detail',['post' => $data]);
     }
 }
