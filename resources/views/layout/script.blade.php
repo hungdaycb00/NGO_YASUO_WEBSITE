@@ -47,3 +47,5 @@
 <script src="../frontend/js/slider.js"></script>
 <script src="../frontend/js/1owl.carousel.min.js"></script>
 <!-- slider -->
+{{--donate js--}}<!-- Validator js -->
+<script src="../frontend/js/creditCardValidator.js" type="text/javascript"></script>

@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="{{URL::asset('frontend/css/owl.theme.default.min.css')}}">
 <link rel="stylesheet" href="{{URL::asset('frontend/css/1owl.carousel.min.css')}}">
 
+<link href="{{asset('frontend/css/donate.css')}}" rel="stylesheet" type="text/css" media="all" />
 <style>
     a.text-dark.btn {
         background: #ffbc00;
