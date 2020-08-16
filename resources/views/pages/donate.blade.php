@@ -8,11 +8,9 @@
     <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
     <div class="container-fluid text-center "><p class="h1 mt-15">Donate</p></div>
     <form action="#" method="post">
-        <div class="w3_agile_main_grids">
 
             <div class="agileits_w3layouts_main_grid">
                 <div class="agile_main_grid_left">
-
                     <h3>Your Details :</h3>
                     <input type="text" name="Name" placeholder="First Name" required="">
                     <input type="text" name="Name" placeholder="Last Name" required="">
@@ -111,11 +109,8 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="clear"> </div>
-
             </div>
-        </div>
     </form>
     <!-- Validator js -->
     <script src="frontend/js/creditCardValidator.js" type="text/javascript"></script>
