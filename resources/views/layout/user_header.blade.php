@@ -70,7 +70,7 @@
                         <!-- Logo -->
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo">
-                                <a href="{{URL::to('home')}}"><img src="frontend/img/logo/Logo.png" alt=""></a>
+                                <a href="{{URL::to('home')}}"><img src="../frontend/img/logo/Logo.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-xl-10 col-lg-10">

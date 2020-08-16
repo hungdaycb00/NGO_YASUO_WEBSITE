@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{URL::asset('frontend/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{URL::asset('../frontend/css/bootstrap.min.css')}}">
 <link rel="stylesheet" href="{{URL::asset('frontend/css/owl.carousel.min.css')}}">
 <link rel="stylesheet" href="{{URL::asset('frontend/css/slicknav.css')}}">
 <link rel="stylesheet" href="{{URL::asset('frontend/css/flaticon.css')}}">

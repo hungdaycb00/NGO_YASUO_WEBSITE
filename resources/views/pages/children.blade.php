@@ -39,7 +39,7 @@
                                     <a class="d-inline-block" href="blog_detail/{{$p->post_id}}">
                                         <h2 class="blog-head" style="color: #2d2d2d;">{{$p->post_title}}</h2>
                                     </a>
-                                    <p>{{$p->post_summary}}</p>
+                                    <p>{!!$p->post_summary!!}</p>
                                     <ul class="blog-info-link">
                                         <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
                                         <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>

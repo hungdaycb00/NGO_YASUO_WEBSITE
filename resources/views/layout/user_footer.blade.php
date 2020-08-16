@@ -1,5 +1,5 @@
 <footer>
-    <div class="footer-wrapper section-bg2" data-background="frontend/img/gallery/footer_bg.png">
+    <div class="footer-wrapper section-bg2" data-background="../frontend/img/gallery/footer_bg.png">
         <!-- Footer Top-->
         <div class="footer-area footer-padding">
             <div class="container">
@@ -9,7 +9,7 @@
                             <div class="single-footer-caption mb-30">
                                 <div class="footer-tittle">
                                     <div class="footer-logo mb-20">
-                                        <a href="{{URL::to('home')}}"><img src="frontend/img/logo/Logo1_footer.png" alt=""></a>
+                                        <a href="{{URL::to('home')}}"><img src="../frontend/img/logo/Logo1_footer.png" alt=""></a>
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                                    onblur="this.placeholder = ' Email Address '">
                                             <div class="form-icon">
                                                 <button type="submit" name="submit" id="newsletter-submit"
-                                                        class="email_icon newsletter-submit button-contactForm"><img src="frontend/img/gallery/form.png" alt=""></button>
+                                                        class="email_icon newsletter-submit button-contactForm"><img src="../frontend/img/gallery/form.png" alt=""></button>
                                             </div>
                                             <div class="mt-10 info"></div>
                                         </form>

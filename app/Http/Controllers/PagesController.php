@@ -110,7 +110,11 @@ class PagesController extends Controller
         return view('pages.children');
     }
     public function blogDetail($id){
+//        $edit_Post = list_post::where('post_id', $id)->get();
+//        $managerPost= view('pages.blog_detail')->with('edit_post',$edit_Post);
+//        return view('layout.user_layout')->with('pages.blog_detail',$managerPost);
+
         $data = list_post::where('post_id', $id)->get();
-        return view('pages.blog_detail',['post' => $data]);
+        return view('pages.blog_detail',['data' => $data]);
     }
 }

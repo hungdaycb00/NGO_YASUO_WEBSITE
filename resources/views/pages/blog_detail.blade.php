@@ -9,35 +9,36 @@
             <div class="row">
                 <div class="col-lg-8 posts-list">
                     <div class="single-post">
-
-                        <div class="feature-img">
-                            <img class="img-fluid" src="frontend/img/blog/single_blog_1.png" alt="">
+                        @foreach($data as $p)
+                        <div class="feature-img text-center">
+                            <img class="img-fluid" src="../upload/{{$p->post_imageName}}" alt="">
                         </div>
 
                         <div class="blog_details">
 
-                            <h2 style="color: #2d2d2d;">Second divided from form fish beast made every of seas
-                                all gathered us saying he our
+                            <h2 style="color: #2d2d2d;"> {!!$p->post_title!!}
                             </h2>
                             <ul class="blog-info-link mt-3 mb-4">
                                 <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
                                 <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
                             </ul>
                             <p class="excert">
-                              content
+                           {!!$p->post_content!!}
                             </p>
                         </div>
-
+                        @endforeach
                     </div>
                     <div class="navigation-top">
                         <div class="d-sm-flex justify-content-between text-center">
-                            <p class="like-info"><span class="align-middle"><i class="fa fa-heart"></i></span> Lily and 4
+                            <p class="like-info"><span class="align-middle"><i class="fa fa-heart"></i></span> Lily and
+                                4
                                 people like this</p>
                             <div class="col-sm-4 text-center my-2 my-sm-0">
                                 <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
                             </div>
                             <ul class="social-icons">
-                                <li><a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                </li>
                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
                                 <li><a href="#"><i class="fab fa-behance"></i></a></li>
@@ -51,12 +52,14 @@
                             <div class="single-comment justify-content-between d-flex">
                                 <div class="user justify-content-between d-flex">
                                     <div class="thumb">
-                                        <img src="assets/img/blog/comment_1.png" alt="">
+                                        <img src="../frontend/img/blog/comment_1.png" alt="">
                                     </div>
                                     <div class="desc">
                                         <p class="comment">
-                                            Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                            Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
+                                            Multiply sea night grass fourth day sea lesser rule open subdue female fill
+                                            which them
+                                            Blessed, give fill lesser bearing multiply sea night grass fourth day sea
+                                            lesser
                                         </p>
                                         <div class="d-flex justify-content-between">
                                             <div class="d-flex align-items-center">
@@ -77,12 +80,14 @@
                             <div class="single-comment justify-content-between d-flex">
                                 <div class="user justify-content-between d-flex">
                                     <div class="thumb">
-                                        <img src="assets/img/blog/comment_2.png" alt="">
+                                        <img src="../frontend/img/blog/comment_2.png" alt="">
                                     </div>
                                     <div class="desc">
                                         <p class="comment">
-                                            Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                            Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
+                                            Multiply sea night grass fourth day sea lesser rule open subdue female fill
+                                            which them
+                                            Blessed, give fill lesser bearing multiply sea night grass fourth day sea
+                                            lesser
                                         </p>
                                         <div class="d-flex justify-content-between">
                                             <div class="d-flex align-items-center">
@@ -103,12 +108,14 @@
                             <div class="single-comment justify-content-between d-flex">
                                 <div class="user justify-content-between d-flex">
                                     <div class="thumb">
-                                        <img src="assets/img/blog/comment_3.png" alt="">
+                                        <img src="../frontend/img/blog/comment_3.png" alt="">
                                     </div>
                                     <div class="desc">
                                         <p class="comment">
-                                            Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                            Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
+                                            Multiply sea night grass fourth day sea lesser rule open subdue female fill
+                                            which them
+                                            Blessed, give fill lesser bearing multiply sea night grass fourth day sea
+                                            lesser
                                         </p>
                                         <div class="d-flex justify-content-between">
                                             <div class="d-flex align-items-center">
@@ -138,22 +145,26 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control" name="name" id="name" type="text" placeholder="Name">
+                                        <input class="form-control" name="name" id="name" type="text"
+                                               placeholder="Name">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control" name="email" id="email" type="email" placeholder="Email">
+                                        <input class="form-control" name="email" id="email" type="email"
+                                               placeholder="Email">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <input class="form-control" name="website" id="website" type="text" placeholder="Website">
+                                        <input class="form-control" name="website" id="website" type="text"
+                                               placeholder="Website">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="button button-contactForm btn_1 boxed-btn">Post Comment</button>
+                                <button type="submit" class="button button-contactForm btn_1 boxed-btn">Post Comment
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -165,61 +176,34 @@
                                 <div class="form-group">
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control" placeholder='Search Keyword'
-                                               onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
+                                               onfocus="this.placeholder = ''"
+                                               onblur="this.placeholder = 'Search Keyword'">
                                         <div class="input-group-append">
                                             <button class="btns" type="button"><i class="ti-search"></i></button>
                                         </div>
                                     </div>
                                 </div>
                                 <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                                        type="submit">Search</button>
+                                        type="submit">Search
+                                </button>
                             </form>
                         </aside>
                         <aside class="single_sidebar_widget post_category_widget">
                             <h4 class="widget_title" style="color: #2d2d2d;">Category</h4>
                             <ul class="list cat-list">
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Resaurant food</p>
-                                        <p>(37)</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Travel news</p>
-                                        <p>(10)</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Modern technology</p>
-                                        <p>(03)</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Product</p>
-                                        <p>(11)</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Inspiration</p>
-                                        <p>(21)</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Health Care</p>
-                                        <p>(21)</p>
-                                    </a>
-                                </li>
+                                @foreach($cate as $lt)
+                                    <li>
+                                        <a href="" class="d-flex">
+                                            <p>{{$lt->category_name}}</p>
+                                        </a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </aside>
                         <aside class="single_sidebar_widget popular_post_widget">
                             <h3 class="widget_title" style="color: #2d2d2d;">Recent Post</h3>
                             <div class="media post_item">
-                                <img src="assets/img/post/post_1.png" alt="post">
+                                <img src="../frontend/img/post/post_1.png" alt="post">
                                 <div class="media-body">
                                     <a href="blog_details.html">
                                         <h3 style="color: #2d2d2d;">From life was you fish...</h3>
@@ -228,7 +212,7 @@
                                 </div>
                             </div>
                             <div class="media post_item">
-                                <img src="assets/img/post/post_2.png" alt="post">
+                                <img src="../frontend/img/post/post_2.png" alt="post">
                                 <div class="media-body">
                                     <a href="blog_details.html">
                                         <h3 style="color: #2d2d2d;">The Amazing Hubble</h3>
@@ -237,21 +221,12 @@
                                 </div>
                             </div>
                             <div class="media post_item">
-                                <img src="assets/img/post/post_3.png" alt="post">
+                                <img src="../frontend/img/post/post_3.png" alt="post">
                                 <div class="media-body">
                                     <a href="blog_details.html">
                                         <h3 style="color: #2d2d2d;">Astronomy Or Astrology</h3>
                                     </a>
                                     <p>03 Hours ago</p>
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="assets/img/post/post_4.png" alt="post">
-                                <div class="media-body">
-                                    <a href="blog_details.html">
-                                        <h3 style="color: #2d2d2d;">Asteroids telescope</h3>
-                                    </a>
-                                    <p>01 Hours ago</p>
                                 </div>
                             </div>
                         </aside>
@@ -289,32 +264,32 @@
                             <ul class="instagram_row flex-wrap">
                                 <li>
                                     <a href="#">
-                                        <img class="img-fluid" src="assets/img/post/post_5.png" alt="">
+                                        <img class="img-fluid" src="../frontend/img/post/post_5.png" alt="">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img class="img-fluid" src="assets/img/post/post_6.png" alt="">
+                                        <img class="img-fluid" src="../frontend/img/post/post_6.png" alt="">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img class="img-fluid" src="assets/img/post/post_7.png" alt="">
+                                        <img class="img-fluid" src="../frontend/img/post/post_7.png" alt="">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img class="img-fluid" src="assets/img/post/post_8.png" alt="">
+                                        <img class="img-fluid" src="../frontend/img/post/post_8.png" alt="">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img class="img-fluid" src="assets/img/post/post_9.png" alt="">
+                                        <img class="img-fluid" src="../frontend/img/post/post_9.png" alt="">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img class="img-fluid" src="assets/img/post/post_10.png" alt="">
+                                        <img class="img-fluid" src="../frontend/img/post/post_10.png" alt="">
                                     </a>
                                 </li>
                             </ul>
@@ -326,7 +301,9 @@
                                     <input type="email" class="form-control" onfocus="this.placeholder = ''"
                                            onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
                                 </div>
-                                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" type="submit">Subscribe</button>
+                                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                        type="submit">Subscribe
+                                </button>
                             </form>
                         </aside>
                     </div>

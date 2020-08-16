@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon" href="frontend/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../frontend/img/favicon.ico">
 
     <!-- CSS here -->
     @include('layout.css')
@@ -20,7 +20,7 @@
         <div class="preloader-inner position-relative">
             <div class="preloader-circle"></div>
             <div class="preloader-img pere-text">
-                <img src="frontend/img/logo/Logo.png" alt="">
+                <img src="../frontend/img/logo/Logo.png" alt="">
             </div>
         </div>
     </div>
