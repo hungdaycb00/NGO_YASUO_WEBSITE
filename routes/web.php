@@ -85,4 +85,16 @@ Route::group(['prefix'=>'admin'],function (){
         Route::get('/inactive/{id}','PostController@inactivePost');
         Route::get('/active/{id}','PostController@activePost');
     });
+    Route::group(['prefix'=>'events'],function (){
+        Route::get('add_post','EventsController@addPost');
+        Route::get('list_post','EventsController@listPost');
+        Route::get('edit_post/{id}','EventsController@editPost');
+
+        Route::post('/save_new_post','EventsController@saveNewPost');
+        Route::post('/update_post/{id}','EventsController@updatePost');
+        Route::get('/delete_post/{id}','EventsController@deletePost');
+
+        Route::get('/inactive/{id}','EventsController@inactivePost');
+        Route::get('/active/{id}','EventsController@activePost');
+    });
 });

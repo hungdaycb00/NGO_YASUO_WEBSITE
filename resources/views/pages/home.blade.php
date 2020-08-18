@@ -1,5 +1,11 @@
 @extends('layout.user_layout')
 @section('user_content')
+    <style>
+        .btn:not(:disabled):not(.disabled) {
+            cursor: pointer;
+            padding: 20px 20px;
+        }
+    </style>
     <link rel="stylesheet" href="{{URL::asset('frontend/css/style_home.css')}}">
 
     <!-- slider Area Start-->
@@ -198,13 +204,14 @@
                 </div>
             </div>
             <div class="row">
+                @foreach($events as $key => $p)
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-cases mb-40">
                         <div class="cases-img">
-                            <img src="frontend/img/gallery/case4.jpg" alt="">
+                            <img src="{{asset('upload/'.$p->events_imageName)}}" alt="">
                         </div>
                         <div class="cases-caption">
-                            <h3><a href="#">Ensure Education For Every Poor Children</a></h3>
+                            <h3><a href="#">{{$p->events_title}}</a></h3>
                             <!-- Progress Bar -->
                             <div class="single-skill mb-15">
                                 <div class="bar-progress">
@@ -219,63 +226,17 @@
                             <!-- / progress -->
                             <div class="prices d-flex justify-content-between">
                                 <p>Raised:<span> $20,000</span></p>
-                                <p>Goal:<span> $35,000</span></p>
+                                <p>Goal:<span> ${{$p->total_donate}}</span></p>
+                            </div>
+                            <!-- Hero-btn -->
+                            <div class="text-center mt-20">
+                                <a href="{{URL::to('donate')}}" class="btn btn-sm btn-success" data-animation="fadeInLeft"
+                                   data-delay=".8s">Donate</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-cases mb-40">
-                        <div class="cases-img">
-                            <img src="frontend/img/gallery/case5.jpg" alt="">
-                        </div>
-                        <div class="cases-caption">
-                            <h3><a href="#">Support For Pets In Difficult Circumstancesv</a></h3>
-                            <!-- Progress Bar -->
-                            <div class="single-skill mb-15">
-                                <div class="bar-progress">
-                                    <div id="bar2" class="barfiller">
-                                        <div class="tipWrap">
-                                            <span class="tip"></span>
-                                        </div>
-                                        <span class="fill" data-percentage="25"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- / progress -->
-                            <div class="prices d-flex justify-content-between">
-                                <p>Raised:<span> $20,000</span></p>
-                                <p>Goal:<span> $35,000</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-cases mb-40">
-                        <div class="cases-img">
-                            <img src="frontend/img/gallery/case6.jpg" alt="">
-                        </div>
-                        <div class="cases-caption">
-                            <h3><a href="#">Wheelchair Assistance For People With Disabilities</a></h3>
-                            <!-- Progress Bar -->
-                            <div class="single-skill mb-15">
-                                <div class="bar-progress">
-                                    <div id="bar3" class="barfiller">
-                                        <div class="tipWrap">
-                                            <span class="tip"></span>
-                                        </div>
-                                        <span class="fill" data-percentage="50"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- / progress -->
-                            <div class="prices d-flex justify-content-between">
-                                <p>Raised:<span> $20,000</span></p>
-                                <p>Goal:<span> $35,000</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

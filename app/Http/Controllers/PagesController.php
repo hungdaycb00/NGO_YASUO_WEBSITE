@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category_post;
+use App\Events;
 use App\list_post;
 use Illuminate\Http\Request;
 use App\member;
@@ -102,8 +103,11 @@ class PagesController extends Controller
     {
         $category =  Category_post::all();
         $post = list_post::all()->sortByDesc('created_at');
+        $events = Events::all()->sortByDesc('created_at')
+            ->take(3);
         view()->share('cate',$category);
         view()->share('post',$post);
+        view()->share('events',$events);
     }
 
     public function showChildren(){

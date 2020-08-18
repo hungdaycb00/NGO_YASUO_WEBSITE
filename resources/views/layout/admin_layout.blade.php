@@ -128,6 +128,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><a href="{{URL::to('admin/post/list_post')}}">List Posts</a></li>
                         </ul>
                     </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-calendar"></i>
+                            <span>Events </span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="{{URL::to('admin/events/add_post')}}">New Events</a></li>
+                            <li><a href="{{URL::to('admin/events/list_post')}}">List Events</a></li>
+                        </ul>
+                    </li>
 
                     <li class="sub-menu">
                         <a href="javascript:;">
