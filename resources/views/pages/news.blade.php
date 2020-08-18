@@ -1,6 +1,6 @@
 @extends('layout.user_layout')
 @section('title')
-    Children
+    News
 @endsection
 @section('user_content')
 
@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap hero-cap2 pt-25 text-left">
-                                <h2>Children</h2>
+                                <h2>News</h2>
                             </div>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                 <div class="row">
                     <div class="col-lg-8 mb-5 mb-lg-0">
                         <div class="blog_left_sidebar">
-                            @foreach($children as $p)
+                            @foreach($post as $p)
                             <article class="blog_item">
                                 <div class="blog_item_img">
                                     <img class="card-img rounded-0" src="upload/{{$p->post_imageName}}" alt="">
@@ -72,9 +72,9 @@
                             </nav>
                         </div>
                     </div>
-{{--                    right sidebar--}}
+                    {{--                    right sidebar--}}
                     @include('layout.rightSideBar')
-{{--                    end sidebar--}}
+                    {{--                    end sidebar--}}
                 </div>
             </div>
         </section>

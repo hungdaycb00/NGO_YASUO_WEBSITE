@@ -28,7 +28,7 @@ Route::group(['prefix'=>'/'],function(){
 
     //pages
     Route::get('/help_center','HelpCenterController@showHelpCenter');
-    Route::get('/children','PagesController@showChildren');
+    Route::get('/Children','PagesController@showChildren');
 
     Route::get('/contact', 'PagesController@contact');
     Route::group(['prefix'=>'donate'],function (){
@@ -38,6 +38,10 @@ Route::group(['prefix'=>'/'],function(){
     });
     Route::get('/about_us', 'PagesController@aboutUs');
     Route::get('/blog_detail/{id}', 'PagesController@blogDetail');
+    Route::get('/news', 'PagesController@news');
+    Route::get('/Education', 'PagesController@showEducation');
+    Route::get('/Health', 'PagesController@showHealth');
+    Route::get('/Other', 'PagesController@showOther');
 });
 //Backend
 //hiển thị trang chủ admin

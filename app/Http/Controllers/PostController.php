@@ -20,6 +20,20 @@ class PostController extends Controller
        return view('admin.post.list_post',['list'=>$dataListPost]);
     }
     public function saveNewPost(Request $request){
+        $this->validate($request,
+            [
+                'add_title_post'=> 'required|max:100',
+                'add_summary'=>'required|max:255',
+                'post_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            ],
+            [
+                'add_title_post.required'=>'Enter the title!!!',
+                'add_title_post.max'=>'The title max to 100 characters!!!',
+                'add_summary.required'=>'Enter the title!!!',
+                'add_summary.max'=>'The summary max to 255 characters!!!',
+                'post_image.max'=>'images with a maximum size of 2048kb!!!',
+                'post_image.mines'=>'The image must have a jpeg,png,jpg,gif,svg extension!!!',
+            ]);
         $data = array();
         $data['post_title'] = $request->add_title_post;
         $data['post_summary'] = $request->add_summary;
@@ -27,9 +41,6 @@ class PostController extends Controller
         $data['post_highlights']= $request->highlights;
         $data['category_id']= $request->category_type;
         $data['post_status']= $request->post_status;
-        $this->validate($request, [
-            'post_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
         $get_image = $request->file('post_image');
         if($get_image){
             $get_name_image = $get_image->getClientOriginalName();
@@ -61,6 +72,16 @@ class PostController extends Controller
         return view('layout.admin_layout')->with('admin.post.update_post',$managerPost);
     }
     public function updatePost(Request $request, $id){
+        $this->validate($request,
+            [
+            'add_title_post'=> 'required',
+            'add_summary'=>'required|max:255'
+            ],
+            [
+            'add_title_post.required'=>'Enter the title!!!',
+                'add_summary.required'=>'Enter the title!!!',
+                'add_summary.max'=>'The summary max to 255 characters!!!',
+            ]);
         $data = array();
         $data['post_title'] = $request->add_title_post;
         $data['post_summary'] = $request->add_summary;

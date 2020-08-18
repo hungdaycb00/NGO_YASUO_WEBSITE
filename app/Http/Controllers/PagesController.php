@@ -101,19 +101,31 @@ class PagesController extends Controller
     function __construct()
     {
         $category =  Category_post::all();
-        $post = list_post::all();
+        $post = list_post::all()->sortByDesc('created_at');
         view()->share('cate',$category);
         view()->share('post',$post);
     }
 
     public function showChildren(){
-        return view('pages.children');
+        $post = list_post::all()->where('category_id', 3)->where('post_status',1)->sortByDesc('created_at');
+        return view('pages.children',['children'=>$post]);
+    }
+    public function showEducation(){
+        $post = list_post::all()->where('category_id', 1)->where('post_status',1)->sortByDesc('created_at');
+        return view('pages.education',['children'=>$post]);
+    }
+    public function showHealth(){
+        $post = list_post::all()->where('category_id', 2)->where('post_status',1)->sortByDesc('created_at');
+        return view('pages.health_care',['children'=>$post]);
+    }
+    public function showOther(){
+        $post = list_post::all()->where('category_id', 4)->where('post_status',1)->sortByDesc('created_at');
+        return view('pages.other',['children'=>$post]);
+    }
+    public function news(){
+        return view('pages.news');
     }
     public function blogDetail($id){
-//        $edit_Post = list_post::where('post_id', $id)->get();
-//        $managerPost= view('pages.blog_detail')->with('edit_post',$edit_Post);
-//        return view('layout.user_layout')->with('pages.blog_detail',$managerPost);
-
         $data = list_post::where('post_id', $id)->get();
         return view('pages.blog_detail',['data' => $data]);
     }

@@ -10,8 +10,8 @@
                             <h3>Your Details :</h3>
                             <input type="text" name="Name" placeholder="Name" required="">
                             <input type="email" name="Email" placeholder="Email" required="">
-                            <input type="text" name="Phone Number" placeholder="Address" required="">
-                            <input type="text" name="Phone Number" placeholder="Phone Number" required="">
+                            <input type="text" name="Address " placeholder="Address" required="">
+                            <input type="text" name="Phone" placeholder="Phone Number" required="">
 
                         </div>
 

@@ -1,6 +1,6 @@
 @extends('layout.user_layout')
 @section('title')
-    Children
+    Other
 @endsection
 @section('user_content')
 
@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap hero-cap2 pt-25 text-left">
-                                <h2>Children</h2>
+                                <h2>Other</h2>
                             </div>
                         </div>
                     </div>
@@ -72,9 +72,9 @@
                             </nav>
                         </div>
                     </div>
-{{--                    right sidebar--}}
+                    {{--                    right sidebar--}}
                     @include('layout.rightSideBar')
-{{--                    end sidebar--}}
+                    {{--                    end sidebar--}}
                 </div>
             </div>
         </section>

@@ -81,10 +81,10 @@
                                         <ul id="navigation">
                                             <li><a href="{{URL::to('home')}}" class="font-weight-bold"><h2>News</h2></a>
                                                 <ul class="submenu">
-                                                    <li><a href="{{URL::to('children')}}">Privileged Children</a></li>
-                                                    <li><a href="#">Education</a></li>
-                                                    <li><a href="#">Health Care </a></li>
-                                                    <li><a href="#">Others</a></li>
+                                                    <li><a href="{{URL::to('Children')}}">Privileged Children</a></li>
+                                                    <li><a href="{{URL::to('Education')}}">Education</a></li>
+                                                    <li><a href="{{URL::to('Health')}}">Health Care </a></li>
+                                                    <li><a href="{{URL::to('Other')}}">Others</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="{{URL::to('about_us')}}">About Us</a></li>

@@ -9,7 +9,21 @@
         </header>
 
         <div class="panel-body">
+            @if(count($errors)>0)
+                <div class="alert alert-danger">
+                    @foreach($errors->all() as $err)
+                        {{$err}} <br>
+                    @endforeach
+                </div>
+            @endif
+            <?php
 
+            $message = Session::get('message');
+            if($message){
+                echo '<span class="text-alert alert" >'.$message.'</span>';
+                Session::put('message', null);
+            }
+            ?>
             @foreach($edit_post as $key =>$edit_value)
             <div class="position-center">
                 <form role="form" action="{{URL::to('admin/post/update_post/'.$edit_value->post_id)}}" method="post" enctype="multipart/form-data">

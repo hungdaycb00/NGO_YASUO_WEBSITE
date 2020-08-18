@@ -16,9 +16,9 @@
                                     disadvantaged, to bring a smile to them.</P>
                                 <!-- Hero-btn -->
                                 <div class="hero__btn">
-                                    <a href="industries.html" class="btn hero-btn mb-10" data-animation="fadeInLeft"
+                                    <a href="{{URL::to('donate')}}" class="btn hero-btn mb-10" data-animation="fadeInLeft"
                                        data-delay=".8s">Donate</a>
-                                    <a href="industries.html" class="cal-btn ml-15" data-animation="fadeInRight"
+                                    <a href="#" class="cal-btn ml-15" data-animation="fadeInRight"
                                        data-delay="1.0s">
                                         <i class="flaticon-null"></i>
                                         <p>+1800 1000</p>
@@ -33,7 +33,7 @@
     </div>
     <!-- slider Area End-->
     <!--? Slider start-->
-    <div class="service-area section-padding30">
+    <div class="service-area">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-7 col-md-10 col-sm-10">

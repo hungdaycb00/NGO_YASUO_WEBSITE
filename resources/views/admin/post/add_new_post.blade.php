@@ -10,6 +10,13 @@
 
         <div class="panel-body">
             <div class="position-center text-center">
+                @if(count($errors)>0)
+                    <div class="alert alert-danger">
+                        @foreach($errors->all() as $err)
+                            {{$err}} <br>
+                        @endforeach
+                    </div>
+                @endif
                 <?php
                 $message = Session::get('message');
                 if($message){
