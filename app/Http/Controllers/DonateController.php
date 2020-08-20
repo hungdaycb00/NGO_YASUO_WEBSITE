@@ -2,15 +2,15 @@
 
 
 namespace App\Http\Controllers;
-
+use App\Controllers;
+use App\list_post;
 use App\Events;
 use Session;
 use App\Donate;
-use App\list_post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
-class DonateController
+class DonateController extends Controller
 {
     public function showDonate(){
         Session::put('events_id', null);
@@ -41,6 +41,13 @@ class DonateController
     }
     public function save(Request $request){
 
+        $this->validate($request,
+            [
+                'category_type' => 'required'
+            ],
+            [
+                'category_type.required'=>'Please select the donate reason!!!',
+            ]);
         $data = new Donate;
         $data->name = $request->name;
         $data->email = $request->email;
@@ -50,7 +57,7 @@ class DonateController
         $data->category_id = $request->category_type;
         $data->events_id = $request->events_id;
         $data->donator_status = $request->status;
-        $data->money_status = 0;
+        $data->money_status = 3;
         $data->comment = $request->message;
 
             $data->save();
@@ -81,7 +88,7 @@ class DonateController
         $data->events_id = $request->events;
         $data->donator_status = $request->donator_status;
         $data->money_status = $request->money_status;
-        $data->comment = $request->message;
+        $data->comment = $request->comment;
 
         $data->save();
         Session::put('events_id', null);

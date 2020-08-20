@@ -65,11 +65,20 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <label for="">Donator Status</label>
+                        <select class="form-control input-m m-bot15" name="donator_status">
+                            <option value="{{$d->donator_status}}">{{$d->statusDonator->status_name}}</option>
+                            <option value="2">Private</option>
+                            <option value="1">Public</option>
+                        </select>
+                        <label for="">Money Status</label>
+                        <select class="form-control input-m m-bot15" name="money_status">
+                            <option value="{{$d->money_status}}">{{$d->statusMoney->status_name}}</option>
+                            <option value="4">Complete</option>
+                            <option value="3">Pending</option>
+                        </select>
                         <label >Comment</label>
                         <input type="text" value="{{$d->comment}}" class="form-control"  name="comment">
-                        <input type="hidden" value="{{$d->donator_status}}" class="form-control"  name="donator_status">
-                        <input type="hidden" value="{{$d->money_status}}" class="form-control"  name="money_status">
-                        <input type="hidden" value="{{$d->comment}}" class="form-control"  name="comment">
                     </div>
                     <button type="submit" name="update_post" class="btn mt-10 btn-info ">Submit</button>
                 </form>

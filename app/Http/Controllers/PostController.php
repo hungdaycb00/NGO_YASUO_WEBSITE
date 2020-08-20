@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 use App\Controllers;
 use App\Category_post;
 use App\list_post;
-use Illuminate\Http\Request;
 use DB;
 use Session;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
 class PostController extends Controller
@@ -20,6 +20,7 @@ class PostController extends Controller
        return view('admin.post.list_post',['list'=>$dataListPost]);
     }
     public function saveNewPost(Request $request){
+        $this->
         $this->validate($request,
             [
                 'add_title_post'=> 'required|max:100',

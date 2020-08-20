@@ -15,4 +15,10 @@ class Donate extends Model
     public function events(){
         return $this->belongsTo('App\Events','events_id','events_id');
     }
+    public function statusDonator(){
+        return $this->belongsTo('App\Status','donator_status','id');
+    }
+    public function statusMoney(){
+        return $this->belongsTo('App\Status','money_status','id');
+    }
 }

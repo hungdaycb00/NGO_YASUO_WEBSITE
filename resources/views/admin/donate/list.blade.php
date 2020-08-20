@@ -52,26 +52,8 @@
                         <td>{{$d->amount}}</td>
 {{--                        <td>{{$d->events->events_title}}</td>--}}
                         <td>{{$d->category->category_name}}</td>
-                        <td><?php
-                            if($d->donator_status == 0){
-                                ?>
-
-                                <span>Public</span>
-                           <?php
-                            }
-                            else{
-                            ?>
-                            <span>Private</span>
-                            <?php
-                            }
-                        ?>
-                        </td>
-                        <td>@if($d->money_status == 0)
-                        <span class="alert alert-warning">Pending...</span>
-                            @endif
-                        @if($d->money_status == 1)
-                        <span class="alert alert-success">Complete</span>
-                            @endif</td>
+                        <td>{{$d->statusDonator->status_name}}</td>
+                        <td>{{$d->statusMoney->status_name}}</td>
                         <td>{{$d->updated_at}}</td>
                         <td>
                             <a href="{{URL::to('admin/donate/edit/'.$d->id)}}" class="active styling-edit" ui-toggle-class="">
