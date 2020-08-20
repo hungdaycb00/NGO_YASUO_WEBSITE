@@ -19,7 +19,20 @@
                             <div class="w3_agileits_main_grid_left_grid">
                                 <h3>Your Donation :</h3>
                                 <div class="agileits_main_grid_left_l_grids">
-                                    <h4>Because</h4>
+
+                                    @if(Session::get('events_id') != null)
+
+                                        <h4>For Events</h4>
+                                        <select id="w3_agileits_select1" name ="events_id" class="w3layouts_select" onchange="change_country(this.value)"
+                                                required="" disabled>
+                                            @foreach($events as $e)
+                                            <option value="{{$e->events_id}}">{{$e->events_title}} </option>
+                                                <input type="hidden" name="category_type" value="{{$e->categoryPost->category_id}}">
+                                            @endforeach
+                                        </select>
+                                    @endif
+                                    @if(Session::get('events_id') == null)
+                                        <h4>Because</h4>
                                     <select id="w3_agileits_select1" name ="category_type" class="w3layouts_select" onchange="change_country(this.value)"
                                             required="">
                                         <option value="" selected=""> --Any donation cause--</option>
@@ -28,9 +41,10 @@
                                         <option value="2"> Health Care</option>
                                         <option value="4"> Others</option>
                                     </select>
+                                    @endif
                                     <h4>Do you want to be public or private?</h4>
-                                    <label class="radio-inline"><input class="mr-1" name="status" type="radio" value="1">Private</label>
-                                    <label class="radio-inline"><input class="mr-1"  name="status" type="radio" value="0">Public</label>
+                                    <label class="radio-inline"><input class="mr-1" name="status" type="radio" value="0">Private</label>
+                                    <label class="radio-inline"><input class="mr-1"  name="status" type="radio" value="1">Public</label>
                                 </div>
 
                                 <div class="col-xs-2">

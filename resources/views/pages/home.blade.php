@@ -52,43 +52,44 @@
             </div>
             <div class="row">
                 <div class="owl-carousel owl-theme">
+                    @foreach($news as $p)
                     <div class="item">
-                        <a href="">
-                            <img src="frontend/img/slidernew/slider1.jpg" alt="">
-                        </a>
+                        <a href="blog_detail/{{$p->post_id}}">
+                            <div class="cases-img">
+                                <img src="{{URL::to('upload/'.$p->post_imageName)}}" alt="" style="height: 200px;">
+                            </div>
 
-                        <div class="cases-caption2">
-                            <h5><a href="services.html">Daville Has A New Home!</a></h5>
-
-                        </div>
-
-                    </div>
-                    <div class="item">
-                        <a href="">
-                            <img src="frontend/img/slidernew/slider2.jpg" alt="">
                         </a>
                         <div class="cases-caption2">
-                            <h5><a href="services.html">A Call From The Mother</a></h5>
+                            <h5><a href="blog_detail/{{$p->post_id}}">{{$p->post_title}}</a></h5>
+                        </div>
+                    </div>
+                    @endforeach
+{{--                    <div class="item">--}}
+{{--                        <a href="">--}}
+{{--                            <img src="frontend/img/slidernew/slider2.jpg" alt="">--}}
+{{--                        </a>--}}
+{{--                        <div class="cases-caption2">--}}
+{{--                            <h5><a href="services.html">A Call From The Mother</a></h5>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="item">--}}
+{{--                        <a href="">--}}
+{{--                            <img src="frontend/img/slidernew/slider3.jpg" alt="">--}}
+{{--                        </a>--}}
+{{--                        <div class="cases-caption2">--}}
+{{--                            <h5><a href="services.html">Unsafe Drinking Water</a></h5>--}}
 
-                        </div>
-                    </div>
-                    <div class="item">
-                        <a href="">
-                            <img src="frontend/img/slidernew/slider3.jpg" alt="">
-                        </a>
-                        <div class="cases-caption2">
-                            <h5><a href="services.html">Unsafe Drinking Water</a></h5>
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <a href="">
-                            <img src="frontend/img/slidernew/slider4.jpg" alt="">
-                        </a>
-                        <div class="cases-caption2">
-                            <h5><a href="services.html">A Life Spared</a></h5>
-                        </div>
-                    </div>
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="item">--}}
+{{--                        <a href="">--}}
+{{--                            <img src="frontend/img/slidernew/slider4.jpg" alt="">--}}
+{{--                        </a>--}}
+{{--                        <div class="cases-caption2">--}}
+{{--                            <h5><a href="services.html">A Life Spared</a></h5>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>
@@ -183,7 +184,7 @@
                             <img src="frontend/img/gallery/about0.jpg" alt="">
                         </div>
                         <div class="about-back-img ">
-                            <img src="frontend/img/gallery/about4.jpg" alt="">
+                            <img src="frontend/img/gallery/about1.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -235,7 +236,7 @@
                                 <a href="{{URL::to('events_detail/'.$p->events_id)}}" class="text-info" >read more</a>
                             </div>
                             <div class="text-center mt-20">
-                                <a href="{{URL::to('donate')}}" class="btn btn-success" >Donate</a>
+                                <a href="{{URL::to('donate/'.$p->events_id)}}" class="btn btn-success" >Donate</a>
                             </div>
                         </div>
                     </div>

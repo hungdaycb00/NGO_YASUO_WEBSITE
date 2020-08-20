@@ -103,11 +103,13 @@ class PagesController extends Controller
     {
         $category =  Category_post::all();
         $post = list_post::all()->sortByDesc('created_at');
+        $news = list_post::all()->where('post_highlights',1)->sortByDesc('created_at')->take(4);
         $events = Events::all()->sortByDesc('created_at')
             ->take(3);
         view()->share('cate',$category);
         view()->share('post',$post);
         view()->share('events',$events);
+        view()->share('news',$news);
     }
 
     public function showChildren(){

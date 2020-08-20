@@ -31,7 +31,13 @@
                             <span class="fa fa-heartbeat"></span>
                         </div>
                         <div class="cat-cap">
-                            <h5><a href="{{URL::to('/donate/transfer')}}">Donate via account number</a></h5>
+                            <h5>@if(Session::get('events_id') != null)
+                                    <a href="{{URL::to('/donate/transfer/'.Session::get('events_id'))}}">Donate via account number</a>
+                                @endif
+                                @if(Session::get('events_id') == null)
+                                <a href="{{URL::to('/donate/transfer')}}">Donate via account number</a>
+                                @endif
+                            </h5>
                             <p>Card number: 0611001917137, <br>Card name: QUỸ TRÒ NGHÈO VÙNG CAO, <br>Swift Code: BFTVVNVX061
                                 <br>Ngân hàng Ngoại Thương Việt Nam - Vietcombank, chi nhánh Ba Đình, Hà Nội</p>
                         </div>
