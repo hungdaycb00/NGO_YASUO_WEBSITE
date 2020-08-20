@@ -38,6 +38,7 @@ Route::group(['prefix'=>'/'],function(){
     });
     Route::get('/about_us', 'PagesController@aboutUs');
     Route::get('/blog_detail/{id}', 'PagesController@blogDetail');
+    Route::get('/events_detail/{id}', 'PagesController@eventsDetail');
     Route::get('/news', 'PagesController@news');
     Route::get('/Education', 'PagesController@showEducation');
     Route::get('/Health', 'PagesController@showHealth');

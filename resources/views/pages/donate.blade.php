@@ -18,7 +18,7 @@
                             <span class="fa fa-hand-peace"></span>
                         </div>
                         <div class="cat-cap">
-                            <h5><a href="#">You can come directly to the office for donate</a></h5>
+                            <h5><a href="{{URL::to('/donate/transfer')}}">You can come directly to the office for donate</a></h5>
                             <p>Address : Hà Nội, Việt Nam <br>
                                 Phone : +8880 888888 <br>
                                 Email : yasuo@gmail.com</p>

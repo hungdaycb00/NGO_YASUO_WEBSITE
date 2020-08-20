@@ -211,7 +211,7 @@
                             <img src="{{asset('upload/'.$p->events_imageName)}}" alt="">
                         </div>
                         <div class="cases-caption">
-                            <h3><a href="#">{{$p->events_title}}</a></h3>
+                            <h3><a href="events_detail/{{$p->events_id}}">{{$p->events_title}}</a></h3>
                             <!-- Progress Bar -->
                             <div class="single-skill mb-15">
                                 <div class="bar-progress">
@@ -219,15 +219,16 @@
                                         <div class="tipWrap">
                                             <span class="tip"></span>
                                         </div>
-                                        <span class="fill" data-percentage="70"></span>
+                                        <span class="fill" data-percentage="50"></span>
                                     </div>
                                 </div>
                             </div>
                             <!-- / progress -->
                             <div class="prices d-flex justify-content-between">
                                 <p>Raised:<span> $20,000</span></p>
-                                <p>Goal:<span> ${{$p->total_donate}}</span></p>
+                                <p>Goal:<span> ${{number_format($p->total_donate,0)}}</span></p>
                             </div>
+
                             <!-- Hero-btn -->
                             <div class="text-center mt-20">
                                 <a href="{{URL::to('donate')}}" class="btn btn-sm btn-success" data-animation="fadeInLeft"
@@ -237,6 +238,7 @@
                     </div>
                 </div>
                 @endforeach
+
             </div>
         </div>
     </div>

@@ -55,7 +55,7 @@ class PagesController extends Controller
         else{
             Session::put('username', $result->lastname);
             Session::put('user_id', $result->member_id);
-            return Redirect::to('pages/home');
+            return Redirect::to('home');
         }
     }
     public function register(){
@@ -132,5 +132,9 @@ class PagesController extends Controller
     public function blogDetail($id){
         $data = list_post::where('post_id', $id)->get();
         return view('pages.blog_detail',['data' => $data]);
+    }
+    public function eventsDetail($id){
+        $data = Events::where('events_id', $id)->get();
+        return view('pages.events_detail',['data' => $data]);
     }
 }

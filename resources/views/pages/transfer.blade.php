@@ -20,17 +20,17 @@
                                 <h3>Your Donation :</h3>
                                 <div class="agileits_main_grid_left_l_grids">
                                     <h4>Because</h4>
-                                    <select id="w3_agileits_select1" class="w3layouts_select" onchange="change_country(this.value)"
+                                    <select id="w3_agileits_select1" name ="category_type" class="w3layouts_select" onchange="change_country(this.value)"
                                             required="">
                                         <option value="" selected=""> --Any donation cause--</option>
-                                        <option value=""> Children</option>
-                                        <option value=""> Education</option>
-                                        <option value=""> Environment</option>
-                                        <option value=""> Health</option>
-                                        <option value=""> Women</option>
-                                        <option value=""> Youth</option>
-                                        <option value="">Other</option>
+                                        <option value="3"> Privileged Children</option>
+                                        <option value="1"> Education</option>
+                                        <option value="2"> Health Care</option>
+                                        <option value="4"> Others</option>
                                     </select>
+                                    <h4>Do you want to be public or private?</h4>
+                                    <label class="checkbox-inline"><input class="mr-1" name="status" type="checkbox" value="1">Private</label>
+                                    <label class="checkbox-inline"><input class="mr-1"  name="status" type="checkbox" value="0">Public</label>
                                 </div>
 
                                 <div class="col-xs-2">
