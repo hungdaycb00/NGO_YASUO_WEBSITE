@@ -204,6 +204,7 @@
                 </div>
             </div>
             <div class="row">
+                <?php $i = 1 ?>
                 @foreach($events as $key => $p)
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-cases mb-40">
@@ -215,7 +216,7 @@
                             <!-- Progress Bar -->
                             <div class="single-skill mb-15">
                                 <div class="bar-progress">
-                                    <div id="bar1" class="barfiller">
+                                    <div id="bar{{$i}}" class="barfiller">
                                         <div class="tipWrap">
                                             <span class="tip"></span>
                                         </div>
@@ -237,6 +238,7 @@
                         </div>
                     </div>
                 </div>
+                    <?php $i++ ?>
                 @endforeach
 
             </div>
