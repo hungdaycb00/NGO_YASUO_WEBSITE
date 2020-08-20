@@ -138,6 +138,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><a href="{{URL::to('admin/events/list_post')}}">List Events</a></li>
                         </ul>
                     </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-dollar"></i>
+                            <span>Donate </span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="{{URL::to('donate/transfer')}}">Add Donate</a></li>
+                            <li><a href="{{URL::to('admin/donate/list')}}">List Donate</a></li>
+                        </ul>
+                    </li>
 
                     <li class="sub-menu">
                         <a href="javascript:;">

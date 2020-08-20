@@ -35,6 +35,9 @@ Route::group(['prefix'=>'/'],function(){
         Route::get('/','DonateController@showDonate');
         Route::get('/transfer','DonateController@transfer');
         Route::get('/donate_credit_card','DonateController@creditCard');
+        Route::get('/{id}','DonateController@showDonateEvents');
+        Route::get('/transfer/{id}','DonateController@transferEvents');
+        Route::get('/donate_credit_card/{id}','DonateController@creditCardEvents');
     });
     Route::get('/about_us', 'PagesController@aboutUs');
     Route::get('/blog_detail/{id}', 'PagesController@blogDetail');
@@ -97,5 +100,17 @@ Route::group(['prefix'=>'admin'],function (){
 
         Route::get('/inactive/{id}','EventsController@inactivePost');
         Route::get('/active/{id}','EventsController@activePost');
+    });
+    Route::group(['prefix'=>'donate'],function (){
+//        Route::get('add','DonateController@add');
+        Route::get('list','DonateController@list');
+        Route::get('edit/{id}','DonateController@edit');
+
+        Route::post('/save','DonateController@save');
+        Route::post('/update/{id}','DonateController@update');
+        Route::get('/delete/{id}','DonateController@delete');
+
+        Route::get('/inactive/{id}','DonateController@inactive');
+        Route::get('/active/{id}','DonateController@active');
     });
 });

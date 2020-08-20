@@ -5,14 +5,13 @@
             <br>Ngân hàng Ngoại Thương Việt Nam - Vietcombank, chi nhánh Ba Đình, Hà Nội</p></div>
 
     <form action="{{URL::to('admin/donate/save')}}" method="post">
-        {{csrf_field()}}
                     <div class="agileits_w3layouts_main_grid">
                         <div class="agile_main_grid_left">
                             <h3>Your Details :</h3>
                             <input type="text" name="name" placeholder="Name" required="">
                             <input type="email" name="email" placeholder="Email" required="">
-                            <input type="text" name="address" placeholder="Address" required="">
-                            <input type="text" name="phone" placeholder="Phone Number" required="">
+                            <input type="text" name="address " placeholder="Address" required="">
+                            <input type="number" name="phone" placeholder="Phone Number" required="">
                         </div>
 
                         <div class="agile_main_grid_left">
@@ -29,15 +28,14 @@
                                         <option value="4"> Others</option>
                                     </select>
                                     <h4>Do you want to be public or private?</h4>
-                                    <label class="radio-inline"><input class="mr-1" name="status" type="radio" value="1">Private</label>
-                                    <label class="radio-inline"><input class="mr-1"  name="status" type="radio" value="0">Public</label>
+                                    <label class="radio-inline"><input class="mr-1" name="donator_status" type="radio" value="1">Private</label>
+                                    <label class="radio-inline"><input class="mr-1"  name="donator_status" type="radio" value="0">Public</label>
                                 </div>
 
                                 <div class="col-xs-2">
                                     <h4 for="ex1">Donate Amount</h4>
                                     <input class="form-control" name="amount" id="ex1" type="number" placeholder="$0.00">
                                 </div>
-                                <br>
                                 <textarea name="message" placeholder="Comments..." required=""></textarea>
                             </div>
                         </div>

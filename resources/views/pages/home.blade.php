@@ -231,9 +231,11 @@
                             </div>
 
                             <!-- Hero-btn -->
+                            <div class="text-right mt-20">
+                                <a href="{{URL::to('events_detail/'.$p->events_id)}}" class="text-info" >read more</a>
+                            </div>
                             <div class="text-center mt-20">
-                                <a href="{{URL::to('donate')}}" class="btn btn-sm btn-success" data-animation="fadeInLeft"
-                                   data-delay=".8s">Donate</a>
+                                <a href="{{URL::to('donate')}}" class="btn btn-success" >Donate</a>
                             </div>
                         </div>
                     </div>

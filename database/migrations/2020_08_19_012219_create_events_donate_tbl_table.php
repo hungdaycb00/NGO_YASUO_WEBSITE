@@ -13,17 +13,20 @@ class CreateEventsDonateTblTable extends Migration
      */
     public function up()
     {
-        Schema::create('events_donate_tbl', function (Blueprint $table) {
+        Schema::create('donate_tbl', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('member_id')->nullable();
             $table->string('name');
             $table->string('email');
             $table->string('address');
             $table->string('phone');
-            $table->integer('events_id');
+            $table->integer('amount');
+            $table->integer('events_id')->nullable();
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('category_id')->on('category_post');
-            $table->integer('donate_status');
-            $table->string('comment');
+            $table->integer('donator_status');
+            $table->integer('money_status');
+            $table->string('comment')->nullable();
             $table->timestamps();
         });
     }
@@ -35,6 +38,6 @@ class CreateEventsDonateTblTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('events_donate_tbl');
+        Schema::dropIfExists('donate_tbl');
     }
 }

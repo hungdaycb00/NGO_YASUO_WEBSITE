@@ -15,4 +15,7 @@ class Category_post extends Model
     public function Events(){
         return $this->hasMany('App\Events','category_id','category_id');
     }
+    public function Donate(){
+        return $this->hasMany('App\Donate','category_id','category_id');
+    }
 }
