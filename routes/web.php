@@ -33,7 +33,7 @@ Route::group(['prefix'=>'/'],function(){
     Route::get('/contact', 'PagesController@contact');
     //vn pay
     Route::get('onlinebank','PagesController@showVNPay');
-    Route::post('savebank','PagesController@createVNPay');
+    Route::post('onlinebank','PagesController@createVNPay');
     Route::group(['prefix'=>'donate'],function (){
         Route::get('/','DonateController@showDonate');
         Route::get('/transfer','DonateController@transfer');

@@ -15,7 +15,10 @@ use DB;
 
 class PagesController extends Controller
 {
-
+    private $vnp_TmnCode = "MET2IMIN"; //Mã website tại VNPAY
+    private $vnp_HashSecret = "JQMZJMUHWPTWRXJOGNIFIEPYVPEJFZZV"; //Chuỗi bí mật
+    private $vnp_Url = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
+    private $vnp_Returnurl ="http://ngo-yasuo.org/onlinebank";
 
     public function home(){
         return view('pages.home');
@@ -150,45 +153,39 @@ class PagesController extends Controller
         $data = Events::where('events_id', $id)->get();
         return view('pages.events_detail',['data' => $data]);
     }
-
     public function showVNPay(Request $request){
         if ($request->vnp_ResponseCode == '00')
         {
-            $transactionID = $request->vnp_TxnRef;
-            $transaction = Transaction::find($transactionID);
-            if ($transaction)
-            {
-                $transaction->tr_type = Transaction::TYPE_PAY;
-                $transaction->tr_status = Transaction::STATUS_DONE;
-                $transaction->save();
+//            $transactionID = $request->vnp_TxnRef;
+//            $transaction = Transaction::find($transactionID);
+//            if ($transaction)
+//            {
+//                \Cart::clear();
+//                $transaction->tr_type = Transaction::TYPE_PAY;
+//                $transaction->tr_status = Transaction::STATUS_DONE;
+//                $transaction->save();
+//
+//                return redirect()->to('/')->with('success','Xác nhận giao dịch thành công');
+//            }
 
-                Session::put('message','Payment success!!!');
-                return redirect()->to('/');
-            }
-
-            return redirect()->to('/')->with('message','Invalid Form!!!!');
+            return redirect()->to('/')->with('message','Xác nhận giao dịch thành công');
         }
 
-
-        return view('pages.vnpay');
-    }
+    return view('pages.vnpay');
+}
     public function createVNPay(Request $request){
-         $vnp_TmnCode = "MET2IMIN"; //Mã website tại VNPAY
-      $vnp_HashSecret = "JQMZJMUHWPTWRXJOGNIFIEPYVPEJFZZV"; //Chuỗi bí mật
-         $vnp_Url = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-        $vnp_Returnurl = "http://ngo-yasuo.org/onlinebank";
 
-        $vnp_TxnRef = $_POST['order_id']; //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
-        $vnp_OrderInfo = $_POST['order_desc'];
-        $vnp_OrderType = $_POST['order_type'];
-        $vnp_Amount = $_POST['amount'] * 100;
-        $vnp_Locale = $_POST['language'];
-        $vnp_BankCode = $_POST['bank_code'];
-        $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
+        $vnp_TxnRef = 20000000000;//Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
+            $vnp_OrderInfo = $request->order_desc;
+            $vnp_OrderType = $request->order_type;
+            $vnp_Amount = $request->amount* 100;
+            $vnp_Locale = $request->language;
+            $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
+            error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
 
         $inputData = array(
             "vnp_Version" => "2.0.0",
-            "vnp_TmnCode" => $vnp_TmnCode,
+            "vnp_TmnCode" => $this->vnp_TmnCode,
             "vnp_Amount" => $vnp_Amount,
             "vnp_Command" => "pay",
             "vnp_CreateDate" => date('YmdHis'),
@@ -197,13 +194,13 @@ class PagesController extends Controller
             "vnp_Locale" => $vnp_Locale,
             "vnp_OrderInfo" => $vnp_OrderInfo,
             "vnp_OrderType" => $vnp_OrderType,
-            "vnp_ReturnUrl" => $vnp_Returnurl,
+            "vnp_ReturnUrl" => $this->vnp_Returnurl,
             "vnp_TxnRef" => $vnp_TxnRef,
         );
-
-        if (isset($vnp_BankCode) && $vnp_BankCode != "") {
-            $inputData['vnp_BankCode'] = $vnp_BankCode;
-        }
+            if ($request->bank_code)
+            {
+                $inputData['vnp_BankCode'] = 'NCB';
+            }
         ksort($inputData);
         $query = "";
         $i = 0;
@@ -218,22 +215,20 @@ class PagesController extends Controller
             $query .= urlencode($key) . "=" . urlencode($value) . '&';
         }
 
-        $vnp_Url = $vnp_Url . "?" . $query;
-        if (isset($vnp_HashSecret)) {
-            // $vnpSecureHash = md5($vnp_HashSecret . $hashdata);
-            $vnpSecureHash = hash('sha256', $vnp_HashSecret . $hashdata);
+        $vnp_Url = $this->vnp_Url . "?" . $query;
+        if ($this->vnp_HashSecret) {
+            $vnpSecureHash = hash('sha256',$this->vnp_HashSecret . $hashdata);
             $vnp_Url .= 'vnp_SecureHashType=SHA256&vnp_SecureHash=' . $vnpSecureHash;
         }
-        $returnData = array('code' => '00'
-        , 'message' => 'success'
-        , 'data' => $vnp_Url);
-        echo json_encode($returnData);
-    }
 
-    function search(Request $request){
-        $keyword = $request -> keyword;
-        $data = list_post::where('post_title', 'like', "%$keyword%")->orWhere('post_content', 'like', "%$keyword%")
-            ->take(10)->paginate(5);
-        return view('pages.search', ['blogDetail' => $data, 'keyword' => $keyword ]);
-    }
+            $returnData = array(
+                'code' => '00',
+                'message' => 'success',
+                'data' => $vnp_Url
+            );
+
+//        dd($returnData);
+//
+            return redirect()->to($returnData['data']);
+        }
 }

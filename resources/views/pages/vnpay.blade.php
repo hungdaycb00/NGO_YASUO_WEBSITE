@@ -23,12 +23,12 @@
     </div>
     <h3>Tạo mới đơn hàng</h3>
     <div class="table-responsive">
-        <form action="savebank" id="create_form" method="post">
-
+        <form action="onlinebank" id="create_form" method="post">
+            {{csrf_field()}}
             <div class="form-group">
                 <label for="language">Loại hàng hóa </label>
                 <select name="order_type" id="order_type" class="form-control">
-                    <option value="topup">Nạp tiền điện thoại</option>
+                    <option value="billpayment">Nạp tiền điện thoại</option>
                     <option value="billpayment">Thanh toán hóa đơn</option>
                     <option value="fashion">Thời trang</option>
                     <option value="other">Khác - Xem thêm tại VNPAY</option>
