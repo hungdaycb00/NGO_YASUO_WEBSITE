@@ -117,3 +117,6 @@ Route::group(['prefix'=>'admin'],function (){
         Route::get('/active/{id}','DonateController@active');
     });
 });
+
+//search
+Route::post('/search', 'PagesController@search');

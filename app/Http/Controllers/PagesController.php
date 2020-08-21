@@ -229,4 +229,11 @@ class PagesController extends Controller
         , 'data' => $vnp_Url);
         echo json_encode($returnData);
     }
+
+    function search(Request $request){
+        $keyword = $request -> keyword;
+        $data = list_post::where('post_title', 'like', "%$keyword%")->orWhere('post_content', 'like', "%$keyword%")
+            ->take(10)->paginate(5);
+        return view('pages.search', ['blogDetail' => $data, 'keyword' => $keyword ]);
+    }
 }
