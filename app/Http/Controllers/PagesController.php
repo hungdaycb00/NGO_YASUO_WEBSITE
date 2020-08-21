@@ -107,11 +107,11 @@ class PagesController extends Controller
         $post = list_post::all()->sortByDesc('created_at');
         $news = list_post::all()->where('post_highlights',1)->sortByDesc('created_at')->take(4);
         $events = Events::all()->sortByDesc('created_at')->take(3);
-
         $data = DB::table('events_tbl')
             ->join('donate_tbl','donate_tbl.events_id','events_tbl.events_id')
             ->select('donate_tbl.events_id',DB::raw('Sum(donate_tbl.amount) as total_donates'))
             ->groupBy('donate_tbl.events_id')
+            ->where('donate_tbl.money_status',4)
             ->get();
 
 //        $data = Donate::all()->where('money_status',4)->groupBy('events_id')->sum('amount');

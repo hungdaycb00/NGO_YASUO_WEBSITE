@@ -1,7 +1,7 @@
 @extends('layout.user_layout')
 @section('user_content')
     <div class="text-center mt-30"><p class="h1 uppercase">Fund account information</p>
-    <p class="blockquote color-blue">Card number: 0611001917137, <br>Card name: QUỸ TRÒ NGHÈO VÙNG CAO, <br>Swift Code: BFTVVNVX061
+    <p class="blockquote color-blue">Card number: 0611001917137, <br>Card name: QUỸ TRÒ NGHÈO VÙNG CAO,
             <br>Ngân hàng Ngoại Thương Việt Nam - Vietcombank, chi nhánh Ba Đình, Hà Nội</p></div>
 
     @if(count($errors)>0)

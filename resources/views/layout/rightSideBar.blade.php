@@ -19,7 +19,6 @@
         <aside class="single_sidebar_widget post_category_widget">
             <h4 class="widget_title" style="color: #2d2d2d;">Category</h4>
             <ul class="list cat-list">
-
                 <li>
                     <a href="/Education" class="d-flex">
                         <p>Education</p>
@@ -40,40 +39,22 @@
                         <p>Others</p>
                     </a>
                 </li>
-
             </ul>
         </aside>
-
-        <aside class="single_sidebar_widget tag_cloud_widget">
-            <h4 class="widget_title" style="color: #2d2d2d;">Tag Clouds</h4>
-            <ul class="list">
-                <li>
-                    <a href="#">project</a>
-                </li>
-                <li>
-                    <a href="#">love</a>
-                </li>
-                <li>
-                    <a href="#">technology</a>
-                </li>
-                <li>
-                    <a href="#">travel</a>
-                </li>
-                <li>
-                    <a href="#">restaurant</a>
-                </li>
-                <li>
-                    <a href="#">life style</a>
-                </li>
-                <li>
-                    <a href="#">design</a>
-                </li>
-                <li>
-                    <a href="#">illustration</a>
-                </li>
-            </ul>
+        <aside class="single_sidebar_widget popular_post_widget">
+            <h3 class="widget_title" style="color: #2d2d2d;">Recent Post</h3>
+            @foreach($news as $n)
+            <div class="media post_item">
+                <img src="../upload/{{$n->post_imageName}}" alt="" style="width: 80px; height: 80px;">
+                <div class="media-body">
+                    <a href="blog_details.html">
+                        <h3 style="color: #2d2d2d;">{{$n->post_title}}</h3>
+                    </a>
+                    <p>{{ \Carbon\Carbon::parse($n->created_at)->format('d M Y') }}</p>
+                </div>
+            </div>
+            @endforeach
         </aside>
-
         <aside class="single_sidebar_widget instagram_feeds">
             <h4 class="widget_title" style="color: #2d2d2d;">Instagram Feeds</h4>
             <ul class="instagram_row flex-wrap">
