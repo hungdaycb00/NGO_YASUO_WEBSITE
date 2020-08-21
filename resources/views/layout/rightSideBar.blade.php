@@ -1,10 +1,11 @@
 <div class="col-lg-4">
     <div class="blog_right_sidebar">
         <aside class="single_sidebar_widget search_widget">
-            <form action="#">
+            <form action="search" method="post" role="search">
+                <input type="hidden" name="_token" value="{{csrf_token()}}";>
                 <div class="form-group">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder='Search Keyword'
+                        <input type="text" name="keyword" class="form-control" placeholder='Search Keyword'
                                onfocus="this.placeholder = ''"
                                onblur="this.placeholder = 'Search Keyword'">
                         <div class="input-group-append">

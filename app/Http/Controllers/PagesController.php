@@ -149,4 +149,12 @@ class PagesController extends Controller
         $data = Events::where('events_id', $id)->get();
         return view('pages.events_detail',['data' => $data]);
     }
+
+    function search(Request $request){
+        $keyword = $request -> keyword;
+        $data = list_post::where('post_title', 'like', "%$keyword%")->orWhere('post_content', 'like', "%$keyword%")
+            ->take(10)->paginate(5);
+        return view('pages.search', ['blogDetail' => $data, 'keyword' => $keyword ]);
+    }
+
 }
