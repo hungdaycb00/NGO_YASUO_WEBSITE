@@ -65,31 +65,6 @@
                         </div>
                     </div>
                     @endforeach
-{{--                    <div class="item">--}}
-{{--                        <a href="">--}}
-{{--                            <img src="frontend/img/slidernew/slider2.jpg" alt="">--}}
-{{--                        </a>--}}
-{{--                        <div class="cases-caption2">--}}
-{{--                            <h5><a href="services.html">A Call From The Mother</a></h5>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="item">--}}
-{{--                        <a href="">--}}
-{{--                            <img src="frontend/img/slidernew/slider3.jpg" alt="">--}}
-{{--                        </a>--}}
-{{--                        <div class="cases-caption2">--}}
-{{--                            <h5><a href="services.html">Unsafe Drinking Water</a></h5>--}}
-
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="item">--}}
-{{--                        <a href="">--}}
-{{--                            <img src="frontend/img/slidernew/slider4.jpg" alt="">--}}
-{{--                        </a>--}}
-{{--                        <div class="cases-caption2">--}}
-{{--                            <h5><a href="services.html">A Life Spared</a></h5>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
                 </div>
             </div>
         </div>
@@ -221,13 +196,20 @@
                                         <div class="tipWrap">
                                             <span class="tip"></span>
                                         </div>
-                                        <span class="fill" data-percentage="50"></span>
+                                        @foreach($donate as $d)
+                                            @if($p->events_id ==($d->events_id))
+                                        <span class="fill" data-percentage="{{number_format($d->total_donates/$p->total_donate*100,1)}}"></span>
                                     </div>
                                 </div>
                             </div>
                             <!-- / progress -->
                             <div class="prices d-flex justify-content-between">
-                                <p>Raised:<span> $20,000</span></p>
+
+
+
+                                <p>Raised:<span> ${{$d->total_donates}}</span></p>
+                                    @endif
+                                @endforeach
                                 <p>Goal:<span> ${{number_format($p->total_donate,0)}}</span></p>
                             </div>
 

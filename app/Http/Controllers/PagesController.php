@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category_post;
+use App\Donate;
 use App\Events;
 use App\list_post;
 use Illuminate\Http\Request;
@@ -10,6 +11,7 @@ use App\member;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Redirect;
 use Session;
+use DB;
 
 class PagesController extends Controller
 {
@@ -104,12 +106,20 @@ class PagesController extends Controller
         $category =  Category_post::all();
         $post = list_post::all()->sortByDesc('created_at');
         $news = list_post::all()->where('post_highlights',1)->sortByDesc('created_at')->take(4);
-        $events = Events::all()->sortByDesc('created_at')
-            ->take(3);
+        $events = Events::all()->sortByDesc('created_at')->take(3);
+
+        $data = DB::table('events_tbl')
+            ->join('donate_tbl','donate_tbl.events_id','events_tbl.events_id')
+            ->select('donate_tbl.events_id',DB::raw('Sum(donate_tbl.amount) as total_donates'))
+            ->groupBy('donate_tbl.events_id')
+            ->get();
+
+//        $data = Donate::all()->where('money_status',4)->groupBy('events_id')->sum('amount');
         view()->share('cate',$category);
         view()->share('post',$post);
         view()->share('events',$events);
         view()->share('news',$news);
+        view()->share('donate',$data);
     }
 
     public function showChildren(){
