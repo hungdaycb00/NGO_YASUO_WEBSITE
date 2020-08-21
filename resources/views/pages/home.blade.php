@@ -61,7 +61,7 @@
 
                         </a>
                         <div class="cases-caption2">
-                            <h5><a href="blog_detail/{{$p->post_id}}">{{$p->post_title}}</a></h5>
+                            <h5><a href="blog_detail/{{$p->post_id}}" style="font-weight: 100;">{{$p->post_title}}</a></h5>
                         </div>
                     </div>
                     @endforeach

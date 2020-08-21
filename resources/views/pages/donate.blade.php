@@ -1,5 +1,6 @@
 @extends('layout.user_layout')
 @section('user_content')
+
     <!--? Services Area Start -->
     <div class="service-area pt-50">
         <div class="container">
