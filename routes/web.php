@@ -31,9 +31,11 @@ Route::group(['prefix'=>'/'],function(){
     Route::get('/Children','PagesController@showChildren');
 
     Route::get('/contact', 'PagesController@contact');
+
+    Route::get('/notice_transfer','DonateController@transferSuccess');
     //vn pay
-    Route::get('onlinebank','PagesController@showVNPay');
-    Route::post('onlinebank','PagesController@createVNPay');
+    Route::get('onlinebank','DonateController@showVNPay');
+    Route::post('onlinebank','DonateController@createVNPay');
     Route::group(['prefix'=>'donate'],function (){
         Route::get('/','DonateController@showDonate');
         Route::get('/transfer','DonateController@transfer');
@@ -110,6 +112,7 @@ Route::group(['prefix'=>'admin'],function (){
         Route::get('edit/{id}','DonateController@edit');
 
         Route::post('/save','DonateController@save');
+        Route::post('/saveCredit','DonateController@saveCredit');
         Route::post('/update/{id}','DonateController@update');
         Route::get('/delete/{id}','DonateController@delete');
 

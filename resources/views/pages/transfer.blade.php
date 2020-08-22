@@ -18,6 +18,7 @@
                     <div class="agileits_w3layouts_main_grid">
                         <div class="agile_main_grid_left">
                             <h3>Your Details :</h3>
+                            <input type="text" name="code_payment" placeholder="Code Payment" value="<?php echo date("dHis").rand(0,9) ?>">
                             <input type="text" name="name" placeholder="Name" required="">
                             <input type="email" name="email" placeholder="Email" required="">
                             <input type="text" name="address" placeholder="Address" required="">
@@ -32,10 +33,9 @@
                                     @if(Session::get('events_id') != null)
 
                                         <h4>For Events</h4>
-                                        <select id="w3_agileits_select1" name ="events_id" class="w3layouts_select" onchange="change_country(this.value)"
-                                                required="" disabled>
+                                        <select id="w3_agileits_select1" name ="events_id" class="w3layouts_select">
                                             @foreach($events as $e)
-                                            <option value="{{$e->events_id}}">{{$e->events_title}} </option>
+                                            <option value="{{$e->events_id}}">{{$e->events_title}}</option>
                                                 <input type="hidden" name="category_type" value="{{$e->categoryPost->category_id}}">
                                             @endforeach
                                         </select>

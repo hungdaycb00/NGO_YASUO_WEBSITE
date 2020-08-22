@@ -19,38 +19,38 @@
 
 <div class="container">
     <div class="header clearfix">
-        <h3 class="text-muted">VNPAY DEMO</h3>
+        <h3 class="text-muted">VNPAY</h3>
     </div>
-    <h3>Tạo mới đơn hàng</h3>
     <div class="table-responsive">
+
         <form action="onlinebank" id="create_form" method="post">
             {{csrf_field()}}
+            @foreach($code as $c)
             <div class="form-group">
-                <label for="language">Loại hàng hóa </label>
+                <label for="language">Order Type </label>
                 <select name="order_type" id="order_type" class="form-control">
-                    <option value="billpayment">Nạp tiền điện thoại</option>
-                    <option value="billpayment">Thanh toán hóa đơn</option>
-                    <option value="fashion">Thời trang</option>
-                    <option value="other">Khác - Xem thêm tại VNPAY</option>
+                    <option value="billpayment">Donate</option>
                 </select>
             </div>
+
+
             <div class="form-group">
-                <label for="order_id">Mã hóa đơn</label>
-                <input class="form-control" id="order_id" name="order_id" type="text" value="<?php echo date("YmdHis") ?>"/>
+                <label for="order_id">Code Payment</label>
+                <input class="form-control" id="order_id" name="order_id" type="text" value="{{$c->code_payment}}"/>
             </div>
             <div class="form-group">
-                <label for="amount">Số tiền</label>
+                <label for="amount">Amount</label>
                 <input class="form-control" id="amount"
-                       name="amount" type="number" value="10000"/>
+                       name="amount" type="number" value="{{$c->amount}}"/>
             </div>
             <div class="form-group">
-                <label for="order_desc">Nội dung thanh toán</label>
-                <textarea class="form-control" cols="20" id="order_desc" name="order_desc" rows="2">Noi dung thanh toan</textarea>
+                <label for="order_desc">Content billing</label>
+                <textarea class="form-control" cols="20" id="order_desc" name="order_desc" rows="2" placeholder="messages...">payment</textarea>
             </div>
+            @endforeach
             <div class="form-group">
-                <label for="bank_code">Ngân hàng</label>
+                <label for="bank_code">Bank</label>
                 <select name="bank_code" id="bank_code" class="form-control">
-                    <option value="">Không chọn</option>
                     <option value="NCB"> Ngan hang NCB</option>
                     <option value="AGRIBANK"> Ngan hang Agribank</option>
                     <option value="SCB"> Ngan hang SCB</option>
@@ -76,21 +76,16 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="language">Ngôn ngữ</label>
+                <label for="language">Language</label>
                 <select name="language" id="language" class="form-control">
                     <option value="vn">Tiếng Việt</option>
                     <option value="en">English</option>
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary" id="btnPopup">Thanh toán Popup</button>
-            <button type="submit" class="btn btn-default">Thanh toán Redirect</button>
-
+            <button type="submit" class="btn btn-default">Payment</button>
         </form>
     </div>
-    <p>
-        &nbsp;
-    </p>
     <footer class="footer">
         <p>&copy; VNPAY 2015</p>
     </footer>

@@ -4,17 +4,29 @@
 namespace App\Http\Controllers;
 use App\Controllers;
 use App\list_post;
+use App\Category_post;
+
 use App\Events;
 use Session;
+use DB;
 use App\Donate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
+
 class DonateController extends Controller
 {
+    private $vnp_TmnCode = "MET2IMIN"; //Mã website tại VNPAY
+    private $vnp_HashSecret = "JQMZJMUHWPTWRXJOGNIFIEPYVPEJFZZV"; //Chuỗi bí mật
+    private $vnp_Url = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
+    private $vnp_Returnurl ="http://ngo-yasuo.org/onlinebank";
     public function showDonate(){
         Session::put('events_id', null);
         return view('pages.donate');
+    }
+    public function transferSuccess(){
+        Session::put('events_id', null);
+        return view('pages.transfer_success');
     }
     public function showDonateEvents($id){
         Session::put('events_id', $id);
@@ -30,6 +42,10 @@ class DonateController extends Controller
     public function creditCard(){
         return view('pages.donate_credit_card');
     }
+    public function creditCardEvents($id){
+        $data = Events::where('events_id',$id)->get();
+        return view('pages.donate_credit_card',['events'=>$data]);
+    }
 
     //post
     public function add(){
@@ -43,7 +59,7 @@ class DonateController extends Controller
 
         $this->validate($request,
             [
-                'category_type' => 'required'
+                'category_type' => 'required',
             ],
             [
                 'category_type.required'=>'Please select the donate reason!!!',
@@ -58,12 +74,38 @@ class DonateController extends Controller
         $data->events_id = $request->events_id;
         $data->donator_status = $request->status;
         $data->money_status = 3;
+        $data->code_payment = $request->code_payment;
         $data->comment = $request->message;
 
             $data->save();
-            Session::put('events_id', null);
             Session::put('message', 'Add new donator success!');
-            return Redirect::to('admin/donate/list');
+            return Redirect::to('/notice_transfer');
+    }
+    public function saveCredit(Request $request){
+
+        $this->validate($request,
+            [
+                'category_type' => 'required',
+            ],
+            [
+                'category_type.required'=>'Please select the donate reason!!!',
+            ]);
+        $data = new Donate;
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->address = $request->address;
+        $data->phone = $request->phone;
+        $data->amount = $request->amount;
+        $data->category_id = $request->category_type;
+        $data->events_id = $request->events_id;
+        $data->donator_status = $request->status;
+        $data->money_status = 3;
+        $data->code_payment = $request->code_payment;
+        Session::put('code_payment',$request->code_payment);
+        $data->comment = $request->message;
+        $data->save();
+        Session::put('message', 'Add new donator success!');
+        return Redirect::to('/onlinebank');
     }
     public function delete( $id){
         Donate::where('id', $id)->delete();
@@ -88,6 +130,7 @@ class DonateController extends Controller
         $data->events_id = $request->events;
         $data->donator_status = $request->donator_status;
         $data->money_status = $request->money_status;
+        $data->code_payment = $request->code_payment;
         $data->comment = $request->comment;
 
         $data->save();
@@ -111,4 +154,81 @@ class DonateController extends Controller
         return Redirect::to('admin/post/list_post');
     }
     //end
+    public function showVNPay(Request $request){
+
+        if ($request->vnp_ResponseCode == '00')
+        {
+            $code_payment = Session::get('code_payment');
+            $data = array();
+            $data['money_status'] = 4;
+             DB::table('donate_details')->where('code_payment', $code_payment)->update($data);
+            Session::put('code_payment',null);
+                return redirect::to('/notice_transfer');
+        }
+        if(Session::get('code_payment')){
+            $dataCard = Donate::all()->where('code_payment', Session::get('code_payment'))->take(1);
+            return view('pages.vnpay',['code'=>$dataCard]);
+        }
+
+
+        return view('pages.vnpay');
+    }
+    public function createVNPay(Request $request){
+
+        $vnp_TxnRef = $request->order_id;//Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
+        $vnp_OrderInfo = $request->order_desc;
+        $vnp_OrderType = $request->order_type;
+        $vnp_Amount = $request->amount* 100;
+        $vnp_Locale = $request->language;
+        $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
+        error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
+
+        $inputData = array(
+            "vnp_Version" => "2.0.0",
+            "vnp_TmnCode" => $this->vnp_TmnCode,
+            "vnp_Amount" => $vnp_Amount,
+            "vnp_Command" => "pay",
+            "vnp_CreateDate" => date('YmdHis'),
+            "vnp_CurrCode" => "VND",
+            "vnp_IpAddr" => $vnp_IpAddr,
+            "vnp_Locale" => $vnp_Locale,
+            "vnp_OrderInfo" => $vnp_OrderInfo,
+            "vnp_OrderType" => $vnp_OrderType,
+            "vnp_ReturnUrl" => $this->vnp_Returnurl,
+            "vnp_TxnRef" => $vnp_TxnRef,
+        );
+        if ($request->bank_code)
+        {
+            $inputData['vnp_BankCode'] = $request->bank_code;
+        }
+        ksort($inputData);
+        $query = "";
+        $i = 0;
+        $hashdata = "";
+        foreach ($inputData as $key => $value) {
+            if ($i == 1) {
+                $hashdata .= '&' . $key . "=" . $value;
+            } else {
+                $hashdata .= $key . "=" . $value;
+                $i = 1;
+            }
+            $query .= urlencode($key) . "=" . urlencode($value) . '&';
+        }
+
+        $vnp_Url = $this->vnp_Url . "?" . $query;
+        if ($this->vnp_HashSecret) {
+            $vnpSecureHash = hash('sha256',$this->vnp_HashSecret . $hashdata);
+            $vnp_Url .= 'vnp_SecureHashType=SHA256&vnp_SecureHash=' . $vnpSecureHash;
+        }
+
+        $returnData = array(
+            'code' => '00',
+            'message' => 'success',
+            'data' => $vnp_Url
+        );
+
+//        dd($returnData);
+//
+        return redirect()->to($returnData['data']);
+    }
 }

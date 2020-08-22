@@ -50,8 +50,12 @@
                             <span class="fa fa-handshake"></span>
                         </div>
                         <div class="cat-cap">
-                            <h5><a href="{{URL::to('/donate/donate_credit_card')}}">Donate by Credit Card</a></h5>
-                            <p>The sea freight service has grown conside rably in recent years. We spend timetting to know your processes to.</p>
+                            @if(Session::get('events_id') != null)
+                                <a href="{{URL::to('/donate/donate_credit_card/'.Session::get('events_id'))}}">Donate by VNPAY</a>
+                            @endif
+                            @if(Session::get('events_id') == null)
+                                <a href="{{URL::to('/donate/donate_credit_card')}}">Donate by VNPAY</a>
+                            @endif
                         </div>
                     </div>
                 </div>

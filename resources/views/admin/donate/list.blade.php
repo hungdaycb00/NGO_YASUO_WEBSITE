@@ -27,6 +27,7 @@
                             </label>
                         </th>
                         <th>Donate ID</th>
+                        <th>Code Payment</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Address</th>
@@ -45,6 +46,7 @@
                     <tr>
                         <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
                         <td>{{$d->id}}</td>
+                        <td>{{$d->code_payment}}</td>
                         <td>{{$d->name}}</td>
                         <td>{{$d->email}}</td>
                         <td>{{$d->address}}</td>

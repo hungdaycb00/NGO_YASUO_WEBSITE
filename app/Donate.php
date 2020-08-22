@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Donate extends Model
 {
     //
-    protected $table='donate_tbl';
+    protected $table='donate_details';
 
     public function category(){
         return $this->belongsTo('App\Category_post','category_id','category_id');

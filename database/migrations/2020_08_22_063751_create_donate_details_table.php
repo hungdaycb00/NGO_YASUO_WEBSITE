@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEventsDonateTblTable extends Migration
+class CreateDonateDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateEventsDonateTblTable extends Migration
      */
     public function up()
     {
-        Schema::create('donate_tbl', function (Blueprint $table) {
+        Schema::create('donate_details', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('member_id')->nullable();
             $table->string('name');
@@ -26,6 +26,7 @@ class CreateEventsDonateTblTable extends Migration
             $table->foreign('category_id')->references('category_id')->on('category_post');
             $table->integer('donator_status');
             $table->integer('money_status');
+            $table->integer('code_payment');
             $table->string('comment')->nullable();
             $table->timestamps();
         });
@@ -38,6 +39,6 @@ class CreateEventsDonateTblTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('donate_tbl');
+        Schema::dropIfExists('donate_details');
     }
 }

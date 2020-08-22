@@ -15,10 +15,28 @@ use DB;
 
 class PagesController extends Controller
 {
-    private $vnp_TmnCode = "MET2IMIN"; //Mã website tại VNPAY
-    private $vnp_HashSecret = "JQMZJMUHWPTWRXJOGNIFIEPYVPEJFZZV"; //Chuỗi bí mật
-    private $vnp_Url = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-    private $vnp_Returnurl ="http://ngo-yasuo.org/onlinebank";
+
+
+    function __construct()
+    {
+        $category =  Category_post::all();
+        $post = list_post::all()->sortByDesc('created_at');
+        $news = list_post::all()->where('post_highlights',1)->sortByDesc('created_at')->take(4);
+        $events = Events::all()->sortByDesc('created_at')->take(3);
+        $data = DB::table('events_tbl')
+            ->join('donate_details','donate_details.events_id','events_tbl.events_id')
+            ->select('donate_details.events_id',DB::raw('Sum(donate_details.amount) as total_donates'))
+            ->groupBy('donate_details.events_id')
+            ->where('donate_details.money_status',4)
+            ->get();
+
+//        $data = Donate::all()->where('money_status',4)->groupBy('events_id')->sum('amount');
+        view()->share('cate',$category);
+        view()->share('post',$post);
+        view()->share('events',$events);
+        view()->share('news',$news);
+        view()->share('donate',$data);
+    }
 
     public function home(){
         return view('pages.home');
@@ -105,26 +123,7 @@ class PagesController extends Controller
     public function contact(){
         return view('pages.contact');
     }
-    function __construct()
-    {
-        $category =  Category_post::all();
-        $post = list_post::all()->sortByDesc('created_at');
-        $news = list_post::all()->where('post_highlights',1)->sortByDesc('created_at')->take(4);
-        $events = Events::all()->sortByDesc('created_at')->take(3);
-        $data = DB::table('events_tbl')
-            ->join('donate_tbl','donate_tbl.events_id','events_tbl.events_id')
-            ->select('donate_tbl.events_id',DB::raw('Sum(donate_tbl.amount) as total_donates'))
-            ->groupBy('donate_tbl.events_id')
-            ->where('donate_tbl.money_status',4)
-            ->get();
 
-//        $data = Donate::all()->where('money_status',4)->groupBy('events_id')->sum('amount');
-        view()->share('cate',$category);
-        view()->share('post',$post);
-        view()->share('events',$events);
-        view()->share('news',$news);
-        view()->share('donate',$data);
-    }
 
     public function showChildren(){
         $post = list_post::all()->where('category_id', 3)->where('post_status',1)->sortByDesc('created_at');
@@ -153,82 +152,5 @@ class PagesController extends Controller
         $data = Events::where('events_id', $id)->get();
         return view('pages.events_detail',['data' => $data]);
     }
-    public function showVNPay(Request $request){
-        if ($request->vnp_ResponseCode == '00')
-        {
-//            $transactionID = $request->vnp_TxnRef;
-//            $transaction = Transaction::find($transactionID);
-//            if ($transaction)
-//            {
-//                \Cart::clear();
-//                $transaction->tr_type = Transaction::TYPE_PAY;
-//                $transaction->tr_status = Transaction::STATUS_DONE;
-//                $transaction->save();
-//
-//                return redirect()->to('/')->with('success','Xác nhận giao dịch thành công');
-//            }
 
-            return redirect()->to('/')->with('message','Xác nhận giao dịch thành công');
-        }
-
-    return view('pages.vnpay');
-}
-    public function createVNPay(Request $request){
-
-        $vnp_TxnRef = 20000000000;//Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
-            $vnp_OrderInfo = $request->order_desc;
-            $vnp_OrderType = $request->order_type;
-            $vnp_Amount = $request->amount* 100;
-            $vnp_Locale = $request->language;
-            $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
-            error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
-
-        $inputData = array(
-            "vnp_Version" => "2.0.0",
-            "vnp_TmnCode" => $this->vnp_TmnCode,
-            "vnp_Amount" => $vnp_Amount,
-            "vnp_Command" => "pay",
-            "vnp_CreateDate" => date('YmdHis'),
-            "vnp_CurrCode" => "VND",
-            "vnp_IpAddr" => $vnp_IpAddr,
-            "vnp_Locale" => $vnp_Locale,
-            "vnp_OrderInfo" => $vnp_OrderInfo,
-            "vnp_OrderType" => $vnp_OrderType,
-            "vnp_ReturnUrl" => $this->vnp_Returnurl,
-            "vnp_TxnRef" => $vnp_TxnRef,
-        );
-            if ($request->bank_code)
-            {
-                $inputData['vnp_BankCode'] = 'NCB';
-            }
-        ksort($inputData);
-        $query = "";
-        $i = 0;
-        $hashdata = "";
-        foreach ($inputData as $key => $value) {
-            if ($i == 1) {
-                $hashdata .= '&' . $key . "=" . $value;
-            } else {
-                $hashdata .= $key . "=" . $value;
-                $i = 1;
-            }
-            $query .= urlencode($key) . "=" . urlencode($value) . '&';
-        }
-
-        $vnp_Url = $this->vnp_Url . "?" . $query;
-        if ($this->vnp_HashSecret) {
-            $vnpSecureHash = hash('sha256',$this->vnp_HashSecret . $hashdata);
-            $vnp_Url .= 'vnp_SecureHashType=SHA256&vnp_SecureHash=' . $vnpSecureHash;
-        }
-
-            $returnData = array(
-                'code' => '00',
-                'message' => 'success',
-                'data' => $vnp_Url
-            );
-
-//        dd($returnData);
-//
-            return redirect()->to($returnData['data']);
-        }
 }

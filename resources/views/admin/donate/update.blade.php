@@ -31,6 +31,8 @@
                     <div class="form-group">
                         <label >Name</label>
                         <input type="text" value="{{$d->name}}" class="form-control"  name="name">
+                        <label >Code Payment</label>
+                        <input type="number" value="{{$d->code_payment}}" class="form-control"  name="code_payment">
                         <label >Member ID</label>
                         <input type="number" value="{{$d->member_id}}" class="form-control"  name="member_id">
                         <label >Email</label>
