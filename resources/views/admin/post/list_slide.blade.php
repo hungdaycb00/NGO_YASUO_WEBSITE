@@ -16,27 +16,6 @@
                 }
                 ?>
             </div>
-{{--            <div class="row w3-res-tb">--}}
-{{--                <div class="col-sm-5 m-b-xs">--}}
-{{--                    <select class="input-sm form-control w-sm inline v-middle">--}}
-{{--                        <option value="0">Bulk action</option>--}}
-{{--                        <option value="1">Delete selected</option>--}}
-{{--                        <option value="2">Bulk edit</option>--}}
-{{--                        <option value="3">Export</option>--}}
-{{--                    </select>--}}
-{{--                    <button class="btn btn-sm btn-default">Apply</button>--}}
-{{--                </div>--}}
-{{--                <div class="col-sm-4">--}}
-{{--                </div>--}}
-{{--                <div class="col-sm-3">--}}
-{{--                    <div class="input-group">--}}
-{{--                        <input type="text" class="input-sm form-control" placeholder="Search">--}}
-{{--                        <span class="input-group-btn">--}}
-{{--            <button class="btn btn-sm btn-default" type="button">Go!</button>--}}
-{{--          </span>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
             <div class="table-responsive">
                 <table class="table table-striped b-t b-light">
                     <thead>
@@ -47,42 +26,39 @@
                             </label>
                         </th>
                         <th>Title</th>
-                        <th>Category</th>
-                        <th>Summary</th>
-                        <th>Image Name</th>
+                        <th>Image</th>
                         <th>Post Status</th>
+                        <th>Link Address</th>
                         <th>Upload Date</th>
                         <th style="width:30px;"></th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($list as $key =>$cate_pro)
+                    @foreach($list as $key =>$c)
                     <tr>
                         <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-                        <td>{{$cate_pro->post_title}}</td>
-                        <td>{{$cate_pro->categoryPost->category_name}}</td>
-                        <td>{{$cate_pro->post_summary}}</td>
-                        <td><img src="/upload/{{$cate_pro->post_imageName}}" alt="" height="100" width="100"></td>
+                        <td>{{$c->title}}</td>
+                        <td><img src="/upload/{{$c->image_name}}" alt="" height="100" width="100"></td>
                         <td><?php
-                            if($cate_pro->post_status == 0){
+                            if($c->post_status == 0){
                                 ?>
-
-                                <a href="{{URL::to('admin/post/inactive/'.$cate_pro->post_id)}}"><span class='fa thumbs-up-style fa-thumbs-down'></span></a>
+                                <a href="{{URL::to('admin/our_partners/inactive/'.$c->id)}}"><span class='fa thumbs-up-style fa-thumbs-down'></span></a>
                            <?php
                             }
                             else{
                             ?>
-                                <a href="{{URL::to('admin/post/active/'.$cate_pro->post_id)}}"><span class='fa thumbs-down-style fa-thumbs-up'></span></a>
+                                <a href="{{URL::to('admin/our_partners/active/'.$c->id)}}"><span class='fa thumbs-down-style fa-thumbs-up'></span></a>
                             <?php
                             }
                         ?>
                         </td>
-                        <td>{{$cate_pro->updated_at}}</td>
+                         <td><a href="{{$c->link_address}}">{{$c->link_address}}</a></td>
+                        <td>{{$c->updated_at}}</td>
                         <td>
-                            <a href="{{URL::to('admin/post/edit_post/'.$cate_pro->post_id)}}" class="active styling-edit" ui-toggle-class="">
+                            <a href="{{URL::to('admin/our_partners/edit/'.$c->id)}}" class="active styling-edit" ui-toggle-class="">
                                 <i class="fa fa-pencil-square-o text-success text-active"></i>
                             </a>
-                            <a onclick="return confirm('Are you sure to delete ?')" href="{{URL::to('admin/post/delete_post/'.$cate_pro->post_id)}}" class="active  styling-edit" ui-toggle-class="">
+                            <a onclick="return confirm('Are you sure to delete ?')" href="{{URL::to('admin/our_partners/delete/'.$c->id)}}" class="active  styling-edit" ui-toggle-class="">
                                 <i class="fa fa-times text-danger text"></i>
                             </a>
                         </td>

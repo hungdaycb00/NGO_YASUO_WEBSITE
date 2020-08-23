@@ -248,88 +248,18 @@
                 <p>We are pleased to work with thousands of partners. Those who work with us globally include:</p>
                 <!-- Set up your HTML -->
                 <div class="owl-carousel owl-theme">
+                    @foreach($partners as $p)
                     <div class="item1">
-                        <a href="">
-                            <img src="frontend/img/ourpartners/logo1.png" alt="">
+                        <a href="{{$p->link_address}}">
+                            <img src="upload/{{$p->image_name}}" alt="">
                         </a>
                         <div class="cases-caption2">
-                            <h5><a href="services.html">The Global Fund</a></h5>
-                            <a href=""><span class="card__btn">LEARN MORE</span></a>
+                            <h5><a href="{{$p->link_address}}" style="text-transform: uppercase">{{$p->title}}</a></h5>
+                            <a href="{{$p->link_address}}"><span class="card__btn">LEARN MORE</span></a>
                         </div>
 
                     </div>
-                    <div class="item1">
-                        <a href="">
-                            <img src="assets/img/ourpartners/logo2.png" alt="">
-                        </a>
-                        <div class="cases-caption2">
-                            <h5><a href="services.html">WFP</a></h5>
-                            <a href=""><span class="card__btn">LEARN MORE</span></a>
-                        </div>
-                    </div>
-                    <div class="item1">
-                        <a href="">
-                            <img src="assets/img/ourpartners/logo3.png" alt="">
-                        </a>
-                        <div class="cases-caption2">
-                            <h5><a href="services.html">UNICEF</a></h5>
-                            <a href=""><span class="card__btn">LEARN MORE</span></a>
-                        </div>
-                    </div>
-                    <div class="item1">
-                        <a href="">
-                            <img src="assets/img/ourpartners/logo4.png" alt="">
-                        </a>
-                        <div class="cases-caption2">
-                            <h5><a href="services.html">UNHCR</a></h5>
-                            <a href=""><span class="card__btn">LEARN MORE</span></a>
-                        </div>
-                    </div>
-                    <div class="item1">
-                        <a href="">
-                            <img src="assets/img/ourpartners/logo5.png" alt="">
-                        </a>
-                        <div class="cases-caption2">
-                            <h5><a href="services.html">GRUNDFOS</a></h5>
-                            <a href=""><span class="card__btn">LEARN MORE</span></a>
-                        </div>
-                    </div>
-                    <div class="item1">
-                        <a href="">
-                            <img src="assets/img/ourpartners/logo6.png" alt="">
-                        </a>
-                        <div class="cases-caption2">
-                            <h5><a href="services.html"> GlobalPartnership</a></h5>
-                            <a href=""><span class="card__btn">LEARN MORE</span></a>
-                        </div>
-                    </div>
-                    <div class="item1">
-                        <a href="">
-                            <img src="assets/img/ourpartners/logo7.png" alt="">
-                        </a>
-                        <div class="cases-caption2">
-                            <h5><a href="services.html">Joint Learning Initiative</a></h5>
-                            <a href=""><span class="card__btn">LEARN MORE</span></a>
-                        </div>
-                    </div>
-                    <div class="item1">
-                        <a href="">
-                            <img src="assets/img/ourpartners/logo8.png" alt="">
-                        </a>
-                        <div class="cases-caption2">
-                            <h5><a href="services.html">PMNCH</a></h5>
-                            <a href=""><span class="card__btn">LEARN MORE</span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row2">
-
-                    <a href="">
-               <span class="card__btn1">
-                   OTHER VALUED PARTNERS
-                </span>
-                    </a>
-
+                    @endforeach
                 </div>
             </div>
 

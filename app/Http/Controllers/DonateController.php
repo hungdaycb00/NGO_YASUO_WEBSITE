@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use App\Controllers;
 use App\list_post;
 use App\Category_post;
-
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Events;
 use Session;
 use DB;
 use App\Donate;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
 
@@ -119,21 +119,21 @@ class DonateController extends Controller
         return view('admin.donate.update',['edit'=>$edit],['edit1'=>$events]);
     }
     public function update(Request $request, $id){
-        $data = new Donate;
-        $data->name = $request->name;
-        $data->member_id = $request->member_id;
-        $data->email = $request->email;
-        $data->address = $request->address;
-        $data->phone = $request->phone;
-        $data->amount = $request->amount;
-        $data->category_id = $request->category_type;
-        $data->events_id = $request->events;
-        $data->donator_status = $request->donator_status;
-        $data->money_status = $request->money_status;
-        $data->code_payment = $request->code_payment;
-        $data->comment = $request->comment;
+        $data = array();
+        $data['name'] = $request->name;
+        $data['member_id']= $request->member_id;
+        $data['email']  = $request->email;
+        $data['address'] = $request->address;
+        $data['phone'] = $request->phone;
+        $data['amount'] = $request->amount;
+        $data['category_id'] = $request->category_type;
+        $data['events_id'] = $request->events;
+        $data['donator_status'] = $request->donator_status;
+        $data['money_status'] = $request->money_status;
+        $data['code_payment'] = $request->code_payment;
+        $data['comment']  = $request->comment;
 
-        $data->save();
+        DB::table('donate_details')->where('id',$id)->update($data);
         Session::put('events_id', null);
         Session::put('message', 'Update donator success!');
         return Redirect::to('admin/donate/list');

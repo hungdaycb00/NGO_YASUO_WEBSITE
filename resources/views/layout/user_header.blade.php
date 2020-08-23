@@ -79,7 +79,7 @@
                                 <div class="main-menu d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="{{URL::to('home')}}" class="font-weight-bold"><h2>News</h2></a>
+                                            <li><a href="{{URL::to('news')}}" class="font-weight-bold"><h2>News</h2></a>
                                                 <ul class="submenu">
                                                     <li><a href="{{URL::to('Children')}}">Privileged Children</a></li>
                                                     <li><a href="{{URL::to('Education')}}">Education</a></li>

@@ -128,8 +128,8 @@ Route::group(['prefix'=>'admin'],function (){
         Route::post('/update/{id}','PostController@updatePartners');
         Route::get('/delete/{id}','PostController@deletePartners');
 
-        Route::get('/inactive/{id}','PostController@inactivePost');
-        Route::get('/active/{id}','PostController@activePost');
+        Route::get('/inactive/{id}','PostController@inactivePartners');
+        Route::get('/active/{id}','PostController@activePartners');
     });
 });
 

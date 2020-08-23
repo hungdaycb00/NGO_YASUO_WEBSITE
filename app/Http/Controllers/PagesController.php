@@ -6,6 +6,7 @@ use App\Category_post;
 use App\Donate;
 use App\Events;
 use App\list_post;
+use App\Slide;
 use Illuminate\Http\Request;
 use App\member;
 use Illuminate\Routing\Controller as BaseController;
@@ -20,6 +21,7 @@ class PagesController extends Controller
     function __construct()
     {
         $category =  Category_post::all();
+        $partner= Slide::all()->where('post_status', 1);
         $post = list_post::all()->sortByDesc('created_at');
         $news = list_post::all()->where('post_highlights',1)->sortByDesc('created_at')->take(4);
         $events = Events::all()->sortByDesc('created_at')->take(3);
@@ -36,6 +38,7 @@ class PagesController extends Controller
         view()->share('events',$events);
         view()->share('news',$news);
         view()->share('donate',$data);
+        view()->share('partners',$partner);
     }
 
     public function home(){
@@ -154,5 +157,10 @@ class PagesController extends Controller
         $data = Events::where('events_id', $id)->get();
         return view('pages.events_detail',['data' => $data]);
     }
-
+    public function search(Request $request){
+        $keyword = $request -> keyword;
+        $data = list_post::where('post_title', 'like', "%$keyword%")->orWhere('post_content', 'like', "%$keyword%")
+            ->take(10)->paginate(5);
+        return view('pages.search', ['blogDetail' => $data, 'keyword' => $keyword ]);
+    }
 }

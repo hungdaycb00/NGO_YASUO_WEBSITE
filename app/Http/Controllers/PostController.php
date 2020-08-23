@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Controllers;
 use App\Category_post;
 use App\list_post;
+use App\Slide;
 use DB;
 use Session;
 use Illuminate\Http\Request;
@@ -164,17 +165,18 @@ class PostController extends Controller
         return view('admin.post.add_new_slide');
     }
     public function listPartners(){
-        $dataListPost = list_post::all();
-        return view('admin.post.list_post',['list'=>$dataListPost]);
+        $dataListPost = Slide::all();
+        return view('admin.post.list_slide',['list'=>$dataListPost]);
     }
     public function saveNewPartners(Request $request){
         $this->validate($request,
             [
-                'post_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+                'post_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
             ],
             [
                 'post_image.max'=>'images with a maximum size of 2048kb!!!',
                 'post_image.mines'=>'The image must have a jpeg,png,jpg,gif,svg extension!!!',
+                'post_image.required'=>'Choose logo image!!!'
             ]);
         $data = array();
         $data['title'] = $request->title;
@@ -191,59 +193,63 @@ class PostController extends Controller
             Session::put('message', 'Add new Partners success!');
             return Redirect::to('admin/our_partners/add');
         }
-        else{
-            DB::table('slide_tbl')->insert($data);
-            Session::put('message', 'Add new post success!');
-            return Redirect::to('admin/our_partners/add_post');
-        }
-
-
     }
     public function deletePartners( $id){
-        list_post::where('post_id', $id)->delete();
-        Session::put('message', 'Delete post success!');
-        return Redirect::to('admin/post/list_post');
+        Slide::where('id', $id)->delete();
+        Session::put('message', 'Delete partners success!');
+        return Redirect::to('admin/our_partners/list');
 
     }
     public function editPartners($id){
-        $edit_Post = list_post::where('post_id', $id)->get();
-        $managerPost= view('admin.post.update_post')->with('edit_post',$edit_Post);
-        return view('layout.admin_layout')->with('admin.post.update_post',$managerPost);
+        $edit_Post = Slide::where('id', $id)->get();
+        $managerPost= view('admin.post.update_slide')->with('edit_slide',$edit_Post);
+        return view('layout.admin_layout')->with('admin.post.update_slide',$managerPost);
     }
     public function updatePartners(Request $request, $id){
         $this->validate($request,
             [
-                'add_title_post'=> 'required',
-                'add_summary'=>'required|max:255'
+                'post_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
             ],
             [
-                'add_title_post.required'=>'Enter the title!!!',
-                'add_summary.required'=>'Enter the title!!!',
-                'add_summary.max'=>'The summary max to 255 characters!!!',
+                'post_image.max'=>'images with a maximum size of 2048kb!!!',
+                'post_image.mines'=>'The image must have a jpeg,png,jpg,gif,svg extension!!!',
             ]);
         $data = array();
-        $data['post_title'] = $request->add_title_post;
-        $data['post_summary'] = $request->add_summary;
-        $data['post_content'] = $request->add_content;
-        $data['post_highlights']= $request->highlights;
-        $data['category_id']= $request->category_type;
+        $data['title'] = $request->title;
+        $data['link_address'] = $request->link;
         $get_image = $request->file('post_image');
         if($get_image){
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.',$get_name_image));
             $new_image = $name_image.time().'.'.$get_image->getClientOriginalExtension();
             $get_image->move('upload/',$new_image);
-            $data['post_imageName'] = $new_image;
-            list_post::where('post_id', $id)->update($data);
-            Session::put('message', 'Update post success!');
-            return Redirect::to('admin/post/list_post');
+            $data['image_name'] = $new_image;
+            DB::table('slide_tbl')->update($data);
+            Session::put('message', 'Update Partners success!');
+            return Redirect::to('admin/our_partners/add');
+
         }
         else{
-            $data['post_imageName'] = $request->old_image;
-            list_post::where('post_id', $id)->update($data);
-            Session::put('message', 'Update post success!');
-            return Redirect::to('admin/post/list_post');
+            $data['image_name'] = $request->old_image;
+            Slide::where('id', $id)->update($data);
+            Session::put('message', 'Update Partners success!');
+            return Redirect::to('admin/our_partners/list');
         }
+    }
+    public function inactivePartners($id){
+
+        $data = array();
+        $data['post_status'] = 1;
+        Slide::where('id', $id)->update($data);
+        Session::put('message', 'Partners is inactive!');
+        return Redirect::to('admin/our_partners/list');
+    }
+    public function activePartners($id){
+        $data = array();
+        $data['post_status'] = 0;
+        Slide::where('id', $id)->update($data);
+        Session::put('message', 'Partners is active!');
+        return Redirect::to('admin/our_partners/list');
     }
     //end
 }
