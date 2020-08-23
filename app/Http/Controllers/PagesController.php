@@ -123,7 +123,9 @@ class PagesController extends Controller
     public function contact(){
         return view('pages.contact');
     }
-
+    public function showOurPartners(){
+        return view('pages.our_partners');
+    }
 
     public function showChildren(){
         $post = list_post::all()->where('category_id', 3)->where('post_status',1)->sortByDesc('created_at');

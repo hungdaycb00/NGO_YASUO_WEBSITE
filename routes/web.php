@@ -29,7 +29,7 @@ Route::group(['prefix'=>'/'],function(){
     //pages
     Route::get('/help_center','HelpCenterController@showHelpCenter');
     Route::get('/Children','PagesController@showChildren');
-
+    Route::get('/our_partners','PagesController@showOurPartners');
     Route::get('/contact', 'PagesController@contact');
 
     Route::get('/notice_transfer','DonateController@transferSuccess');
@@ -118,6 +118,18 @@ Route::group(['prefix'=>'admin'],function (){
 
         Route::get('/inactive/{id}','DonateController@inactive');
         Route::get('/active/{id}','DonateController@active');
+    });
+    Route::group(['prefix'=>'our_partners'],function (){
+        Route::get('add','PostController@addPartners');
+        Route::get('list','PostController@listPartners');
+        Route::get('edit/{id}','PostController@editPartners');
+
+        Route::post('/save','PostController@saveNewPartners');
+        Route::post('/update/{id}','PostController@updatePartners');
+        Route::get('/delete/{id}','PostController@deletePartners');
+
+        Route::get('/inactive/{id}','PostController@inactivePost');
+        Route::get('/active/{id}','PostController@activePost');
     });
 });
 

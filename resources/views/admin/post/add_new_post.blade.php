@@ -90,7 +90,6 @@
                     <div class="form-group" name="imageName">
                         <label for="exampleInputFile">Image input</label>
                         <input type="file" name="post_image" id="exampleInputFile">
-
                     </div>
                     <select class="form-control input-m m-bot15" name="post_status">
                         <option value="1">Show</option>

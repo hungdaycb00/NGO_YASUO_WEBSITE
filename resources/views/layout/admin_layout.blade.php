@@ -148,7 +148,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><a href="{{URL::to('admin/donate/list')}}">List Donate</a></li>
                         </ul>
                     </li>
-
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-hand-o-up"></i>
+                            <span>Our Partners</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="{{URL::to('admin/our_partners/add')}}">Add Partners</a></li>
+                            <li><a href="{{URL::to('admin/our_partners/list')}}">List Partners</a></li>
+                        </ul>
+                    </li>
                     <li class="sub-menu">
                         <a href="javascript:;">
                             <i class="fa fa-user"></i>
@@ -159,9 +168,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><a href="{{URL::to('admin/register')}}">Register Admin</a></li>
                         </ul>
                     </li>
-
-
-                </ul>            </div>
+                </ul>
+            </div>
             <!-- sidebar menu end-->
         </div>
     </aside>
