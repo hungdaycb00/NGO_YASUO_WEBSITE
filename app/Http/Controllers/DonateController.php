@@ -53,7 +53,7 @@ class DonateController extends Controller
     }
     public function list(){
         $dataListPost = Donate::all();
-        return view('admin.donate.list',['list'=>$dataListPost]);
+        return view('admin.donate.list',['listDonate'=>$dataListPost]);
     }
     public function save(Request $request){
 

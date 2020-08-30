@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\admin_user;
+use App\Donate;
+use App\Events;
 use App\member;
 use App\ngo_admin;
 use Illuminate\Routing\Controller as BaseController;
@@ -15,7 +17,40 @@ use DB;
 class AdminController extends Controller
 {
     //
+//    function __construct()
+//    {
+//        $event = Events::all();
+//        $member = member::all();
+//        $donate = Donate::all()->where('money_status', 4);
+//        view()->share('data1'=>$event);
+//    }
+
     public function showDashboard(){
+        $event = Events::all();
+        $member = member::all();
+        $donate = Donate::all()->where('money_status', 4);
+        $donate1 = Donate::all()->where('money_status', 4)->where('category_id', 1)->sum('amount');
+        $donate2 = Donate::all()->where('money_status', 4)->where('category_id', 2)->sum('amount');
+        $donate3 = Donate::all()->where('money_status', 4)->where('category_id', 3)->sum('amount');
+        $donate4 = Donate::all()->where('money_status', 4)->where('category_id', 4)->sum('amount');
+        $total_money = Donate::all()->where('money_status', 4)->sum('amount');
+        $events = Events::all()->take(1);
+        $data = DB::table('events_tbl')
+            ->join('donate_details','donate_details.events_id','events_tbl.events_id')
+            ->select('donate_details.events_id',DB::raw('Sum(donate_details.amount) as total_donates'))
+            ->groupBy('donate_details.events_id')
+            ->where('donate_details.money_status',4)
+            ->get();
+        view()->share('data1',$event);
+        view()->share('data2',$member);
+        view()->share('data3',$donate);
+        view()->share('data4', $total_money);
+        view()->share('donate1', $donate1);
+        view()->share('donate2', $donate2);
+        view()->share('donate3', $donate3);
+        view()->share('donate4', $donate4);
+        view()->share('data5',$events);
+        view()->share('data6',$data);
         return view('admin.index');
     }
     public function showLogin(){
@@ -28,8 +63,6 @@ class AdminController extends Controller
         $dataListMember = member::all();
         return view('admin.member.list_member',['list' => $dataListMember]);
     }
-
-
     public function editProfile($id){
         $data = member::where('member_id', $id)->get();
         return view('admin.member.edit_profile_member',['list_member' => $data]);
@@ -91,6 +124,7 @@ class AdminController extends Controller
         }
 
     }
+
 
 
 }

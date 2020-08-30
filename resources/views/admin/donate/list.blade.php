@@ -42,7 +42,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($list as $key =>$d)
+                    @foreach($listDonate as $key =>$d)
                     <tr>
                         <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
                         <td>{{$d->id}}</td>
