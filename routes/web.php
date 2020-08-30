@@ -44,6 +44,15 @@ Route::group(['prefix'=>'/'],function(){
         Route::get('/transfer/{id}','DonateController@transferEvents');
         Route::get('/donate_credit_card/{id}','DonateController@creditCardEvents');
     });
+    Route::group(['prefix'=>'about_us'],function (){
+        Route::get('/','PagesController@aboutUs');
+        Route::get('/about_us1','PagesController@aboutUs1');
+        Route::get('/about_us2','PagesController@aboutUs2');
+        Route::get('/about_us3','PagesController@aboutUs3');
+        Route::get('/about_us4','PagesController@aboutUs4');
+        Route::get('/about_us5','PagesController@aboutUs5');
+
+    });
     Route::get('/about_us', 'PagesController@aboutUs');
     Route::get('/blog_detail/{id}', 'PagesController@blogDetail');
     Route::get('/events_detail/{id}', 'PagesController@eventsDetail');

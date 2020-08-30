@@ -120,9 +120,28 @@ class PagesController extends Controller
     }
 
     //pages
+    //about us
     public function aboutUs(){
         return view('pages.about_us');
     }
+    public function aboutUs1(){
+        return view('pages.about_us1');
+    }
+    public function aboutUs2(){
+        return view('pages.about_us2');
+    }
+    public function aboutUs3(){
+        return view('pages.about_us3');
+    }
+    public function aboutUs4(){
+        return view('pages.about_us4');
+    }
+    public function aboutUs5(){
+        return view('pages.about_us5');
+    }
+
+
+    //end
     public function contact(){
         return view('pages.contact');
     }
