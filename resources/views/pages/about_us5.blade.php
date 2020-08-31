@@ -91,13 +91,13 @@
                     <div class="card">
                         <div class="card-header" id="headingOne">
                             <h5 class="mb-0">
-                                <button class=" btn1 btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <button class=" btn1 btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                     Annual Report 2018-19
                                 </button>
                             </h5>
                         </div>
 
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                             <div class="card-body">
                                 <p class="tieude6"><a href="https://give-marketplace.s3.ap-south-1.amazonaws.com/static/legal/AnnualReport_2018-2019/1._Auditor_Report.pdf">Auditor's Report</a></p>
                                 <p class="tieude6"><a href="https://give-marketplace.s3.ap-south-1.amazonaws.com/static/legal/AnnualReport_2018-2019/2.+Balancesheet.pdf">Balance Sheet</a></p>
