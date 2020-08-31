@@ -62,18 +62,12 @@ Route::group(['prefix'=>'/'],function(){
     Route::get('/Other', 'PagesController@showOther');
 });
 //Backend
-//hiển thị trang chủ admin
-Route::get('/admin', 'AdminController@showDashboard');
-// list member
-Route::get('/admin/list_member','AdminController@listMember');
+
 //web đăng nhập admin website
 Route::get('/admin/login', 'AdminController@showLogin');
-Route::get('/admin/register', 'AdminController@register');
 Route::get('/admin_logout','AdminController@logOut');
 Route::post('/admin-dashBoard', 'AdminController@login');
 // lưu thông tin đăng kí người dùng của user
-//danh sách thành viên
-Route::get('admin/list_member','AdminController@listMember');
 // edit profile by admin
 Route::get('edit_profile_member/{id}','AdminController@editProfile');
 Route::post('update_profile_member/{id}','AdminController@updateProfile');
@@ -81,7 +75,11 @@ Route::post('update_profile_member/{id}','AdminController@updateProfile');
 Route::get('delete_profile_member/{id}','AdminController@deleteProfile');
 // lưu thông tin đăng kí tài khoản của admin
 Route::post('/save_register_admin', 'AdminController@saveRegister');
-Route::group(['prefix'=>'admin'],function (){
+Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function (){
+    Route::get('/', 'AdminController@showDashboard');
+    Route::get('/list_member','AdminController@listMember');
+    Route::get('/register', 'AdminController@register');
+
     Route::group(['prefix'=>'category'],function (){
         Route::get('add_category','PostController@addCategory');
         Route::get('list_category','PostController@listCategory');
@@ -116,15 +114,10 @@ Route::group(['prefix'=>'admin'],function (){
         Route::get('/active/{id}','EventsController@activePost');
     });
     Route::group(['prefix'=>'donate'],function (){
-//        Route::get('add','DonateController@add');
         Route::get('list','DonateController@list');
         Route::get('edit/{id}','DonateController@edit');
-
-        Route::post('/save','DonateController@save');
-        Route::post('/saveCredit','DonateController@saveCredit');
         Route::post('/update/{id}','DonateController@update');
         Route::get('/delete/{id}','DonateController@delete');
-
         Route::get('/inactive/{id}','DonateController@inactive');
         Route::get('/active/{id}','DonateController@active');
     });
@@ -141,7 +134,13 @@ Route::group(['prefix'=>'admin'],function (){
         Route::get('/active/{id}','PostController@activePartners');
     });
 });
+Route::group(['prefix'=>'admin'],function (){
+    Route::group(['prefix'=>'donate'],function (){
+        Route::post('/save','DonateController@save');
+        Route::post('/saveCredit','DonateController@saveCredit');
+    });
 
+});
 //search
 Route::post('/search', 'PagesController@search');
 //send mail

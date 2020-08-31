@@ -12,6 +12,7 @@ use phpDocumentor\Reflection\Types\Array_;
 use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 use DB;
 
 class AdminController extends Controller

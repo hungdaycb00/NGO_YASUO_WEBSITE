@@ -76,7 +76,9 @@ class DonateController extends Controller
         $data->money_status = 3;
         $data->code_payment = $request->code_payment;
         $data->comment = $request->message;
-
+        if(Session::get('user_id') != null){
+            $data->member_id = Session::get('user_id');
+        }
             $data->save();
             Session::put('message', 'Add new donator success!');
         Session::put('name', $request->name);
@@ -105,6 +107,9 @@ class DonateController extends Controller
         $data->code_payment = $request->code_payment;
         Session::put('code_payment',$request->code_payment);
         $data->comment = $request->message;
+        if(Session::get('user_id') != null){
+            $data->member_id = Session::get('user_id');
+        }
         $data->save();
         Session::put('message', 'Add new donator success!');
         return Redirect::to('/onlinebank');
