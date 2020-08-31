@@ -16,6 +16,7 @@
         <div class="agileits_w3layouts_main_grid">
             <div class="agile_main_grid_left">
                 <h3>Your Details :</h3>
+                Donate Code
                 <input type="text" name="code_payment" placeholder="Code Payment" value="<?php echo date("dHis").rand(0,9) ?>">
                 <input type="text" name="name" placeholder="Name" required="">
                 <input type="email" name="email" placeholder="Email" required="">

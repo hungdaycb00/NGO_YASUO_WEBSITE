@@ -144,3 +144,6 @@ Route::group(['prefix'=>'admin'],function (){
 
 //search
 Route::post('/search', 'PagesController@search');
+//send mail
+Route::get('send-mail','MailController@sendMail');
+Route::get('test-mail','MailController@mail');

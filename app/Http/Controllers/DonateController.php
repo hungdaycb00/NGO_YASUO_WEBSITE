@@ -79,7 +79,9 @@ class DonateController extends Controller
 
             $data->save();
             Session::put('message', 'Add new donator success!');
-            return Redirect::to('/notice_transfer');
+        Session::put('name', $request->name);
+            Session::put('mail', $request->email);
+            return Redirect::to('/send-mail');
     }
     public function saveCredit(Request $request){
 
