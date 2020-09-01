@@ -10,6 +10,7 @@ use App\Slide;
 use Illuminate\Http\Request;
 use App\member;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Session;
 use DB;
@@ -72,18 +73,36 @@ class PagesController extends Controller
         return Redirect::to('login');
     }
     public function loginCheck(Request $request){
+        $this->validate($request,
+            [
+                'username'=>'min:6',
+                'password'=>'min:6',
+
+            ],[
+                'username.min'=>'The username must be at least 6 characters.',
+                'password.min'=>'The password must be at least 6 characters.',
+            ]);
         $username = $request->username;
         $password = $request->password;
-        $result = member::where('username',$username)->where('password',$password)->first();
-        if(!$result){
-            Session::put('message',' Invalid login or password. Please try again. !!!');
-            return Redirect::to('login');
+//        $result = member::where('username',$username)->where('password',$password)->first();
+//        if(!$result){
+//            Session::put('message',' Invalid login or password. Please try again. !!!');
+//            return Redirect::to('login');
+//        }
+//        else{
+//            Session::put('username', $result->lastname);
+//            Session::put('user_id', $result->member_id);
+//            return Redirect::to('home');
+//        }
+
+        if(Auth::member()->attempt(['username'=>$request->username,'password'=>$request->password])){
+            return redirect('/');
         }
         else{
-            Session::put('username', $result->lastname);
-            Session::put('user_id', $result->member_id);
-            return Redirect::to('home');
+
+            return redirect('login')->with('message','error');
         }
+
     }
     public function register(){
         return view('pages.registration_user');
@@ -92,6 +111,18 @@ class PagesController extends Controller
         return view('pages.registration_success');
     }
     public function saveRegister(Request $request){
+        $this->validate($request,
+            [
+                'username'=>'min:6',
+                'password'=>'min:6',
+                'confirm_password'=>'same:password',
+                'check'=> 'accepted'
+            ],[
+                'username.min'=>'The username must be at least 6 characters.',
+                'password.min'=>'The password must be at least 6 characters.',
+                'confirm_password.same'=>'The confirm password must be same with password!!',
+                'check.accepted'=>'You need agree to the Terms of Service and Privacy Policy'
+            ]);
         $data = new member();
         $name = $request->username;
         $email = $request->email;

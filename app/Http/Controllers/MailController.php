@@ -18,7 +18,6 @@ class MailController extends Controller
         $data = array("name"=>"Give - AID Team,","body"=>'We have received your information!',"end"=>'Thanks you so much !!!','user'=>$to_name); //body of mail.blade.php
 
                 Mail::send('pages.Send_mail',$data,function($message) use ($to_name,$to_email){
-
                     $message->to($to_email)->subject('Donate Give - AID');//send this mail with subject
                     $message->from($to_email,$to_name);//send from this mail
                 });
@@ -26,7 +25,7 @@ class MailController extends Controller
         Session::put('name', null);
         Session::put('mail', null);
                 //--send mail
-        return redirect('notice_transfer')->with('message','');
+        return redirect('notice_transfer');
     }
     public function mail(){
         return view('pages.Send_mail');

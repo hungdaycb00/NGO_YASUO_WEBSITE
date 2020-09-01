@@ -1,25 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Tạo mới đơn hàng</title>
+
+
+
+
+@extends('layout.user_layout')
+@section('user_content')
     <!-- Bootstrap core CSS -->
-    <link href="/assetsVNpay/bootstrap.min.css" rel="stylesheet"/>
+{{--    <link href="/assetsVNpay/bootstrap.min.css" rel="stylesheet"/>--}}
     <!-- Custom styles for this template -->
     <link href="/assetsVNpay/jumbotron-narrow.css" rel="stylesheet">
     <script src="/assetsVNpay/jquery-1.11.3.min.js"></script>
-</head>
-
-<body>
+    <style>
+        .form-control {
+            display: block;
+            width: 100%;
+            height: 34px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        }
+    </style>
 
 <div class="container">
-    <div class="header clearfix">
-        <h3 class="text-muted">VNPAY</h3>
+    <div class="header clearfix text-center">
+        <p><h1 class="text-muted display-4 pt-25">VNPAY</h1></p>
     </div>
     <div class="table-responsive">
 
@@ -34,7 +47,7 @@
             </div>
 
 
-            <div class="form-group">
+            <div class="form-group mt-50">
                 <label for="order_id">Code Payment</label>
                 <input class="form-control" id="order_id" name="order_id" type="text" value="{{$c->code_payment}}"/>
             </div>
@@ -49,33 +62,6 @@
             </div>
             @endforeach
             <div class="form-group">
-                <label for="bank_code">Bank</label>
-                <select name="bank_code" id="bank_code" class="form-control">
-                    <option value="NCB"> Ngan hang NCB</option>
-                    <option value="AGRIBANK"> Ngan hang Agribank</option>
-                    <option value="SCB"> Ngan hang SCB</option>
-                    <option value="SACOMBANK">Ngan hang SacomBank</option>
-                    <option value="EXIMBANK"> Ngan hang EximBank</option>
-                    <option value="MSBANK"> Ngan hang MSBANK</option>
-                    <option value="NAMABANK"> Ngan hang NamABank</option>
-                    <option value="VNMART"> Vi dien tu VnMart</option>
-                    <option value="VIETINBANK">Ngan hang Vietinbank</option>
-                    <option value="VIETCOMBANK"> Ngan hang VCB</option>
-                    <option value="HDBANK">Ngan hang HDBank</option>
-                    <option value="DONGABANK"> Ngan hang Dong A</option>
-                    <option value="TPBANK"> Ngân hàng TPBank</option>
-                    <option value="OJB"> Ngân hàng OceanBank</option>
-                    <option value="BIDV"> Ngân hàng BIDV</option>
-                    <option value="TECHCOMBANK"> Ngân hàng Techcombank</option>
-                    <option value="VPBANK"> Ngan hang VPBank</option>
-                    <option value="MBBANK"> Ngan hang MBBank</option>
-                    <option value="ACB"> Ngan hang ACB</option>
-                    <option value="OCB"> Ngan hang OCB</option>
-                    <option value="IVB"> Ngan hang IVB</option>
-                    <option value="VISA"> Thanh toan qua VISA/MASTER</option>
-                </select>
-            </div>
-            <div class="form-group">
                 <label for="language">Language</label>
                 <select name="language" id="language" class="form-control">
                     <option value="vn">Tiếng Việt</option>
@@ -83,7 +69,7 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-default">Payment</button>
+            <button type="submit" class="btn btn-lg btn-success mt-30 ">Payment</button>
         </form>
     </div>
     <footer class="footer">
@@ -118,6 +104,5 @@
     });
 </script>
 
+@endsection
 
-</body>
-</html>

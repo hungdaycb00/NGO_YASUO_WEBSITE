@@ -25,6 +25,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="w3layouts-main">
         <h2>Sign In </h2>
 {{--        show message--}}
+        @if(count($errors)>0)
+            <div class="alert alert-danger text-center">
+                @foreach($errors->all() as $err)
+                    {{$err}} <br>
+                @endforeach
+            </div>
+        @endif
         <?php
         $message = Session::get('message');
         if($message){
@@ -36,7 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             {{csrf_field()}}
             <input type="text" class="ggg" name="username" placeholder="Enter your account" required="">
             <input type="password" class="ggg" name="password" placeholder="Enter your password" required="">
-            <span><input type="checkbox" />Remember Me</span>
+            <span><input type="checkbox" name="remember"/>Remember Me</span>
             <h6><a href="#">Forgot Password?</a></h6>
             <div class="clearfix"></div>
             <input type="submit" value="Sign In" name="login">

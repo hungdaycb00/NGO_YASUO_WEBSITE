@@ -23,6 +23,7 @@ class CreateMembersTable extends Migration
             $table->string('firstname');
             $table->string('lastname');
             $table->string('address');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

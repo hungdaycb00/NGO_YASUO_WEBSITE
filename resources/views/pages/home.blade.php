@@ -1,11 +1,11 @@
 @extends('layout.user_layout')
 @section('user_content')
-    <style>
-        .btn:not(:disabled):not(.disabled) {
-            cursor: pointer;
-            padding: 20px 20px;
-        }
-    </style>
+{{--    <style>--}}
+{{--        .btn:not(:disabled):not(.disabled) {--}}
+{{--            cursor: pointer;--}}
+{{--            padding: 20px 20px;--}}
+{{--        }--}}
+{{--    </style>--}}
     <link rel="stylesheet" href="{{URL::asset('frontend/css/style_home.css')}}">
 
     <!-- slider Area Start-->

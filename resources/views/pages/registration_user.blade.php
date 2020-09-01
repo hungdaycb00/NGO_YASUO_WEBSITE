@@ -24,6 +24,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="reg-w3">
 <div class="w3layouts-main">
 	<h2>Register Now</h2>
+    @if(count($errors)>0)
+        <div class="alert alert-danger text-center">
+            @foreach($errors->all() as $err)
+                {{$err}} <br>
+            @endforeach
+        </div>
+    @endif
     <?php
     $message = Session::get('message');
     if($message){
@@ -40,7 +47,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <input type="text" class="ggg" name="firstname" placeholder="FIRSTNAME" required="">
             <input type="text" class="ggg" name="lastname" placeholder="LASTNAME" required="">
             <input type="text" class="ggg" name="address" placeholder="ADDRESS" required="">
-			<h4><input type="checkbox" />I agree to the Terms of Service and Privacy Policy</h4>
+			<h4><input name="check" type="checkbox" />I agree to the Terms of Service and Privacy Policy</h4>
 				<div class="clearfix"></div>
 				<input type="submit" value="Register" name="register" data-target="#exampleModal">
 		</form>

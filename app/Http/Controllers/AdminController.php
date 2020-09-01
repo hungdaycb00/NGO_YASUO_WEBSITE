@@ -17,14 +17,6 @@ use DB;
 
 class AdminController extends Controller
 {
-    //
-//    function __construct()
-//    {
-//        $event = Events::all();
-//        $member = member::all();
-//        $donate = Donate::all()->where('money_status', 4);
-//        view()->share('data1'=>$event);
-//    }
 
     public function showDashboard(){
         $event = Events::all();
