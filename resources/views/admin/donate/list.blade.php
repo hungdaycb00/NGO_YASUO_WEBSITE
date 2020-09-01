@@ -5,7 +5,7 @@
     <div class="table-agile-info">
         <div class="panel panel-default">
             <div class="panel-heading">
-                List of post
+                List of Donate
             </div>
             <div class="position-center text-center">
 
@@ -51,7 +51,7 @@
                         <td>{{$d->email}}</td>
                         <td>{{$d->address}}</td>
                         <td>{{$d->phone}}</td>
-                        <td>{{$d->amount}}</td>
+                        <td>{{number_format($d->amount,0)}}</td>
 {{--                        <td>{{$d->events->events_title}}</td>--}}
                         <td>{{$d->category->category_name}}</td>
                         <td>{{$d->statusDonator->status_name}}</td>

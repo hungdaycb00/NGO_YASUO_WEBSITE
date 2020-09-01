@@ -5,7 +5,7 @@
     <div class="table-agile-info">
         <div class="panel panel-default">
             <div class="panel-heading">
-                List of post
+                List of Events
             </div>
             <div class="position-center text-center">
 
@@ -41,7 +41,7 @@
                         <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
                         <td>{{$cate_pro->events_title}}</td>
                         <td>{{$cate_pro->categoryPost->category_name}}</td>
-                        <td>{{$cate_pro->total_donate}}</td>
+                        <td>{{number_format($cate_pro->total_donate,0)}}</td>
                         <td><img src="/upload/{{$cate_pro->events_imageName}}" alt="" height="100" width="100"></td>
                         <td><?php
                             if($cate_pro->post_status == 0){

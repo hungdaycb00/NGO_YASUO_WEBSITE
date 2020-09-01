@@ -41,7 +41,7 @@
                 <div class="col-md-8 market-update-left">
                     <h4>Total Donate</h4>
                     <h3><?php
-                        echo $data4;
+                        echo number_format($data4,0).'$';
                         ?></h3>
                     <p class="btn btn-default mt-10"><a href="{{URL::to('admin/donate/list')}}">View details ></a></p>
                 </div>
