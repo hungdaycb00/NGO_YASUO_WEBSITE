@@ -5,5 +5,5 @@
     <p>We will check and confirm via email</p>
     <p><i>Thanks you</i></p>
     <br>
-    <a href="{{URL::to('/')}}"><button class="btn-large">Back to Home</button></a>
+    <a href="{{URL::to('/')}}"><button class="btn-large btn-success">Back to Home</button></a>
 @endsection
