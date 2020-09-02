@@ -6,7 +6,9 @@ use App\Category_post;
 use App\Donate;
 use App\Events;
 use App\list_post;
+use App\Message;
 use App\Slide;
+use http\Cookie;
 use Illuminate\Http\Request;
 use App\member;
 use Illuminate\Routing\Controller as BaseController;
@@ -25,7 +27,7 @@ class PagesController extends Controller
         $partner= Slide::all()->where('post_status', 1);
         $post = list_post::all()->sortByDesc('created_at');
         $news = list_post::all()->where('post_highlights',1)->sortByDesc('created_at')->take(4);
-        $events = Events::all()->sortByDesc('created_at')->take(3);
+        $events = Events::all()->where('post_status',1)->sortByDesc('created_at');
         $data = DB::table('events_tbl')
             ->join('donate_details','donate_details.events_id','events_tbl.events_id')
             ->select('donate_details.events_id',DB::raw('Sum(donate_details.amount) as total_donates'))
@@ -90,18 +92,24 @@ class PagesController extends Controller
             return Redirect::to('login');
         }
         else{
+            if(!empty($request->remember))
+            {
+                setcookie('member_login',$username, time()+(10*365*24*60*60));
+                setcookie('member_password',$password, time()+(10*365*24*60*60));
+            }
+            else{
+                if(isset($_COOKIE['member_login'])){
+                    setcookie('member_login','');
+                }
+                if(isset($_COOKIE['member_password'])){
+                    setcookie('member_password','');
+                }
+            }
             Session::put('username', $result->lastname);
             Session::put('user_id', $result->member_id);
             return Redirect::to('home');
         }
 
-//        if(Auth::member()->attempt(['username'=>$request->username,'password'=>$request->password])){
-//            return redirect('/');
-//        }
-//        else{
-//
-//            return redirect('login')->with('message','error');
-//        }
 
     }
     public function register(){
@@ -195,9 +203,31 @@ class PagesController extends Controller
         return view('pages.help_center6');
     }
     //end
+    //contact
     public function contact(){
         return view('pages.contact');
     }
+    public function postContact(Request $request){
+        $data = array();
+        $data['subject'] = $request->subject;
+        $data['name'] = $request->name;
+        $data['mail'] = $request->mail;
+        $data['message'] = $request->message;
+        if($data){
+            DB::table('guest_message')->insert($data);
+            return Redirect::to('/contact')->with('message','We will read and reply to you later!!');
+        }
+    }
+    public function listMessage(){
+        $data = Message::all();
+        return view('admin.member.list_message',['mess'=>$data]);
+    }
+
+    public function deleteMessage($id){
+        $data = Message::where('id',$id)->delete();
+        return redirect('admin/message/list');
+    }
+    //end
     public function showOurPartners(){
         return view('pages.our_partners');
     }

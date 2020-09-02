@@ -85,6 +85,19 @@ class AdminController extends Controller
            return Redirect::to('admin/login');
        }
        else{
+           if(!empty($request->remember))
+           {
+               setcookie('admin_email',$admin_email, time()+(10*365*24*60*60));
+               setcookie('admin_password',$admin_email, time()+(10*365*24*60*60));
+           }
+           else{
+               if(isset($_COOKIE['admin_email'])){
+                   setcookie('admin_email','');
+               }
+               if(isset($_COOKIE['admin_password'])){
+                   setcookie('admin_password','');
+               }
+           }
            Session::put('admin_name', $result->lastname);
            Session::put('admin_id', $result->admin_id);
            return Redirect::to('admin');

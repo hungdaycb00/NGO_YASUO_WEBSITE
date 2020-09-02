@@ -160,6 +160,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
                     <li class="sub-menu">
                         <a href="javascript:;">
+                            <i class="fa fa-envelope"></i>
+                            <span>Message</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="{{URL::to('admin/message/list')}}">List Message</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
                             <i class="fa fa-user"></i>
                             <span>Login</span>
                         </a>

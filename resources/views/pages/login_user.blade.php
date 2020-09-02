@@ -41,9 +41,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         ?>
         <form action="{{URL::to('login_check')}}" method="post">
             {{csrf_field()}}
-            <input type="text" class="ggg" name="username" placeholder="Enter your account" required="">
-            <input type="password" class="ggg" name="password" placeholder="Enter your password" required="">
-            <span><input type="checkbox" name="remember"/>Remember Me</span>
+            <input type="text" class="ggg" name="username" placeholder="Enter your account" value="<?php if(isset($_COOKIE['member_login'])){ echo $_COOKIE['member_login'];};  ?>" required="">
+            <input type="password" class="ggg" name="password" placeholder="Enter your password" value="<?php if(isset($_COOKIE['member_password'])){ echo $_COOKIE['member_password'];};  ?>" required="">
+            <span><input type="checkbox" name="remember" />Remember Me</span>
             <h6><a href="#">Forgot Password?</a></h6>
             <div class="clearfix"></div>
             <input type="submit" value="Sign In" name="login">

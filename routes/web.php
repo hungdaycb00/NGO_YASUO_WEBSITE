@@ -25,12 +25,14 @@ Route::group(['prefix'=>'/'],function(){
     // update profile by user
     Route::get('edit_profile/{id}','PagesController@editProfile');
     Route::post('update_profile/{id}','PagesController@updateProfile');
+    //contact
+    Route::post('/save_message','PagesController@postContact');
+    Route::get('/contact', 'PagesController@contact');
 
     //pages
     Route::get('/help_center','HelpCenterController@showHelpCenter');
     Route::get('/Children','PagesController@showChildren');
     Route::get('/our_partners','PagesController@showOurPartners');
-    Route::get('/contact', 'PagesController@contact');
 
     Route::get('/notice_transfer','DonateController@transferSuccess');
     //vn pay
@@ -141,6 +143,11 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function (){
 
         Route::get('/inactive/{id}','PostController@inactivePartners');
         Route::get('/active/{id}','PostController@activePartners');
+    });
+    Route::group(['prefix'=>'message'],function (){
+        Route::get('list','PagesController@listMessage');
+        Route::get('/delete/{id}','PagesController@deleteMessage');
+
     });
 });
 Route::group(['prefix'=>'admin'],function (){
