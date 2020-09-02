@@ -84,24 +84,24 @@ class PagesController extends Controller
             ]);
         $username = $request->username;
         $password = $request->password;
-//        $result = member::where('username',$username)->where('password',$password)->first();
-//        if(!$result){
-//            Session::put('message',' Invalid login or password. Please try again. !!!');
-//            return Redirect::to('login');
-//        }
-//        else{
-//            Session::put('username', $result->lastname);
-//            Session::put('user_id', $result->member_id);
-//            return Redirect::to('home');
-//        }
-
-        if(Auth::member()->attempt(['username'=>$request->username,'password'=>$request->password])){
-            return redirect('/');
+        $result = member::where('username',$username)->where('password',$password)->first();
+        if(!$result){
+            Session::put('message',' Invalid login or password. Please try again. !!!');
+            return Redirect::to('login');
         }
         else{
-
-            return redirect('login')->with('message','error');
+            Session::put('username', $result->lastname);
+            Session::put('user_id', $result->member_id);
+            return Redirect::to('home');
         }
+
+//        if(Auth::member()->attempt(['username'=>$request->username,'password'=>$request->password])){
+//            return redirect('/');
+//        }
+//        else{
+//
+//            return redirect('login')->with('message','error');
+//        }
 
     }
     public function register(){
@@ -171,7 +171,29 @@ class PagesController extends Controller
         return view('pages.about_us5');
     }
 
-
+    //end
+    //help center
+    public function helpCenter(){
+        return view('pages.help_center');
+    }
+    public function helpCenter1(){
+        return view('pages.help_center1');
+    }
+    public function helpCenter2(){
+        return view('pages.help_center2');
+    }
+    public function helpCenter3(){
+        return view('pages.help_center3');
+    }
+    public function helpCenter4(){
+        return view('pages.help_center4');
+    }
+    public function helpCenter5(){
+        return view('pages.help_center5');
+    }
+    public function helpCenter6(){
+        return view('pages.help_center6');
+    }
     //end
     public function contact(){
         return view('pages.contact');

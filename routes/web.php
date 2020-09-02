@@ -53,7 +53,16 @@ Route::group(['prefix'=>'/'],function(){
         Route::get('/about_us5','PagesController@aboutUs5');
 
     });
-    Route::get('/about_us', 'PagesController@aboutUs');
+    Route::group(['prefix'=>'help_center'],function (){
+        Route::get('/','PagesController@helpCenter');
+        Route::get('/1','PagesController@helpCenter1');
+        Route::get('/2','PagesController@helpCenter2');
+        Route::get('/3','PagesController@helpCenter3');
+        Route::get('/4','PagesController@helpCenter4');
+        Route::get('/5','PagesController@helpCenter5');
+        Route::get('/6','PagesController@helpCenter6');
+
+    });
     Route::get('/blog_detail/{id}', 'PagesController@blogDetail');
     Route::get('/events_detail/{id}', 'PagesController@eventsDetail');
     Route::get('/news', 'PagesController@news');
