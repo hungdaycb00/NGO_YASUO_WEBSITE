@@ -23,7 +23,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <div class="log-w3">
     <div class="w3layouts-main">
-        <h2>Sign In </h2>
 {{--        show message--}}
         @if(count($errors)>0)
             <div class="alert alert-danger text-center">
@@ -39,14 +38,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             $message = Session::put('message',null);
         }
         ?>
-        <form action="{{URL::to('login_check')}}" method="post">
+        <form action="{{URL::to('send-pass/')}}" method="post">
             {{csrf_field()}}
-            <input type="text" class="ggg" name="username" placeholder="Enter your account" value="<?php if(isset($_COOKIE['member_login'])){ echo $_COOKIE['member_login'];};  ?>" required="">
-            <input type="password" class="ggg" name="password" placeholder="Enter your password" value="<?php if(isset($_COOKIE['member_password'])){ echo $_COOKIE['member_password'];};  ?>" required="">
-            <span><input type="checkbox" name="remember" />Remember Me</span>
-            <h6><a href="{{URL::to('forgot-pass')}}">Forgot Password?</a></h6>
+            <input type="email" class="ggg" name="email" placeholder="Enter your email" required="">
             <div class="clearfix"></div>
-            <input type="submit" value="Sign In" name="login">
+            <input type="submit" value="Submit" name="submit">
 
         </form>
         <p>Don't Have an Account ?<a href="{{URL::to('register')}}">Create an account</a></p>

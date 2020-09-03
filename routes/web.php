@@ -162,3 +162,5 @@ Route::post('/search', 'PagesController@search');
 //send mail
 Route::get('send-mail','MailController@sendMail');
 Route::get('test-mail','MailController@mail');
+Route::post('send-pass','MailController@sendPass');
+Route::get('forgot-pass','MailController@forgotPass');
