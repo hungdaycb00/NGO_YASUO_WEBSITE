@@ -161,6 +161,7 @@ Route::group(['prefix'=>'admin'],function (){
 Route::post('/search', 'PagesController@search');
 //send mail
 Route::get('send-mail','MailController@sendMail');
+Route::post('invite_friend','MailController@sendMailFriend');
 Route::get('test-mail','MailController@mail');
 Route::post('send-pass','MailController@sendPass');
 Route::get('forgot-pass','MailController@forgotPass');

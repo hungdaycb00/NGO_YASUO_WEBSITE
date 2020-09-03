@@ -26,7 +26,45 @@
                            {!!$p->events_content!!}
                             </p>
                         </div>
+                            <div class="mb-15 "><button class="btn mr-10 color-blue"><a href="{{URL::to('donate/'.$p->events_id)}}">Donate</a></button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    Invite Friend
+                                </button>
+                                <!-- Modal -->
+                            </div>
+
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="{{URL::to('invite_friend')}}" method="post">
+                                                {{csrf_field()}}
+                                                <div class="form-group">
+                                                    <input type="hidden" name="id" value="{{$p->events_id}}">
+                                                    <input name="message" type="text" class="form-control" onfocus="this.placeholder = ''"
+                                                           onblur="this.placeholder = 'Enter messages...'" placeholder='Enter messages...' required><br>
+                                                    <input name="mail" type="email" class="form-control" onfocus="this.placeholder = ''"
+                                                           onblur="this.placeholder = 'Enter friend email'" placeholder='Enter friend email' required>
+                                                </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Send</button>
+                                        </div>
+                                        </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         @endforeach
+
                     </div>
                     <div class="navigation-top">
                         <div class="d-sm-flex justify-content-between text-center">

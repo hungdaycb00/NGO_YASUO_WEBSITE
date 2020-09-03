@@ -112,6 +112,7 @@ class PagesController extends Controller
 
 
     }
+
     public function register(){
         return view('pages.registration_user');
     }
