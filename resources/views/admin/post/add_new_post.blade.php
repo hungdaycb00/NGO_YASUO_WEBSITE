@@ -74,10 +74,9 @@
                     <div class="form-group">
                     <label for="">Category</label>
                     <select class="form-control input-m m-bot15" name="category_type">
-                        <option value="1">Education</option>
-                        <option value="2">Health Care</option>
-                        <option value="3">Privileged Children</option>
-                        <option value="4">Other</option>
+                        @foreach($category as $cate)
+                        <option value={{$cate->category_id}}>{{$cate->category_name}}</option>
+                        @endforeach
                     </select>
                     </div>
                     <div class="form-group">

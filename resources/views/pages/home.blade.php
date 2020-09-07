@@ -72,67 +72,6 @@
     <!-- Slider end-->
     <!-- Set up your HTML -->
     <!-- slider New End -->
-    <!--? Services Area Start -->
-    <div class="our-cases-area ">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-6 col-lg-7 col-md-10 col-sm-10">
-                    <!-- Section Tittle -->
-                    <div class="section-tittle text-center mb-80">
-                        <span>our activities</span>
-                        <h2>organizing charity programs to support the poor</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-cases mb-40">
-                        <div class="cases-img">
-                            <img src="frontend/img/post/post_11.jpg" alt="">
-                        </div>
-                        <div class="cases-caption1">
-                            <h5><a href="services.html">Physical Examination</a></h5>
-
-                            <p>We organize a health check-up and free medicine for the poor.</p>
-                            <!-- Progress Bar -->
-
-                            <!-- / progress -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-cases mb-40">
-                        <div class="cases-img">
-                            <img src="frontend/img/post/post_12.jpg" alt="">
-                        </div>
-                        <div class="cases-caption1">
-                            <h5><a href="services.html">Fundraising Activities</a></h5>
-                            <p>Organizing music nights to raise funds for the poor</p>
-                            <!-- Progress Bar -->
-
-                            <!-- / progress -->
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-cases mb-40">
-                        <div class="cases-img">
-                            <img src="frontend/img/post/post_13.jpg" alt="">
-                        </div>
-                        <div class="cases-caption1">
-                            <h5><a href="services.html">Food Support</a></h5>
-                            <p>Organize food and necessities distribution for people in need..</p>
-                            <!-- Progress Bar -->
-
-                            <!-- / progress -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Services Area End -->
     <!--? About Law Start-->
     <section class="about-low-area section-padding2">
         <div
@@ -150,7 +89,7 @@
                             different organizations (NGO).</p>
                         <p>We were founded and helped by many large individuals and companies.</p>
                     </div>
-                    <a href="about.html" class="btn">About US</a>
+                    <a href="about_us" class="btn">About US</a>
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <!-- about-img -->
@@ -239,88 +178,17 @@
         </div>
     </div>
     <!-- Our Cases End -->
-    <!-- Featured_job_start -->
-    <section class="featured-job-area  section-bg2"
-             data-background="frontend/img/gallery/section_bg03.png">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-7 col-lg-9 col-md-10 col-sm-12">
-                    <!-- Section Tittle -->
-                    <div class="section-tittle text-center mb-80">
-                        <span>our actions</span>
-                        <h2>always organize volunteer activities to join hands to support everywhere</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-9 col-md-12">
-                    <!-- single-job-content -->
-                    <div class="single-job-items mb-30">
-                        <div class="job-items">
-                            <div class="company-img">
-                                <a href="#"><img src="frontend/img/gallery/socialEvents5.png" alt=""></a>
-                            </div>
-                            <div class="job-tittle">
-                                <a href="#"><h4>Support The Epidemic Season</h4></a>
-                                <ul>
-                                    <li><i class="far fa-clock"></i>8:30 - 9:30am</li>
-                                    <li><i class="fas fa-sort-amount-down"></i>18.04.2020</li>
-                                    <li><i class="fas fa-map-marker-alt"></i>Hai Phong</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-9 col-md-12">
-                    <!-- single-job-content -->
-                    <div class="single-job-items mb-30">
-                        <div class="job-items">
-                            <div class="company-img">
-                                <a href="#"><img src="frontend/img/gallery/socialEvents6.png" alt=""></a>
-                            </div>
-                            <div class="job-tittle">
-                                <a href="#"><h4>Repel The Flood</h4></a>
-                                <ul>
-                                    <li><i class="far fa-clock"></i>8:30 - 9:30am</li>
-                                    <li><i class="fas fa-sort-amount-down"></i>28.6.2020</li>
-                                    <li><i class="fas fa-map-marker-alt"></i>Cao Bang</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-9 col-md-12">
-                    <!-- single-job-content -->
-                    <div class="single-job-items mb-30">
-                        <div class="job-items">
-                            <div class="company-img">
-                                <a href="#"><img src="frontend/img/gallery/socialEvents7.png" alt=""></a>
-                            </div>
-                            <div class="job-tittle">
-                                <a href="#"><h4>Join Hands To Help Upland Children</h4></a>
-                                <ul>
-                                    <li><i class="far fa-clock"></i>8:30 - 9:30am</li>
-                                    <li><i class="fas fa-sort-amount-down"></i>25.01.2020</li>
-                                    <li><i class="fas fa-map-marker-alt"></i>Tuyen Quang</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Featured_job_end -->
+
 
     <!-- Count Down End -->
 <!-- su kien da ket thuc-->
-<div class="our-cases-area1 section-padding30">
+<div class="our-cases-area1">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-7 col-lg-9 col-md-10 col-sm-12">
                 <div class="section-tittle text-center mb-80">
                     <span>what I have done</span>
-                    <h2>the events we have completed</h2>
+                    <h2>the events we have</h2>
                 </div>
             </div>
 
@@ -337,17 +205,24 @@
                 </thead>
                 <tbody>
                 <?php $i = 0; ?>
-                @foreach($events as $e)
+                @foreach($events_end as $e)
                 <tr>
                     <td>{{$i}}</td>
                     <td>{{$e->events_title}}</td>
+                    <?php $count = 0; ?>
                     @foreach($donate as $d)
                         @if($e->events_id == $d->events_id)
+                            <?php $count++; ?>
                     <td>{{$d->total_donates}}</td>
                         @endif
                     @endforeach
+                    @if($count == 0)
+                        <td>0</td>
+                    @endif
+                    <?php $count = 0; ?>
+
                     <td>{{$e->total_donate}}</td>
-                    <td>11/11/2020</td>
+                    <td>{{$e->end_time}}</td>
                     <th class="readmore"><a href="{{URL::to('events_detail/'.$e->events_id)}}">Read More></a></th>
                 </tr>
                     <?php $i++; ?>

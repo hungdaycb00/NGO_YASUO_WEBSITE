@@ -25,11 +25,13 @@ class PagesController extends Controller
     {
         $category =  Category_post::all();
         $partner= Slide::all()->where('post_status', 1);
+        $activite = list_post::all()->where('category_id',5);
         $post = list_post::all()->sortByDesc('created_at');
         $news = list_post::all()->where('post_highlights',1)->sortByDesc('created_at')->take(4);
         $events = Events::all()->where('post_status',1)->sortByDesc('created_at');
-        $data = DB::table('events_tbl')
-            ->join('donate_details','donate_details.events_id','events_tbl.events_id')
+        $events_end = Events::all()->where('post_status',0)->sortByDesc('created_at');
+        $data = DB::table('list_events')
+            ->join('donate_details','donate_details.events_id','list_events.events_id')
             ->select('donate_details.events_id',DB::raw('Sum(donate_details.amount) as total_donates'))
             ->groupBy('donate_details.events_id')
             ->where('donate_details.money_status',4)
@@ -39,9 +41,12 @@ class PagesController extends Controller
         view()->share('cate',$category);
         view()->share('post',$post);
         view()->share('events',$events);
+        view()->share('events_end',$events_end);
+        view()->share('events_end',$events_end);
         view()->share('news',$news);
         view()->share('donate',$data);
         view()->share('partners',$partner);
+        view()->share('activite',$activite);
     }
 
     public function home(){

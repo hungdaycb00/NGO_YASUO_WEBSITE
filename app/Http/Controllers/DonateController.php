@@ -33,14 +33,16 @@ class DonateController extends Controller
         return view('pages.donate');
     }
     public function transfer(){
-        return view('pages.transfer');
+        $data = Category_post::all();
+        return view('pages.transfer',['category'=>$data]);
     }
     public function transferEvents($id){
         $data = Events::where('events_id',$id)->get();
         return view('pages.transfer',['events'=>$data]);
     }
     public function creditCard(){
-        return view('pages.donate_credit_card');
+        $data = Category_post::all();
+        return view('pages.donate_credit_card',['category'=>$data]);
     }
     public function creditCardEvents($id){
         $data = Events::where('events_id',$id)->get();
@@ -49,7 +51,7 @@ class DonateController extends Controller
 
     //post
     public function add(){
-        return view('admin.donate.transfer');
+        return view('admin.donate');
     }
     public function list(){
         $dataListPost = Donate::all();

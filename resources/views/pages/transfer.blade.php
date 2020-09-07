@@ -45,10 +45,9 @@
                                         <h4>Because</h4>
                                     <select id="w3_agileits_select1" name ="category_type" class="w3layouts_select" onchange="change_country(this.value)">
                                         <option value="" selected=""> --Any donation cause--</option>
-                                        <option value="3"> Privileged Children</option>
-                                        <option value="1"> Education</option>
-                                        <option value="2"> Health Care</option>
-                                        <option value="4"> Others</option>
+                                            @foreach($category as $cate)
+                                                <option value={{$cate->category_id}}>{{$cate->category_name}}</option>
+                                            @endforeach
                                     </select>
                                     @endif
                                     <h4>Do you want to be public or private?</h4>

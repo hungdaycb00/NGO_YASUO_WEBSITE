@@ -36,9 +36,8 @@
                                 <h4>Important Link</h4>
                                 <ul>
                                     <li><a href="#"> View Project</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="contact">Contact Us</a></li>
                                     <li><a href="#">Testimonial</a></li>
-                                    <li><a href="#">Proparties</a></li>
                                     <li><a href="#">Support</a></li>
                                 </ul>
                             </div>

@@ -144,7 +144,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <span>Donate </span>
                         </a>
                         <ul class="sub">
-                            <li><a href="{{URL::to('donate/transfer')}}">Add Donate</a></li>
+                            <li><a href="{{URL::to('donate')}}">Add Donate</a></li>
                             <li><a href="{{URL::to('admin/donate/list')}}">List Donate</a></li>
                         </ul>
                     </li>

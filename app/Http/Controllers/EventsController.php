@@ -39,6 +39,7 @@ class EventsController extends Controller
         $data['total_donate']= $request->total_donate;
         $data['category_id']= $request->category_type;
         $data['post_status']= $request->post_status;
+        $data['end_time']= $request->date;
         $get_image = $request->file('post_image');
         if($get_image){
             $get_name_image = $get_image->getClientOriginalName();
@@ -46,12 +47,12 @@ class EventsController extends Controller
             $new_image = $name_image.time().'.'.$get_image->getClientOriginalExtension();
             $get_image->move('upload/',$new_image);
             $data['events_imageName'] = $new_image;
-            DB::table('events_tbl')->insert($data);
+            DB::table('list_events')->insert($data);
             Session::put('message', 'Add new events success!');
             return Redirect::to('admin/events/add_post');
         }
         else{
-            DB::table('events_tbl')->insert($data);
+            DB::table('list_events')->insert($data);
             Session::put('message', 'Add new post success!');
             return Redirect::to('admin/events/add_post');
         }
@@ -88,6 +89,7 @@ class EventsController extends Controller
         $data['events_content'] = $request->add_content;
         $data['total_donate']= $request->total_donate;
         $data['category_id']= $request->category_type;
+        $data['end_time']= $request->date;
         $get_image = $request->file('post_image');
         if($get_image) {
             $get_name_image = $get_image->getClientOriginalName();

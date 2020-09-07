@@ -77,8 +77,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="">Total Donate(donate amount target)</label>
+                        <label for="">Total Donate(donate amount target $)</label>
                         <input type="number" class="form-control" id="exampleInputEmail1" name="total_donate" placeholder="Enter goal of total donate">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Time to end</label>
+                        <input type="date" class="form-control" id="exampleInputEmail1" name="date" placeholder="Time to end this events.">
                     </div>
                     <div class="form-group" name="imageName">
                         <label for="exampleInputFile">Image input</label>

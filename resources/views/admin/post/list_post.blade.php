@@ -16,27 +16,6 @@
                 }
                 ?>
             </div>
-{{--            <div class="row w3-res-tb">--}}
-{{--                <div class="col-sm-5 m-b-xs">--}}
-{{--                    <select class="input-sm form-control w-sm inline v-middle">--}}
-{{--                        <option value="0">Bulk action</option>--}}
-{{--                        <option value="1">Delete selected</option>--}}
-{{--                        <option value="2">Bulk edit</option>--}}
-{{--                        <option value="3">Export</option>--}}
-{{--                    </select>--}}
-{{--                    <button class="btn btn-sm btn-default">Apply</button>--}}
-{{--                </div>--}}
-{{--                <div class="col-sm-4">--}}
-{{--                </div>--}}
-{{--                <div class="col-sm-3">--}}
-{{--                    <div class="input-group">--}}
-{{--                        <input type="text" class="input-sm form-control" placeholder="Search">--}}
-{{--                        <span class="input-group-btn">--}}
-{{--            <button class="btn btn-sm btn-default" type="button">Go!</button>--}}
-{{--          </span>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
             <div class="table-responsive">
                 <table class="table table-striped b-t b-light">
                     <thead>
@@ -67,12 +46,12 @@
                             if($cate_pro->post_status == 0){
                                 ?>
 
-                                <a href="{{URL::to('admin/post/inactive/'.$cate_pro->post_id)}}"><span class='fa thumbs-up-style fa-thumbs-down'></span></a>
+                                <a href="{{URL::to('admin/post/inactive/'.$cate_pro->post_id)}}"><span class='fa thumbs-up-style fa-thumbs-down'><br>Done</span></a>
                            <?php
                             }
                             else{
                             ?>
-                                <a href="{{URL::to('admin/post/active/'.$cate_pro->post_id)}}"><span class='fa thumbs-down-style fa-thumbs-up'></span></a>
+                                <a href="{{URL::to('admin/post/active/'.$cate_pro->post_id)}}"><span class='fa thumbs-down-style fa-thumbs-up'><br>Active</span></a>
                             <?php
                             }
                         ?>

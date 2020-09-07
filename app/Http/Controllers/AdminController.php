@@ -28,8 +28,8 @@ class AdminController extends Controller
         $donate4 = Donate::all()->where('money_status', 4)->where('category_id', 4)->sum('amount');
         $total_money = Donate::all()->where('money_status', 4)->sum('amount');
         $events = Events::all()->take(1);
-        $data = DB::table('events_tbl')
-            ->join('donate_details','donate_details.events_id','events_tbl.events_id')
+        $data = DB::table('list_events')
+            ->join('donate_details','donate_details.events_id','list_events.events_id')
             ->select('donate_details.events_id',DB::raw('Sum(donate_details.amount) as total_donates'))
             ->groupBy('donate_details.events_id')
             ->where('donate_details.money_status',4)

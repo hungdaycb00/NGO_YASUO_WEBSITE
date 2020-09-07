@@ -79,6 +79,10 @@
                         <label for="">Total Donate(donate amount target)</label>
                         <input type="number" class="form-control" id="exampleInputEmail1" name="total_donate" value="{{$edit_value->total_donate}}" placeholder="Enter goal of total donate">
                     </div>
+                    <div class="form-group">
+                        <label for="">End time</label>
+                        <input type="date" class="form-control" id="exampleInputEmail1" name="date" value="{{$edit_value->end_time}}" placeholder="Time to end this events.">
+                    </div>
                     <div class="form-group" name="imageName">
                         <label for="exampleInputFile"><img src="/upload/{{$edit_value->events_imageName}}" alt="" height="150" width="150" style="margin-bottom: 10px;"></label>
                         <input type="file" name="post_image" id="exampleInputFile">

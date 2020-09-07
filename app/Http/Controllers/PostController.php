@@ -14,7 +14,8 @@ class PostController extends Controller
 {
     //post
     public function addPost(){
-        return view('admin.post.add_new_post');
+        $data = Category_post::all();
+        return view('admin.post.add_new_post',['category'=>$data]);
     }
     public function listPost(){
         $dataListPost = list_post::all();

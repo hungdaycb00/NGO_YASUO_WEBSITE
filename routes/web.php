@@ -125,6 +125,7 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function (){
         Route::get('/active/{id}','EventsController@activePost');
     });
     Route::group(['prefix'=>'donate'],function (){
+        Route::post('save_new_donate','DonateController@save');
         Route::get('list','DonateController@list');
         Route::get('edit/{id}','DonateController@edit');
         Route::post('/update/{id}','DonateController@update');

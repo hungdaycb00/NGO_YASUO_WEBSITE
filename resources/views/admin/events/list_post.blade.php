@@ -31,6 +31,7 @@
                         <th>Total Donate (Dollars)</th>
                         <th>Image Name</th>
                         <th>Post Status</th>
+                        <th>End Time</th>
                         <th>Upload Date</th>
                         <th style="width:30px;"></th>
                     </tr>
@@ -57,6 +58,7 @@
                             }
                         ?>
                         </td>
+                        <td>{{$cate_pro->end_time}}</td>
                         <td>{{$cate_pro->updated_at}}</td>
                         <td>
                             <a href="{{URL::to('admin/events/edit_post/'.$cate_pro->events_id)}}" class="active styling-edit" ui-toggle-class="">
