@@ -63,3 +63,176 @@ h5 a:hover {
     color: #09cc7f;
 }
 
+.owl-carousel .owl-nav button.owl-prev {
+    background: 0 0;
+    color: inherit;
+    border: none;
+    padding: 0 !important;
+    font: inherit;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    background: #00000000;
+}
+.owl-carousel .owl-nav button.owl-next {
+    background: 0 0;
+    color: inherit;
+    border: none;
+    padding: 0 !important;
+    font: inherit;
+    position: absolute;
+    top: 10%;
+    right: 0;
+    background: #00000000;
+
+}
+.owl-carousel .owl-nav button.owl-next span{
+    font-size: 100px;
+    color: #ffffffb8;
+}
+.owl-carousel .owl-nav button.owl-prev span{
+    font-size: 100px;
+    color:#ffffffb8;
+}
+.container .item .cases-caption2 {
+    padding: 24px 20px 10px 20px;
+    background: #fff;
+}
+.container .item .cases-caption2 h5{
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+}
+.container .row .cases-caption1 {
+    padding: 24px 20px 10px 20px;
+    background: #fff;
+}
+.container .row .cases-caption1 h5{
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    display: block;
+}
+.our-cases-area .single-cases .cases-caption1 h5 a {
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    display: block;
+}
+h5 a:hover {
+    color: #09cc7f;
+}
+
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.8em;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+    background-color: #09cc7f;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #09cc7f;;
+}
+
+
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+.our-cases-area1{
+    background: #f9f9ff;
+}
+.pagination {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+.pagination ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: 0 0;
+}
+.pagination li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.pagination {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+.pagination ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: 0 0;
+}
+.pagination li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+.pagination li a {
+    border: 1px solid #c9c9c9;
+    color: #242424;
+    text-decoration: none;
+    display: inline-block;
+    transition: all .8s ease 0s;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 10px 0 0;
+    padding: 0;
+    text-align: center;
+    width: 40px;
+    margin-top: 10px;
+}
+.pagination li a:hover {
+    background-color: #09cc7f;
+    color: white;
+}
+.pagination li a.active {
+    background-color: #09cc7f;
+    color: white;
+}
+th.readmore a{
+    color: #072366;
+}
+th.readmore a:hover{
+    color: #09cc7f;
+}
+

@@ -75,6 +75,7 @@
                         <option value="4">Other</option>
                     </select>
                     </div>
+
                     <div class="form-group">
                         <label for="">Total Donate(donate amount target)</label>
                         <input type="number" class="form-control" id="exampleInputEmail1" name="total_donate" placeholder="Enter goal of total donate">

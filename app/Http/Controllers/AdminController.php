@@ -34,6 +34,7 @@ class AdminController extends Controller
             ->groupBy('donate_details.events_id')
             ->where('donate_details.money_status',4)
             ->get();
+
         view()->share('data1',$event);
         view()->share('data2',$member);
         view()->share('data3',$donate);
@@ -47,7 +48,9 @@ class AdminController extends Controller
         return view('admin.index');
     }
     public function showLogin(){
-        return view('admin.login');
+        $data = array();
+        $data['color'] = ['red','blue','yellow'];
+        return view('admin.login',['color'=>$data]);
     }
     public function register(){
         return view('admin.admin_account.registration_admin');

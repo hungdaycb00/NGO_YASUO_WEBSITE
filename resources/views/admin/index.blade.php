@@ -48,6 +48,7 @@
                 <div class="clearfix"> </div>
             </div>
         </div>
+
         <div class="clearfix"> </div>
     </div>
 
@@ -75,37 +76,88 @@
                             stacked: true
                         });
                     </script>
-
                 </div>
-
             </div>
         </div>
-{{--        <div class="col-md-6 floatcharts_w3layouts_left">--}}
-{{--            <div class="floatcharts_w3layouts_top">--}}
-{{--                <h1>Events Details</h1>--}}
-{{--                <div class="floatcharts_w3layouts_bottom">--}}
-{{--                    <div id="graph8"></div>--}}
-{{--                    <script>--}}
-{{--                        /* data stolen from http://howmanyleft.co.uk/vehicle/jaguar_'e'_type */--}}
-{{--                        var day_data = [--}}
-{{--                            {"title": "hfdghfgh", "Total": 9407, "current": 660},--}}
-{{--                            {"title": "2012-09-30", "Total": 3351, "current": 629},--}}
-{{--                            {"title": "2012-09-29", "Total": 3269, "current": 618},--}}
-{{--                        ];--}}
-{{--                        Morris.Bar({--}}
-{{--                            element: 'graph8',--}}
-{{--                            data: day_data,--}}
-{{--                            xkey: 'title',--}}
-{{--                            ykeys: ['Total', 'current'],--}}
-{{--                            labels: ['Total', 'Current'],--}}
-{{--                            xLabelAngle: 60--}}
-{{--                        });--}}
-{{--                    </script>--}}
+        <div class="clearfix"></div>
+    </div>
+    <div class="agileits-w3layouts-stats">
+        <div class="col-md-12 stats-info widget">
+            <div class="stats-info-agileits">
+                <div class="stats-title">
+                    <h4 class="title">Events Stats</h4>
+                </div>
+                <div class="stats-body">
+                    <ul class="list-unstyled">
+                        @foreach($data1 as $e)
 
-{{--                </div>--}}
+                            @foreach($data6 as $d)
+                                @if($d->events_id == $e->events_id)
+                        <li>{{$e->events_title}} <span class="pull-right">{{number_format($d->total_donates/$e->total_donate*100,2)}}%</span>
+                            <div class="progress progress-striped active progress-right">
+                                <div class="bar red" style="width:{{number_format($d->total_donates/$e->total_donate*100,2)}}%;"></div>
+                            </div>
+                        </li>
+                                @endif
+                            @endforeach
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+{{--        <div class="col-md-8 stats-info stats-last widget-shadow">--}}
+{{--            <div class="stats-last-agile">--}}
+{{--                <table class="table stats-table ">--}}
+{{--                    <thead>--}}
+{{--                    <tr>--}}
+{{--                        <th>S.NO</th>--}}
+{{--                        <th>PRODUCT</th>--}}
+{{--                        <th>STATUS</th>--}}
+{{--                        <th>PROGRESS</th>--}}
+{{--                    </tr>--}}
+{{--                    </thead>--}}
+{{--                    <tbody>--}}
+{{--                    <tr>--}}
+{{--                        <th scope="row">1</th>--}}
+{{--                        <td>Lorem ipsum</td>--}}
+{{--                        <td><span class="label label-success">In progress</span></td>--}}
+{{--                        <td><h5>85% <i class="fa fa-level-up"></i></h5></td>--}}
+{{--                    </tr>--}}
+{{--                    <tr>--}}
+{{--                        <th scope="row">2</th>--}}
+{{--                        <td>Aliquam</td>--}}
+{{--                        <td><span class="label label-warning">New</span></td>--}}
+{{--                        <td><h5>35% <i class="fa fa-level-up"></i></h5></td>--}}
+{{--                    </tr>--}}
+{{--                    <tr>--}}
+{{--                        <th scope="row">3</th>--}}
+{{--                        <td>Lorem ipsum</td>--}}
+{{--                        <td><span class="label label-danger">Overdue</span></td>--}}
+{{--                        <td><h5 class="down">40% <i class="fa fa-level-down"></i></h5></td>--}}
+{{--                    </tr>--}}
+{{--                    <tr>--}}
+{{--                        <th scope="row">4</th>--}}
+{{--                        <td>Aliquam</td>--}}
+{{--                        <td><span class="label label-info">Out of stock</span></td>--}}
+{{--                        <td><h5>100% <i class="fa fa-level-up"></i></h5></td>--}}
+{{--                    </tr>--}}
+{{--                    <tr>--}}
+{{--                        <th scope="row">5</th>--}}
+{{--                        <td>Lorem ipsum</td>--}}
+{{--                        <td><span class="label label-success">In progress</span></td>--}}
+{{--                        <td><h5 class="down">10% <i class="fa fa-level-down"></i></h5></td>--}}
+{{--                    </tr>--}}
+{{--                    <tr>--}}
+{{--                        <th scope="row">6</th>--}}
+{{--                        <td>Aliquam</td>--}}
+{{--                        <td><span class="label label-warning">New</span></td>--}}
+{{--                        <td><h5>38% <i class="fa fa-level-up"></i></h5></td>--}}
+{{--                    </tr>--}}
+{{--                    </tbody>--}}
+{{--                </table>--}}
 {{--            </div>--}}
 {{--        </div>--}}
-        <div class="clearfix"></div>
+        <div class="clearfix"> </div>
     </div>
     <!-- //market-->
 @endsection

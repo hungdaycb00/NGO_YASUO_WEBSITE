@@ -313,6 +313,50 @@
     <!-- Featured_job_end -->
 
     <!-- Count Down End -->
+<!-- su kien da ket thuc-->
+<div class="our-cases-area1 section-padding30">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-7 col-lg-9 col-md-10 col-sm-12">
+                <div class="section-tittle text-center mb-80">
+                    <span>what I have done</span>
+                    <h2>the events we have completed</h2>
+                </div>
+            </div>
 
+            <table class="content-table">
+                <thead>
+                <tr>
+                    <th>Order</th>
+                    <th>Name Of The Event</th>
+                    <th>Total donate</th>
+                    <th>Target</th>
+                    <th>End Time</th>
+                    <th >Read More</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php $i = 0; ?>
+                @foreach($events as $e)
+                <tr>
+                    <td>{{$i}}</td>
+                    <td>{{$e->events_title}}</td>
+                    @foreach($donate as $d)
+                        @if($e->events_id == $d->events_id)
+                    <td>{{$d->total_donates}}</td>
+                        @endif
+                    @endforeach
+                    <td>{{$e->total_donate}}</td>
+                    <td>11/11/2020</td>
+                    <th class="readmore"><a href="{{URL::to('events_detail/'.$e->events_id)}}">Read More></a></th>
+                </tr>
+                    <?php $i++; ?>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- su kien da ket thuc end-->
 @endsection
 
