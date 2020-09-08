@@ -27,14 +27,14 @@ class EventsController extends Controller
     }
     public function listPostDetails($id){
 
-//        $data = DB::table('list_events')
-//            ->join('donate_details','donate_details.events_id','list_events.events_id')
-//            ->select('donate_details.events_id',DB::raw('Sum(donate_details.amount) as total_donates'))
-//            ->groupBy('donate_details.events_id')
-//            ->where('donate_details.money_status',4)
-//            ->get();
-//        $count = Donate::where('events_id',$id)->count();
-//        return view('admin.events.list_post_details',['count'=>$count],['donate'=>$data]);
+        $dataListPost = Events::all()->where('events_id',$id);
+        $count = Donate::where('events_id',$id)->count();
+        $donate = Donate::where('events_id',$id)->where('money_status',4)->sum('amount');
+        view()->share('count',$count);
+        view()->share('list',$dataListPost);
+        view()->share('donate',$donate);
+        return view('admin.events.list_post_details',['list'=>$dataListPost]);
+
     }
     public function saveNewPost(Request $request){
         $this->validate($request,

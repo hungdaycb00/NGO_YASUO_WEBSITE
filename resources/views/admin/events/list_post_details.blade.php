@@ -23,7 +23,6 @@
                         <th>Image Name</th>
                         <th>Post Status</th>
                         <th>End Time</th>
-                        <th>Upload Date</th>
                         <th style="width:30px;"></th>
                     </tr>
                     </thead>
@@ -33,9 +32,8 @@
                         <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
                         <td>{{$cate_pro->events_title}}</td>
                         <td>{{$count}}</td>
-                        @foreach($donate as $d)
-                        <td>{{$d->total_donates}}</td>
-                        @endforeach
+
+                        <td>{{number_format($donate,0)}}</td>
                         <td>{{number_format($cate_pro->total_donate,0)}}</td>
                         <td><img src="/upload/{{$cate_pro->events_imageName}}" alt="" height="100" width="100"></td>
                         <td><?php
@@ -53,7 +51,6 @@
                         ?>
                         </td>
                         <td>{{$cate_pro->end_time}}</td>
-                        <td>{{$cate_pro->updated_at}}</td>
                         <td>
                             <a href="{{URL::to('admin/events/edit_post/'.$cate_pro->events_id)}}" class="active styling-edit" ui-toggle-class="">
                                 <i class="fa fa-pencil-square-o text-success text-active"></i>
