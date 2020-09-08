@@ -87,9 +87,10 @@
                                                     <li><a href="{{URL::to('Other')}}">Others</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="{{URL::to('about_us')}}">About Us</a></li>
+
                                             <li><a href="{{URL::to('help_center')}}">Help Center</a></li>
                                             <li><a href="{{URL::to('our_partners')}}">Our partners </a></li>
+                                            <li><a href="{{URL::to('about_us')}}">About Us</a></li>
                                             <li><a href="{{URL::to('contact')}}">Contact Us </a></li>
                                         </ul>
                                     </nav>
