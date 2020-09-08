@@ -5,17 +5,7 @@
     <div class="table-agile-info">
         <div class="panel panel-default">
             <div class="panel-heading">
-                List of Events
-            </div>
-            <div class="position-center text-center">
-
-                <?php
-                $message = Session::get('message');
-                if($message){
-                    echo '<span class="text-alert alert" >'.$message.'</span>';
-                    Session::put('message', null);
-                }
-                ?>
+                Events Details
             </div>
             <div class="table-responsive">
                 <table class="table table-striped b-t b-light">
@@ -27,8 +17,9 @@
                             </label>
                         </th>
                         <th>Title</th>
-                        <th>Category</th>
-                        <th>Total Donate (Dollars)</th>
+                        <th>Donator</th>
+                        <th>Donate</th>
+                        <th>Target (Dollars)</th>
                         <th>Image Name</th>
                         <th>Post Status</th>
                         <th>End Time</th>
@@ -41,7 +32,10 @@
                     <tr>
                         <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
                         <td>{{$cate_pro->events_title}}</td>
-                        <td>{{$cate_pro->categoryPost->category_name}}</td>
+                        <td>{{$count}}</td>
+                        @foreach($donate as $d)
+                        <td>{{$d->total_donates}}</td>
+                        @endforeach
                         <td>{{number_format($cate_pro->total_donate,0)}}</td>
                         <td><img src="/upload/{{$cate_pro->events_imageName}}" alt="" height="100" width="100"></td>
                         <td><?php
@@ -68,7 +62,7 @@
                                 <i class="fa fa-times text-danger text"></i>
                             </a>
                         </td>
-                        <td><a href="{{URL::to('admin/events/list_post_details/'.$cate_pro->events_id)}}">Events details</a></td>
+
                     </tr>
                     @endforeach
                     </tbody>

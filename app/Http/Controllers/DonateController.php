@@ -62,9 +62,12 @@ class DonateController extends Controller
         $this->validate($request,
             [
                 'category_type' => 'required',
+                'amount'=>'gt:0'
             ],
             [
                 'category_type.required'=>'Please select the donate reason!!!',
+                'amount.gt'=>'your donate must greater than 0!!!'
+
             ]);
         $data = new Donate;
         $data->name = $request->name;
@@ -93,9 +96,12 @@ class DonateController extends Controller
         $this->validate($request,
             [
                 'category_type' => 'required',
+                'amount'=>'gt:0'
             ],
             [
                 'category_type.required'=>'Please select the donate reason!!!',
+                'amount.gt'=>'your donate must greater than 0!!!'
+
             ]);
         $data = new Donate;
         $data->name = $request->name;

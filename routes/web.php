@@ -116,6 +116,7 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function (){
     Route::group(['prefix'=>'events'],function (){
         Route::get('add_post','EventsController@addPost');
         Route::get('list_post','EventsController@listPost');
+        Route::get('list_post_details/{id}','EventsController@listPostDetails');
         Route::get('edit_post/{id}','EventsController@editPost');
 
         Route::post('/save_new_post','EventsController@saveNewPost');
