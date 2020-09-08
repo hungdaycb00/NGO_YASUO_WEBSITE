@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Donate;
 use App\Events;
 use App\member;
 use Illuminate\Support\Facades\Mail;
@@ -12,6 +13,12 @@ use Illuminate\Support\Facades\Redirect;
 class MailController extends Controller
 {
     //
+    function __construct()
+    {
+        $donator = Donate::all()->where('code_payment',Session::get('code_payment'));
+        view()->share('code_payment',$donator);
+    }
+
     public function sendMail(){
         //send mail
         $to_name = Session::get('name');
@@ -30,6 +37,7 @@ class MailController extends Controller
         return redirect('notice_transfer');
     }
     public function mail(){
+
         return view('pages.Send_mail');
     }
     public function sendPass(Request $request){

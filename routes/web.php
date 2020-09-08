@@ -71,6 +71,7 @@ Route::group(['prefix'=>'/'],function(){
     Route::get('/Education', 'PagesController@showEducation');
     Route::get('/Health', 'PagesController@showHealth');
     Route::get('/Other', 'PagesController@showOther');
+    Route::get('/Events', 'PagesController@showEvents');
 });
 //Backend
 

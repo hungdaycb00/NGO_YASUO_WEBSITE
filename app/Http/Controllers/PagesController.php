@@ -261,6 +261,10 @@ class PagesController extends Controller
         $data = list_post::where('post_id', $id)->get();
         return view('pages.blog_detail',['data' => $data]);
     }
+    public function showEvents(){
+        $post = Events::all()->sortByDesc('created_at');
+        return view('pages.events',['events_post'=>$post]);
+    }
     public function eventsDetail($id){
         $data = Events::where('events_id', $id)->get();
         return view('pages.events_detail',['data' => $data]);

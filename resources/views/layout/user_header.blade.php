@@ -81,6 +81,7 @@
                                         <ul id="navigation">
                                             <li><a href="{{URL::to('news')}}" class="font-weight-bold"><h2>News</h2></a>
                                                 <ul class="submenu">
+                                                    <li><a href="{{URL::to('Events')}}">Events</a></li>
                                                     <li><a href="{{URL::to('Children')}}">Privileged Children</a></li>
                                                     <li><a href="{{URL::to('Education')}}">Education</a></li>
                                                     <li><a href="{{URL::to('Health')}}">Health Care </a></li>
