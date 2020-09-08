@@ -93,6 +93,7 @@
 
                             @foreach($data6 as $d)
                                 @if($d->events_id == $e->events_id)
+                                    <img src="upload/{{$e->events_imageName}}" style="width: 100px;" alt="">
                         <li>{{$e->events_title}} <span class="pull-right">{{number_format($d->total_donates/$e->total_donate*100,2)}}%</span>
                             <div class="progress progress-striped active progress-right">
                                 <div class="bar red" style="width:{{number_format($d->total_donates/$e->total_donate*100,2)}}%;"></div>

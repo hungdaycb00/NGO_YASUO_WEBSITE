@@ -71,6 +71,7 @@ Route::group(['prefix'=>'/'],function(){
     Route::get('/Education', 'PagesController@showEducation');
     Route::get('/Health', 'PagesController@showHealth');
     Route::get('/Other', 'PagesController@showOther');
+    Route::get('/Events', 'PagesController@showEvents');
 });
 //Backend
 
@@ -115,6 +116,7 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function (){
     Route::group(['prefix'=>'events'],function (){
         Route::get('add_post','EventsController@addPost');
         Route::get('list_post','EventsController@listPost');
+        Route::get('list_post_details/{id}','EventsController@listPostDetails');
         Route::get('edit_post/{id}','EventsController@editPost');
 
         Route::post('/save_new_post','EventsController@saveNewPost');

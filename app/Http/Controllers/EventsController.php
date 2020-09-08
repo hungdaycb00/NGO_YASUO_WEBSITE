@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Donate;
 use App\Events;
 use App\list_post;
 use DB;
@@ -12,12 +13,28 @@ use Illuminate\Support\Facades\Redirect;
 class EventsController extends Controller
 {
     //post
+    function __construct()
+    {
+
+    }
+
     public function addPost(){
         return view('admin.events.add_new_post');
     }
     public function listPost(){
         $dataListPost = Events::all();
         return view('admin.events.list_post',['list'=>$dataListPost]);
+    }
+    public function listPostDetails($id){
+
+        $dataListPost = Events::all()->where('events_id',$id);
+        $count = Donate::where('events_id',$id)->count();
+        $donate = Donate::where('events_id',$id)->where('money_status',4)->sum('amount');
+        view()->share('count',$count);
+        view()->share('list',$dataListPost);
+        view()->share('donate',$donate);
+        return view('admin.events.list_post_details',['list'=>$dataListPost]);
+
     }
     public function saveNewPost(Request $request){
         $this->validate($request,

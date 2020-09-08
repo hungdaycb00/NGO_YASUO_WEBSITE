@@ -55,8 +55,12 @@
 {{--                        <td>{{$d->events->events_title}}</td>--}}
                         <td>{{$d->category->category_name}}</td>
                         <td>{{$d->statusDonator->status_name}}</td>
-                        <td>{{$d->statusMoney->status_name}}</td>
-                        <td>{{$d->updated_at}}</td>
+                        @if($d->money_status == 4)
+                        <td><label for="" class="btn alert-success">{{$d->statusMoney->status_name}}</label></td>
+                        @else
+                            <td><label for="" class="alert-warning btn">{{$d->statusMoney->status_name}}</label></td>
+                        @endif
+                            <td>{{$d->updated_at}}</td>
                         <td>
                             <a href="{{URL::to('admin/donate/edit/'.$d->id)}}" class="active styling-edit" ui-toggle-class="">
                                 <i class="fa fa-pencil-square-o text-success text-active"></i>

@@ -124,7 +124,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-cases mb-40">
                         <div class="cases-img">
-                            <img src="{{asset('upload/'.$p->events_imageName)}}" alt="">
+                            <img src="{{asset('upload/'.$p->events_imageName)}}" style="height: 210px;" alt="">
                         </div>
                         <div class="cases-caption">
                             <h3><a href="events_detail/{{$p->events_id}}">{{$p->events_title}}</a></h3>
