@@ -85,7 +85,7 @@
         <div class="col-md-12 stats-info widget">
             <div class="stats-info-agileits">
                 <div class="stats-title">
-                    <h4 class="title">Events Stats</h4>
+                    <h4 class="title h1">Events Stats</h4>
                 </div>
                 <div class="stats-body">
                     <ul class="list-unstyled">
@@ -93,8 +93,8 @@
 
                             @foreach($data6 as $d)
                                 @if($d->events_id == $e->events_id)
-                                    <img src="upload/{{$e->events_imageName}}" style="width: 100px;" alt="">
-                        <li>{{$e->events_title}} <span class="pull-right">{{number_format($d->total_donates/$e->total_donate*100,2)}}%</span>
+                                    <img src="upload/{{$e->events_imageName}}" style="height: 100px; width:200px;" alt="">
+                        <li><a href="{{URL::to('admin/events/list_post_details/'.$e->events_id)}}" class="h3 mt-5">{{$e->events_title}}</a> <span class="pull-right">{{number_format($d->total_donates/$e->total_donate*100,2)}}%</span>
                             <div class="progress progress-striped active progress-right">
                                 <div class="bar red" style="width:{{number_format($d->total_donates/$e->total_donate*100,2)}}%;"></div>
                             </div>
