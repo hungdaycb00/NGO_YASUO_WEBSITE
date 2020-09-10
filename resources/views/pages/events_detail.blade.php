@@ -18,6 +18,7 @@
 
                             <h2 style="color: #2d2d2d;"> {!!$p->events_title!!}
                             </h2>
+                            <label for=""><b>End Time: {{$p->end_time}}</b></label>
                             <ul class="blog-info-link mt-3 mb-4">
                                 <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
                                 <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
