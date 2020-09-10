@@ -192,7 +192,7 @@ class DonateController extends Controller
         $vnp_TxnRef = $request->order_id;//Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
         $vnp_OrderInfo = $request->order_desc;
         $vnp_OrderType = $request->order_type;
-        $vnp_Amount = $request->amount* 100;
+        $vnp_Amount = $request->amount* 100*23000;
         $vnp_Locale = $request->language;
         $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
         error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);

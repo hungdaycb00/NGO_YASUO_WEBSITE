@@ -5,7 +5,7 @@
 <div class="col-lg-12">
     <section class="panel">
         <header class="panel-heading">
-            Add new post
+            Add new Partner
         </header>
 
         <div class="panel-body">

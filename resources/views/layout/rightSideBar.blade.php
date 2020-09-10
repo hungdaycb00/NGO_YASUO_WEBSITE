@@ -48,7 +48,7 @@
             <div class="media post_item">
                 <img src="../upload/{{$n->post_imageName}}" alt="" style="width: 80px; height: 80px;">
                 <div class="media-body">
-                    <a href="blog_details.html">
+                    <a href="blog_detail/{{$n->post_id}}">
                         <h3 style="color: #2d2d2d;">{{$n->post_title}}</h3>
                     </a>
                     <p>{{ \Carbon\Carbon::parse($n->created_at)->format('d M Y') }}</p>

@@ -23,7 +23,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap hero-cap2 pt-20 text-center">
-                            <h2>About US</h2>
+                            <h2>Contact US</h2>
                         </div>
                     </div>
                 </div>
@@ -79,8 +79,8 @@
                     <div class="media contact-info">
                         <span class="contact-info__icon"><i class="ti-home"></i></span>
                         <div class="media-body">
-                            <h3>Buttonwood, California.</h3>
-                            <p>Rosemead, CA 91770</p>
+                            <h3>Ha Noi, Viet Nam.</h3>
+                            <p>Cao Ba Quat, CA 91770</p>
                         </div>
                     </div>
                     <div class="media contact-info">

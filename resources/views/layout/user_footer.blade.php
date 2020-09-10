@@ -21,10 +21,10 @@
                                 <h4>Contact Info</h4>
                                 <ul>
                                     <li>
-                                        <p>Address :Your address goes here, your demo address.</p>
+                                        <p>Address :Ha Noi, Viet Nam</p>
                                     </li>
                                     <li><a href="#">Phone : +8880 44338899</a></li>
-                                    <li><a href="#">Email : info@colorlib.com</a></li>
+                                    <li><a href="#">Email : yasuo@gmail.com</a></li>
                                 </ul>
                             </div>
 
@@ -38,7 +38,7 @@
                                     <li><a href="#"> View Project</a></li>
                                     <li><a href="contact">Contact Us</a></li>
                                     <li><a href="#">Testimonial</a></li>
-                                    <li><a href="#">Support</a></li>
+                                    <li><a href="help_center">Support</a></li>
                                 </ul>
                             </div>
                         </div>
